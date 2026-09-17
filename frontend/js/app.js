@@ -46,8 +46,8 @@ class RiskSphere3D {
         this.sphereRadius = 140;
         this.rotX = 0;
         this.rotY = 0;
-        this.rotSpeedY = 0.004;
-        this.rotSpeedX = 0.002;
+        this.rotSpeedY = 0.009; // Visible, smooth continuous rotation
+        this.rotSpeedX = 0.004;
         this.pulse = 0;
         this.rippleActive = 0;
         this.targetColor = { r: 16, g: 185, b: 129 }; // Default low risk green
@@ -55,7 +55,10 @@ class RiskSphere3D {
         this.initParticles();
         this.resize();
         window.addEventListener('resize', () => this.resize());
-        this.animate();
+        
+        // Start animation loop bound to this instance
+        this.animate = this.animate.bind(this);
+        requestAnimationFrame(this.animate);
     }
 
     resize() {
@@ -67,7 +70,6 @@ class RiskSphere3D {
     }
 
     initParticles() {
-        // Fibonacci sphere distribution for uniform 3D density
         const phi = Math.PI * (3 - Math.sqrt(5));
         for (let i = 0; i < this.numParticles; i++) {
             const y = 1 - (i / (this.numParticles - 1)) * 2;
@@ -81,8 +83,7 @@ class RiskSphere3D {
                 baseX: x,
                 baseY: y,
                 baseZ: z,
-                phase: Math.random() * Math.PI * 2,
-                size: Math.random() * 1.5 + 1.2
+                size: Math.random() * 1.6 + 1.2
             });
         }
     }
@@ -109,15 +110,15 @@ class RiskSphere3D {
     }
 
     animate() {
-        requestAnimationFrame(() => this.animate());
+        requestAnimationFrame(this.animate);
         if (!this.ctx) return;
 
         this.ctx.clearRect(0, 0, this.width, this.height);
 
-        // Rotate only when active, or slowly drift when paused
-        this.rotY += appState.monitoringActive ? this.rotSpeedY : 0.001;
-        this.rotX += appState.monitoringActive ? this.rotSpeedX : 0.0005;
-        this.pulse += 0.02;
+        // Always rotate visibly: faster when active, gentle drift when paused
+        this.rotY += appState.monitoringActive ? this.rotSpeedY : 0.003;
+        this.rotX += appState.monitoringActive ? this.rotSpeedX : 0.0015;
+        this.pulse += 0.03;
 
         if (this.rippleActive > 0) {
             this.rippleActive -= 0.025;
@@ -125,8 +126,8 @@ class RiskSphere3D {
 
         const cx = this.width / 2;
         const cy = this.height / 2;
-        const breathing = Math.sin(this.pulse) * 4;
-        const currentRadius = this.sphereRadius + breathing + (this.rippleActive * 24);
+        const breathing = Math.sin(this.pulse) * 5;
+        const currentRadius = this.sphereRadius + breathing + (this.rippleActive * 25);
 
         const cosY = Math.cos(this.rotY);
         const sinY = Math.sin(this.rotY);
@@ -164,7 +165,7 @@ class RiskSphere3D {
             projected.push({
                 x: px,
                 y: py,
-                scale: scale * p.size,
+                scale: Math.max(0.5, scale * p.size),
                 alpha: alpha,
                 z: wz
             });
