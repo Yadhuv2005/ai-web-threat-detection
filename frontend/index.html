@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Web Threat Detection & Real-Time SOC Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Top Cyber SOC Navigation Bar -->
+    <header class="soc-navbar">
+        <div class="brand">
+            <span class="shield-icon">🛡️</span>
+            <div>
+                <h1>AEGIS CYBER DEFENSE <span class="badge">AI/NLP HYBRID SOC</span></h1>
+            </div>
+        </div>
+        <div class="nav-actions">
+            <div class="server-target">
+                Target Node: <strong>http://127.0.0.1:8001</strong> | Log: <code>access.log</code>
+            </div>
+            <span id="ws-badge" class="badge" style="border-color: #64748b; color: #64748b;">CONNECTING...</span>
+            <button id="btn-start" class="btn start">▶ Start Monitoring</button>
+            <button id="btn-stop" class="btn stop">⏹ Stop</button>
+        </div>
+    </header>
+
+    <div class="soc-container">
+        <!-- Hero Status Section: Animated Pulsing Circle + KPI Metrics -->
+        <section class="hero-status">
+            <!-- Center Animated Monitoring Circle -->
+            <div class="circle-card">
+                <div id="circle-wrapper" class="monitoring-circle-wrapper status-gray">
+                    <div class="pulse-ring"></div>
+                    <div class="monitoring-circle">
+                        <span id="circle-icon" class="circle-icon">⏹️</span>
+                        <span id="circle-text" class="circle-text">INITIALIZING</span>
+                    </div>
+                </div>
+                <div class="target-info">
+                    Monitoring: <strong>CyberShop Target</strong><br>
+                    Engine: <code>NLP + Behavioral Rules</code>
+                </div>
+            </div>
+
+            <!-- Real-Time Metrics Counters -->
+            <div class="stat-cards-grid">
+                <div class="stat-card cyan">
+                    <div class="stat-header">TOTAL SCANNED <span>🌐</span></div>
+                    <div id="stat-total-scanned" class="stat-value">0</div>
+                    <div class="stat-desc">Parsed HTTP Requests</div>
+                </div>
+
+                <div class="stat-card green">
+                    <div class="stat-header">BENIGN TRAFFIC <span>✅</span></div>
+                    <div id="stat-normal" class="stat-value">0</div>
+                    <div class="stat-desc">Normal web interactions</div>
+                </div>
+
+                <div class="stat-card red">
+                    <div class="stat-header">THREATS FLAGGED <span>🚨</span></div>
+                    <div id="stat-total-threats" class="stat-value">0</div>
+                    <div class="stat-desc">Attacks blocked/alerted</div>
+                </div>
+
+                <div class="stat-card red">
+                    <div class="stat-header">SQL INJECTIONS <span>💉</span></div>
+                    <div id="stat-sqli" class="stat-value">0</div>
+                    <div class="stat-desc">NLP detected SQLi queries</div>
+                </div>
+
+                <div class="stat-card yellow">
+                    <div class="stat-header">XSS SCRIPTS <span>⚡</span></div>
+                    <div id="stat-xss" class="stat-value">0</div>
+                    <div class="stat-desc">NLP detected script tags</div>
+                </div>
+
+                <div class="stat-card red">
+                    <div class="stat-header">BRUTE FORCE <span>🔓</span></div>
+                    <div id="stat-brute" class="stat-value">0</div>
+                    <div class="stat-desc">Behavioral failed logins</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Visual Grid: Traffic Stream & Real-time Threats -->
+        <section class="dashboard-grid">
+            <!-- Live HTTP Traffic Stream -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>📡 Live Ingested HTTP Traffic Stream</h3>
+                    <span style="font-size: 0.75rem; color: #94a3b8;">Real-time file stream parser</span>
+                </div>
+                <div class="panel-body">
+                    <table class="soc-table">
+                        <thead>
+                            <tr>
+                                <th>TIME</th>
+                                <th>CLIENT IP</th>
+                                <th>METHOD</th>
+                                <th>ENDPOINT</th>
+                                <th>STATUS</th>
+                                <th>CLASSIFICATION</th>
+                                <th>CONFIDENCE</th>
+                            </tr>
+                        </thead>
+                        <tbody id="traffic-tbody">
+                            <!-- Injected dynamically via WebSocket -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Detected Threat Explanations & Alerts -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>🚨 Detected Threat Feed & Explainability</h3>
+                    <span style="font-size: 0.75rem; color: #f87171;">NLP & Behavioral Reasonings</span>
+                </div>
+                <div class="panel-body">
+                    <div id="threat-list" class="threat-list">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Visual Analytics & Alert History -->
+        <section class="alerts-grid">
+            <!-- Threat Category Distribution Chart -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>📊 Threat Distribution Breakdown</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="chart-container">
+                        <canvas id="threat-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert Dispatch Logs (SMS / Email / Dashboard) -->
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>🔔 Security Notification & Dispatch Logs</h3>
+                    <span style="font-size: 0.75rem; color: #94a3b8;">Throttling & Cooldown Active</span>
+                </div>
+                <div class="panel-body">
+                    <div id="alert-list" class="threat-list">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- External and Internal Scripts -->
+    <script src="/js/charts.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

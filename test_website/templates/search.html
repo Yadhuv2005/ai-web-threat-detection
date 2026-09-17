@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results | CyberShop</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">🛒 CyberShop Lab Target</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/login">User Login</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Product Search Results</h2>
+        <p>Query searched: <strong>{{ query }}</strong></p>
+
+        <div class="results-list">
+            {% if results %}
+                {% for item in results %}
+                <div class="product-item">
+                    <h4>{{ item.name }}</h4>
+                    <p>{{ item.desc }}</p>
+                    <span class="price">${{ item.price }}</span>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No products matched your search term.</p>
+            {% endif %}
+        </div>
+
+        <p><a href="/" class="btn secondary">Back to Home</a></p>
+    </main>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Demo Portal | Target Website</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">🛒 CyberShop Lab Target</div>
+        <nav>
+            <a href="/" class="active">Home</a>
+            <a href="/search?q=laptop">Search</a>
+            <a href="/login">User Login</a>
+            <a href="/api/products">API Catalog</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="banner">
+            <h1>Welcome to CyberShop Store</h1>
+            <p>This is an active educational target web application generating real HTTP access logs for the Threat Detection Subsystem.</p>
+        </div>
+
+        <section class="card-grid">
+            <div class="card">
+                <h3>🔍 Search Products</h3>
+                <p>Test queries, filtering, or SQL injection/XSS payloads safely against this input endpoint.</p>
+                <form action="/search" method="get">
+                    <input type="text" name="q" placeholder="Search products..." value="gaming laptop" required>
+                    <button type="submit" class="btn">Search</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>🔐 User Authentication</h3>
+                <p>Simulates authentication endpoint. Generates HTTP 200 (Success) or 401 (Failed) logs.</p>
+                <a href="/login" class="btn secondary">Go to Login Page</a>
+            </div>
+
+            <div class="card">
+                <h3>⚡ JSON API Endpoint</h3>
+                <p>Standard REST endpoint for automated client integrations.</p>
+                <a href="/api/products" target="_blank" class="btn secondary">View /api/products</a>
+            </div>
+        </section>
+
+        <section class="sample-payloads">
+            <h3>🧪 Safe Educational Testing Payloads</h3>
+            <p>You can click these links or enter them in forms to verify that the monitoring system detects threats in real time:</p>
+            <ul>
+                <li><a href="/search?q=wireless%20headphones">Normal Search: <code>/search?q=wireless headphones</code></a> (Clean)</li>
+                <li><a href="/search?q=' OR 1=1 --">SQL Injection Payload: <code>/search?q=' OR 1=1 --</code></a> (Flagged as SQLi)</li>
+                <li><a href="/search?q=&lt;script&gt;alert('XSS')&lt;/script&gt;">XSS Payload: <code>/search?q=&lt;script&gt;alert('XSS')&lt;/script&gt;</code></a> (Flagged as XSS)</li>
+                <li><a href="/search?q=UNION SELECT username, password FROM users">Advanced SQLi: <code>/search?q=UNION SELECT username, password FROM users</code></a> (Flagged as SQLi)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>CyberShop Target Application • Educational Defense Testbed</p>
+    </footer>
+</body>
+</html>

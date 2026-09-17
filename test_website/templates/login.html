@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login | CyberShop</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">🛒 CyberShop Lab Target</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/login" class="active">User Login</a>
+        </nav>
+    </header>
+
+    <main class="container login-container">
+        <div class="card login-card">
+            <h2>Account Login</h2>
+            <p class="subtitle">Valid credentials: <code>admin</code> / <code>secret123</code></p>
+
+            {% if error %}
+            <div class="alert danger">{{ error }}</div>
+            {% endif %}
+
+            {% if success %}
+            <div class="alert success">{{ success }}</div>
+            {% endif %}
+
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" name="username" placeholder="Username or SQLi probe" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn block">Sign In</button>
+            </form>
+
+            <div class="login-note">
+                <small>⚠️ Submitting wrong credentials generates HTTP 401 status logs for the behavioral brute-force detector.</small>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

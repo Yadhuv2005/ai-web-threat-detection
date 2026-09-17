@@ -1,0 +1,26 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+.env
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# SQLite Database & Runtime Logs
+*.db
+*.sqlite3
+test_website/logs/*.log
+*.log
+
+# macOS Files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs
+.vscode/
+.idea/
