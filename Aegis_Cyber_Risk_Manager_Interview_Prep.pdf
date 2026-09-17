@@ -1,0 +1,185 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 5076 >>
+stream
+0.04 0.35 0.60 rg
+BT /F2 20 Tf 50.00 742.00 Td (AEGIS CYBER RISK MANAGER) Tj ET
+0.15 0.20 0.30 rg
+BT /F2 12 Tf 50.00 718.00 Td (Complete BTech Project Interview & Defense Preparation Guide) Tj ET
+0.40 0.45 0.50 rg
+BT /F1 9 Tf 50.00 702.00 Td (Candidate: Yadhu Krishna | Track: AI, NLP & Cybersecurity) Tj ET
+0.8 0.85 0.9 RG 1 w 50 690 m 562 690 l S
+0.92 0.95 0.98 rg 50 660 512 18 re f
+0.04 0.30 0.55 rg
+BT /F2 11 Tf 56.00 664.00 Td (1. 30-Second Elevator Pitch) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 644.00 Td (Aegis is an enterprise-grade Cyber Risk Management platform that bridges the gap) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 631.00 Td (between raw machine learning detection and actionable security operations. It utilizes) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 618.00 Td (character n-gram TF-IDF vectorization with Logistic Regression to classify web) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 605.00 Td (injection attacks in under 1ms, combined with a behavioral sliding-window engine for) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 592.00 Td (brute-force attacks. Built on NIST SP 800-30 principles, it computes a composite Risk) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 579.00 Td (Score \(0-100\) based on Likelihood, Severity, and Asset Criticality, streaming live) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 566.00 Td (telemetry to an interactive 3D particle SOC dashboard.) Tj ET
+0.92 0.95 0.98 rg 50 537 512 18 re f
+0.04 0.30 0.55 rg
+BT /F2 11 Tf 56.00 541.00 Td (2. Core Architectural Questions) Tj ET
+0.10 0.15 0.25 rg
+BT /F2 10 Tf 50.00 517.00 Td (Q1: Why use NLP for Cybersecurity instead of static regex signatures?) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 502.00 Td (Static regex signatures are brittle and easily bypassed using URL encoding) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 489.00 Td (\(%27%20OR%201=1\), character case mutation, or SQL comments. NLP treats HTTP inputs as) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 476.00 Td (structured text patterns, learning structural syntax markers rather than rigid) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 463.00 Td (strings.) Tj ET
+0.10 0.15 0.25 rg
+BT /F2 10 Tf 50.00 442.00 Td (Q2: Why character n-grams instead of standard word tokenization?) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 427.00 Td (Web exploit payloads \(e.g. ' OR '1'='1, <script>alert\(1\)\) do not consist of natural) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 414.00 Td (English dictionary words. Punctuation, quotes, equality signs, and brackets contain) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 401.00 Td (critical malicious signals. Character n-grams \(sub-strings of 2 to 5 characters\)) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 388.00 Td (preserve these exact syntax anomalies even across obfuscated inputs.) Tj ET
+0.10 0.15 0.25 rg
+BT /F2 10 Tf 50.00 367.00 Td (Q3: Why Logistic Regression over a Deep Learning LLM?) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 352.00 Td (Security inspection occurs inline or in real-time streaming. A Large Language Model) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 339.00 Td (\(LLM\) takes 200-1000ms and requires costly GPUs. Our TF-IDF + Logistic Regression) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 326.00 Td (model executes inference in under 1 millisecond on commodity CPUs with calibrated) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 313.00 Td (probability scores and clear explainability.) Tj ET
+0.10 0.15 0.25 rg
+BT /F2 10 Tf 50.00 292.00 Td (Q4: Why is a Behavioral Engine necessary alongside NLP?) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 277.00 Td (NLP only analyzes textual content. A single failed login request) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 264.00 Td (\(username=admin&password=xyz\) looks syntactically 100% normal. Only a temporal sliding) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 251.00 Td (window tracking state over time can detect that 6 failed 401 logins in 30 seconds from) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 238.00 Td (a single IP constitutes a Brute-Force credential attack.) Tj ET
+0.92 0.95 0.98 rg 50 209 512 18 re f
+0.04 0.30 0.55 rg
+BT /F2 11 Tf 56.00 213.00 Td (3. Risk Engine & Prioritization Questions) Tj ET
+0.10 0.15 0.25 rg
+BT /F2 10 Tf 50.00 189.00 Td (Q5: How is the Risk Score calculated?) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 174.00 Td (Based on NIST SP 800-30 guidelines: Risk Score \(0-100\) = Round\(\(Likelihood * 0.35 +) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 161.00 Td (Technical Severity * 0.35 + Asset Criticality * 0.30\) * 100\).) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 144.00 Td (- Likelihood: Derived from ML prediction confidence and exploit complexity.) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 127.00 Td (- Technical Severity: SQLi \(0.95\), Brute Force \(0.90\), Rate Burst \(0.75\), XSS \(0.70\).) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 110.00 Td (- Asset Criticality: Payment/Auth \(1.0\), Admin \(0.95\), Catalog API \(0.8\), Search) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 97.00 Td (\(0.6\).) Tj ET
+0.10 0.15 0.25 rg
+BT /F2 10 Tf 50.00 76.00 Td (Q6: What are the Risk Tiers?) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 5 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+7 0 obj
+<< /Length 3227 >>
+stream
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 742.00 Td (Critical \(80-100, Immediate triage\), High \(60-79, Urgent within shift\), Medium) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 729.00 Td (\(40-59, Elevated anomaly\), Low \(0-39, Baseline/Informational\).) Tj ET
+0.10 0.15 0.25 rg
+BT /F2 10 Tf 50.00 708.00 Td (Q7: How does Smart Alerting work?) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 693.00 Td (Alerts route dynamically: Low = Dashboard only; Medium = Dashboard + Audit log; High) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 680.00 Td (= Dashboard + SMTP Email; Critical = Dashboard + Email + Twilio SMS. An in-memory) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 667.00 Td (cooldown cache deduplicates alerts to prevent notification flooding.) Tj ET
+0.92 0.95 0.98 rg 50 638 512 18 re f
+0.04 0.30 0.55 rg
+BT /F2 11 Tf 56.00 642.00 Td (4. Machine Learning & Metric Questions) Tj ET
+0.10 0.15 0.25 rg
+BT /F2 10 Tf 50.00 618.00 Td (Q8: Why is Recall more important than Precision in threat detection?) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 603.00 Td (Recall measures what percentage of actual attacks were caught \(TP / \(TP + FN\)\). A) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 590.00 Td (False Negative in cybersecurity means an active attacker bypassed the defense and) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 577.00 Td (compromised internal databases. While high Precision reduces analyst fatigue, high) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 564.00 Td (Recall is vital to prevent breaches.) Tj ET
+0.10 0.15 0.25 rg
+BT /F2 10 Tf 50.00 543.00 Td (Q9: What is Concept Drift and how is it mitigated?) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 528.00 Td (Attack patterns evolve as new vulnerabilities emerge. A model trained on past data) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 515.00 Td (may degrade over time \(Concept Drift\). In production, this is solved by active) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 502.00 Td (continuous learning, periodic retraining pipelines, and canary validation.) Tj ET
+0.92 0.95 0.98 rg 50 473 512 18 re f
+0.04 0.30 0.55 rg
+BT /F2 11 Tf 56.00 477.00 Td (5. Frontend & Real-Time Telemetry) Tj ET
+0.10 0.15 0.25 rg
+BT /F2 10 Tf 50.00 453.00 Td (Q10: How does the 3D Particle Risk Sphere work?) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 438.00 Td (Rendered using HTML5 Canvas with 550 glowing nodes distributed via a Fibonacci sphere) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 425.00 Td (algorithm. Uses 3D perspective projection \(fov=400\) and smoothly interpolates colors:) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 412.00 Td (Green \(<40\), Yellow/Orange \(40-79\), Red \(>=80\), with dynamic ripple waves upon threat) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 399.00 Td (arrival.) Tj ET
+0.10 0.15 0.25 rg
+BT /F2 10 Tf 50.00 378.00 Td (Q11: Why WebSockets over Polling?) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 363.00 Td (Polling wastes network bandwidth and CPU by repeatedly querying the server every few) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 350.00 Td (seconds. WebSockets maintain a persistent lightweight TCP channel, pushing threat) Tj ET
+0.25 0.30 0.35 rg
+BT /F1 9 Tf 60.00 337.00 Td (telemetry to the dashboard in under 10 milliseconds with zero polling latency.) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 7 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000266 00000 n 
+0000005394 00000 n 
+0000005530 00000 n 
+0000008809 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+8945
+%%EOF
