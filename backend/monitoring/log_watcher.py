@@ -1,10 +1,10 @@
 """
-Continuous Background Log Monitoring Service
---------------------------------------------
+Continuous Background Log Monitoring Service - Cyber Risk Enhanced
+------------------------------------------------------------------
 Watches the target website's access log file continuously.
-Reads new entries as they arrive (using file seek pointer tailing),
-dispatches them to the Hybrid Detection Pipeline, persists state to DB,
-and broadcasts live updates to frontend WebSocket subscribers.
+Reads new entries as they arrive, evaluates ML threat classification and
+behavioral detection, computes multi-dimensional AI Risk Scores, persists to SQLite,
+dispatches risk-based alerts, and broadcasts live updates over WebSockets.
 """
 
 import os
@@ -15,8 +15,9 @@ from backend.monitoring.log_parser import parse_log_line
 from backend.detection.ml_detector import MLThreatDetector
 from backend.detection.behavioral_detector import BehavioralDetector
 from backend.detection.explainability import generate_explanation
+from backend.risk.risk_engine import RiskEngine
 from backend.alerts.alert_service import AlertService
-from backend.database.models import insert_traffic_log, insert_threat_event, get_stats
+from backend.database.models import insert_traffic_log, insert_threat_event, get_stats, get_prioritized_threats
 
 class ContinuousLogMonitor:
     def __init__(self, broadcast_callback=None):
@@ -24,7 +25,7 @@ class ContinuousLogMonitor:
         self.is_running = False
         self._task = None
 
-        # Instantiate detection and alert engines
+        # Instantiate detection, risk, and alert engines
         self.ml_detector = MLThreatDetector()
         self.behavioral_detector = BehavioralDetector()
         self.alert_service = AlertService()
@@ -53,7 +54,7 @@ class ContinuousLogMonitor:
         payload = entry["payload"]
         status_code = entry["status_code"]
 
-        # Formulate full textual payload for NLP analysis (combining path, query string, and post body)
+        # Formulate full textual payload for NLP analysis
         combined_text = f"{path}?{query} {payload}".strip()
 
         # 1. Run NLP / ML Text Classification
@@ -84,7 +85,17 @@ class ContinuousLogMonitor:
         # 4. Generate Explainability Reason
         reason = generate_explanation(ml_result, behavioral_result, path, combined_text)
 
-        # 5. Persist Traffic Log
+        # 5. Evaluate Multi-Dimensional Cyber Risk Metrics
+        risk_metrics = RiskEngine.calculate_risk(
+            threat_type=threat_type,
+            confidence=confidence,
+            detection_source=detection_source,
+            endpoint=path,
+            payload=combined_text,
+            client_ip=client_ip
+        )
+
+        # 6. Persist Traffic Log
         entry["prediction"] = threat_type
         entry["confidence"] = confidence
         entry["severity"] = severity
@@ -93,7 +104,7 @@ class ContinuousLogMonitor:
         threat_id = None
         alert_info = None
 
-        # 6. If Threat Detected: Save Threat Record & Trigger Alert Service
+        # 7. If Threat Detected: Save Extended Threat Record & Dispatch Risk Alert
         if is_threat:
             threat_event = {
                 "timestamp": entry["timestamp"],
@@ -101,15 +112,22 @@ class ContinuousLogMonitor:
                 "threat_type": threat_type,
                 "detection_source": detection_source,
                 "endpoint": path,
-                "payload": combined_text[:300], # Store preview
+                "payload": combined_text[:300],
                 "confidence": confidence,
                 "severity": severity,
-                "reason": reason
+                "reason": reason,
+                "risk_score": risk_metrics["risk_score"],
+                "risk_level": risk_metrics["risk_level"],
+                "affected_asset": risk_metrics["affected_asset"],
+                "likelihood": risk_metrics["likelihood"],
+                "potential_impact": risk_metrics["potential_impact"],
+                "business_impact": risk_metrics["business_impact"],
+                "remediation_action": risk_metrics["remediation_action"]
             }
             threat_id = insert_threat_event(threat_event)
             alert_info = self.alert_service.dispatch_alert(threat_event, threat_id)
 
-        # 7. Broadcast Event to Connected Frontend WebSockets
+        # 8. Broadcast Event to Connected Frontend WebSockets
         if self.broadcast_callback:
             stats = get_stats()
             event_payload = {
@@ -122,8 +140,14 @@ class ContinuousLogMonitor:
                     "severity": severity,
                     "confidence": confidence,
                     "reason": reason,
-                    "detection_source": detection_source
+                    "detection_source": detection_source,
+                    "risk_score": risk_metrics["risk_score"],
+                    "risk_level": risk_metrics["risk_level"],
+                    "affected_asset": risk_metrics["affected_asset"],
+                    "business_impact": risk_metrics["business_impact"],
+                    "remediation_action": risk_metrics["remediation_action"]
                 } if is_threat else None,
+                "risk": risk_metrics,
                 "alert": alert_info,
                 "stats": stats
             }
@@ -134,7 +158,6 @@ class ContinuousLogMonitor:
         root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
         log_file = os.path.join(root_dir, config.LOG_FILE_PATH)
 
-        # Ensure directory and file exist
         os.makedirs(os.path.dirname(log_file), exist_ok=True)
         if not os.path.exists(log_file):
             with open(log_file, "w", encoding="utf-8") as f:
@@ -144,15 +167,12 @@ class ContinuousLogMonitor:
 
         try:
             with open(log_file, "r", encoding="utf-8") as f:
-                # Seek to end of file to watch only new incoming lines
                 f.seek(0, os.SEEK_END)
-
                 while self.is_running:
                     line = f.readline()
                     if line:
                         await self._process_log_entry(line)
                     else:
-                        # Sleep 150ms between reads to avoid 100% CPU burn while maintaining real-time latency
                         await asyncio.sleep(0.15)
         except asyncio.CancelledError:
             pass

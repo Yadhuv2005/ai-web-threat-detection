@@ -1,14 +1,22 @@
 """
-REST & WebSocket API Endpoints
-------------------------------
+REST & WebSocket API Endpoints - Cyber Risk Platform
+----------------------------------------------------
 Provides endpoints for monitoring lifecycle management, statistics,
-traffic querying, threat review, and real-time streaming updates.
+risk overview, prioritized threats, asset registry, AI Security Analyst,
+and real-time streaming updates.
 """
 
 import json
-from fastapi import APIRouter, WebSocket, WebSocketDisconnect
+from pydantic import BaseModel
+from fastapi import APIRouter, WebSocket, WebSocketDisconnect, Request
 from fastapi.responses import JSONResponse
-from backend.database.models import get_db_connection, get_stats
+from backend.database.models import (
+    get_db_connection, 
+    get_stats, 
+    get_prioritized_threats, 
+    get_registered_assets
+)
+from backend.risk.analyst import AISecurityAnalyst
 
 router = APIRouter()
 
@@ -40,6 +48,10 @@ class ConnectionManager:
 
 ws_manager = ConnectionManager()
 
+# Request schemas
+class AnalystQueryRequest(BaseModel):
+    query: str
+
 @router.get("/status")
 async def get_system_status():
     is_active = log_monitor_instance.is_running if log_monitor_instance else False
@@ -56,11 +68,10 @@ async def get_system_status():
 async def start_monitoring():
     if log_monitor_instance:
         log_monitor_instance.start()
-        # Broadcast status update
         await ws_manager.broadcast({
             "event_type": "STATUS_UPDATE",
             "monitoring_active": True,
-            "message": "Continuous Threat Monitoring is now ACTIVE"
+            "message": "Continuous Cyber Risk Monitoring is now ACTIVE"
         })
         return {"status": "success", "monitoring_active": True}
     return {"status": "error", "message": "Monitor not initialized"}
@@ -69,11 +80,10 @@ async def start_monitoring():
 async def stop_monitoring():
     if log_monitor_instance:
         log_monitor_instance.stop()
-        # Broadcast status update
         await ws_manager.broadcast({
             "event_type": "STATUS_UPDATE",
             "monitoring_active": False,
-            "message": "Continuous Threat Monitoring is STOPPED"
+            "message": "Continuous Cyber Risk Monitoring is STOPPED"
         })
         return {"status": "success", "monitoring_active": False}
     return {"status": "error", "message": "Monitor not initialized"}
@@ -81,6 +91,29 @@ async def stop_monitoring():
 @router.get("/stats")
 async def get_statistics():
     return get_stats()
+
+@router.get("/risk/overview")
+async def get_risk_overview():
+    stats = get_stats()
+    assets = get_registered_assets()
+    prioritized = get_prioritized_threats(5)
+    return {
+        "stats": stats,
+        "assets_count": len(assets),
+        "top_priorities": prioritized
+    }
+
+@router.get("/risk/prioritized")
+async def get_prioritized_risks(limit: int = 50):
+    return get_prioritized_threats(limit)
+
+@router.get("/assets")
+async def get_assets_list():
+    return get_registered_assets()
+
+@router.post("/analyst/query")
+async def query_ai_analyst(payload: AnalystQueryRequest):
+    return AISecurityAnalyst.answer_query(payload.query)
 
 @router.get("/traffic")
 async def get_recent_traffic(limit: int = 50):
@@ -109,16 +142,16 @@ async def get_alert_history(limit: int = 50):
 @router.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await ws_manager.connect(websocket)
-    # Send initial state snapshot upon connection
     initial_status = {
         "event_type": "INITIAL_STATE",
         "monitoring_active": log_monitor_instance.is_running if log_monitor_instance else False,
-        "stats": get_stats()
+        "stats": get_stats(),
+        "prioritized": get_prioritized_threats(15),
+        "assets": get_registered_assets()
     }
     await websocket.send_text(json.dumps(initial_status))
     try:
         while True:
-            # Keep socket alive and receive any client command
             data = await websocket.receive_text()
     except WebSocketDisconnect:
         ws_manager.disconnect(websocket)

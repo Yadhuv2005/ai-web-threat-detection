@@ -1,316 +1,768 @@
-:root {
-    --bg-main: #0a0e17;
-    --bg-card: #111827;
-    --bg-card-hover: #1f2937;
-    --border-color: #1f293d;
-    --border-glow: #22d3ee22;
-    
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
+/* ==========================================================================
+   AEGIS CYBER RISK MANAGER — ULTRA-CLEAN ENTERPRISE SOC DESIGN
+   Sleek glassmorphism, professional typography, calibrated spacing
+   ========================================================================== */
 
-    --neon-green: #10b981;
-    --neon-green-glow: rgba(16, 185, 129, 0.4);
-    --neon-red: #ef4444;
-    --neon-red-glow: rgba(239, 68, 68, 0.5);
-    --neon-yellow: #f59e0b;
-    --neon-yellow-glow: rgba(245, 158, 11, 0.4);
-    --neon-blue: #3b82f6;
-    --neon-cyan: #06b6d4;
-    --neon-gray: #4b5563;
+:root {
+    --bg-base: #070a12;
+    --bg-surface: #0c1220;
+    --bg-card: #101828;
+    --bg-card-hover: #152138;
+    --border-subtle: #192640;
+    --border-glow: rgba(56, 189, 248, 0.25);
+
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+
+    --color-critical: #ef4444;
+    --color-critical-glow: rgba(239, 68, 68, 0.45);
+    --color-high: #f97316;
+    --color-high-glow: rgba(249, 115, 22, 0.40);
+    --color-medium: #eab308;
+    --color-medium-glow: rgba(234, 179, 8, 0.35);
+    --color-low: #10b981;
+    --color-low-glow: rgba(16, 185, 129, 0.35);
+    --color-cyan: #06b6d4;
+    --color-cyan-glow: rgba(6, 182, 212, 0.35);
+    --color-purple: #8b5cf6;
+
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-base);
 }
 
-/* Top Navbar */
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    line-height: 1.5;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR
+   ========================================================================== */
 .soc-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background: #0d1322;
-    border-bottom: 1px solid var(--border-color);
+    padding: 0.85rem 2.5rem;
+    background: rgba(12, 18, 32, 0.90);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-subtle);
 }
-.brand { display: flex; align-items: center; gap: 0.75rem; }
-.shield-icon { font-size: 1.8rem; }
-.brand h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.brand-icon {
+    font-size: 1.75rem;
+    filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.6));
+}
+
+.brand h1 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
 .brand .badge {
     font-size: 0.65rem;
-    background: #1e293b;
-    color: var(--neon-cyan);
-    border: 1px solid var(--neon-cyan);
-    padding: 0.2rem 0.5rem;
+    background: rgba(6, 182, 212, 0.14);
+    color: var(--color-cyan);
+    border: 1px solid rgba(6, 182, 212, 0.35);
+    padding: 0.15rem 0.5rem;
     border-radius: 4px;
-    font-weight: 600;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-weight: 700;
 }
-.nav-actions { display: flex; align-items: center; gap: 1rem; }
-.server-target { font-size: 0.85rem; color: var(--text-secondary); }
-.server-target strong { color: #e2e8f0; }
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.nav-node-info {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+.nav-node-info strong { color: #e2e8f0; }
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    padding: 0.3rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+.status-pill.online {
+    border-color: rgba(16, 185, 129, 0.4);
+    color: var(--color-low);
+    background: rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+.status-pill.paused {
+    border-color: rgba(234, 179, 8, 0.4);
+    color: var(--color-medium);
+    background: rgba(234, 179, 8, 0.1);
+}
+.status-pill .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: currentColor;
+}
 
 .btn {
-    padding: 0.55rem 1.1rem;
+    padding: 0.5rem 1.15rem;
+    font-size: 0.82rem;
+    font-weight: 700;
     border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    cursor: pointer;
     border: none;
+    cursor: pointer;
     transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
 }
-.btn.start { background: var(--neon-green); color: #022c22; }
-.btn.start:hover { box-shadow: 0 0 15px var(--neon-green-glow); }
-.btn.stop { background: #374151; color: #f87171; border: 1px solid #7f1d1d; }
-.btn.stop:hover { background: #b91c1c; color: #fff; }
+.btn-primary {
+    background: var(--color-low);
+    color: #022c22;
+}
+.btn-primary:hover {
+    box-shadow: 0 0 14px var(--color-low-glow);
+    transform: translateY(-1px);
+}
+.btn-secondary {
+    background: #1e293b;
+    color: #f87171;
+    border: 1px solid #450a0a;
+}
+.btn-secondary:hover {
+    background: #7f1d1d;
+    color: #fff;
+    transform: translateY(-1px);
+}
+.btn:active { transform: translateY(0); }
 
-/* Dashboard Container */
+/* Main Container */
 .soc-container {
-    max-width: 1440px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 1.5rem;
-    width: 100%;
-}
-
-/* Status Hero Section (Center Animated Circle) */
-.hero-status {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.circle-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    gap: 2.25rem;
 }
 
-/* Animated Monitoring Circle */
-.monitoring-circle-wrapper {
+/* ==========================================================================
+   SECTION 1: HERO 3D PARTICLE RISK SPHERE
+   ========================================================================= */
+.hero-sphere-section {
     position: relative;
-    width: 140px;
-    height: 140px;
-    margin-bottom: 1.25rem;
-}
-
-.monitoring-circle {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+    background: radial-gradient(circle at 50% 45%, #15223c 0%, var(--bg-surface) 65%, var(--bg-base) 100%);
+    border: 1px solid var(--border-subtle);
+    border-radius: 18px;
+    padding: 3rem 2rem 2rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #111827;
+    overflow: hidden;
+    min-height: 520px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+}
+
+.sphere-stage {
+    position: relative;
+    width: 100%;
+    max-width: 580px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#risk-sphere-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+}
+
+/* Central Circular HUD */
+.sphere-hud {
     position: relative;
     z-index: 2;
+    text-align: center;
+    pointer-events: none;
+    background: rgba(10, 16, 28, 0.82);
+    backdrop-filter: blur(12px);
+    border: 2px solid var(--border-glow);
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.7);
     transition: all 0.4s ease;
 }
 
-/* Radar pulse wave effect */
-.pulse-ring {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    border-radius: 50%;
-    z-index: 1;
-    pointer-events: none;
+.sphere-hud.state-low {
+    border-color: var(--color-low);
+    box-shadow: 0 0 40px var(--color-low-glow), inset 0 0 20px rgba(16, 185, 129, 0.1);
+}
+.sphere-hud.state-medium {
+    border-color: var(--color-medium);
+    box-shadow: 0 0 40px var(--color-medium-glow), inset 0 0 20px rgba(234, 179, 8, 0.1);
+}
+.sphere-hud.state-high {
+    border-color: var(--color-high);
+    box-shadow: 0 0 50px var(--color-high-glow), inset 0 0 25px rgba(249, 115, 22, 0.15);
+}
+.sphere-hud.state-critical {
+    border-color: var(--color-critical);
+    box-shadow: 0 0 60px var(--color-critical-glow), inset 0 0 30px rgba(239, 68, 68, 0.2);
+}
+.sphere-hud.state-paused {
+    border-color: #64748b;
+    box-shadow: 0 0 25px rgba(100, 116, 139, 0.2);
 }
 
-/* Green Active State */
-.status-green .monitoring-circle {
-    border: 3px solid var(--neon-green);
-    box-shadow: 0 0 25px var(--neon-green-glow);
+.hud-label {
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text-muted);
 }
-.status-green .pulse-ring {
-    border: 2px solid var(--neon-green);
-    animation: pulseWaveGreen 2s infinite cubic-bezier(0.25, 1, 0.5, 1);
+.hud-score {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin: 0.25rem 0;
+    letter-spacing: -0.03em;
+    color: #fff;
 }
-
-/* Red Threat State */
-.status-red .monitoring-circle {
-    border: 3px solid var(--neon-red);
-    box-shadow: 0 0 35px var(--neon-red-glow);
+.hud-score span {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-dim);
 }
-.status-red .pulse-ring {
-    border: 3px solid var(--neon-red);
-    animation: pulseWaveRed 1s infinite cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* Yellow Warning State */
-.status-yellow .monitoring-circle {
-    border: 3px solid var(--neon-yellow);
-    box-shadow: 0 0 25px var(--neon-yellow-glow);
-}
-.status-yellow .pulse-ring {
-    border: 2px solid var(--neon-yellow);
-    animation: pulseWaveYellow 1.5s infinite cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* Gray Inactive State */
-.status-gray .monitoring-circle {
-    border: 3px solid var(--neon-gray);
-    box-shadow: none;
-}
-.status-gray .pulse-ring {
-    animation: none;
-    border: none;
+.hud-status {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
 }
 
-@keyframes pulseWaveGreen {
-    0% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(1.6); opacity: 0; }
+/* Status Meta Banner below sphere */
+.sphere-meta-banner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    background: rgba(16, 24, 40, 0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-subtle);
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
 }
-@keyframes pulseWaveRed {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(1.7); opacity: 0; }
+.sphere-meta-banner strong { color: #fff; }
+.sphere-meta-item { display: flex; align-items: center; gap: 0.45rem; }
+
+.tag-pill {
+    padding: 0.18rem 0.55rem;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    font-family: var(--font-mono);
 }
-@keyframes pulseWaveYellow {
-    0% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(1.5); opacity: 0; }
+.tag-pill.critical { background: rgba(239, 68, 68, 0.2); color: var(--color-critical); }
+.tag-pill.high { background: rgba(249, 115, 22, 0.2); color: var(--color-high); }
+.tag-pill.medium { background: rgba(234, 179, 8, 0.2); color: var(--color-medium); }
+.tag-pill.low { background: rgba(16, 185, 129, 0.2); color: var(--color-low); }
+
+/* Section Header Typography */
+.section-title-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1.1rem;
+    border-bottom: 1px solid rgba(25, 38, 64, 0.6);
+    padding-bottom: 0.5rem;
+}
+.section-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: -0.01em;
+}
+.section-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-dim);
 }
 
-.circle-icon { font-size: 2rem; margin-bottom: 0.25rem; }
-.circle-text { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
-.target-info { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; }
-.target-info code { color: var(--neon-cyan); background: #1e293b; padding: 0.1rem 0.3rem; border-radius: 3px; }
-
-/* Stat Cards Grid */
-.stat-cards-grid {
+/* ==========================================================================
+   SECTION 2: RISK OVERVIEW CARDS
+   ========================================================================== */
+.overview-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
     gap: 1rem;
 }
-.stat-card {
+
+.overview-card {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-subtle);
     border-radius: 12px;
     padding: 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
-.stat-header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    font-weight: 600;
-}
-.stat-value {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin: 0.5rem 0;
-    color: #ffffff;
-}
-.stat-desc { font-size: 0.75rem; color: var(--text-muted); }
-
-.stat-card.red .stat-value { color: var(--neon-red); }
-.stat-card.green .stat-value { color: var(--neon-green); }
-.stat-card.yellow .stat-value { color: var(--neon-yellow); }
-.stat-card.cyan .stat-value { color: var(--neon-cyan); }
-
-/* Main Grid Layout */
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: 2fr 1.2fr;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+.overview-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
-.panel {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-}
-.panel-header {
-    padding: 1rem 1.25rem;
-    border-bottom: 1px solid var(--border-color);
+.overview-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
-.panel-header h3 { font-size: 0.95rem; font-weight: 600; color: #e2e8f0; }
-.panel-body { padding: 1.25rem; max-height: 400px; overflow-y: auto; }
+.overview-card-value {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin: 0.4rem 0;
+    color: #fff;
+    line-height: 1;
+}
+.overview-card-desc {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+}
 
-/* Tables */
-table.soc-table {
+.overview-card.crit .overview-card-value { color: var(--color-critical); }
+.overview-card.high .overview-card-value { color: var(--color-high); }
+.overview-card.med .overview-card-value { color: var(--color-medium); }
+.overview-card.low .overview-card-value { color: var(--color-low); }
+.overview-card.cyan .overview-card-value { color: var(--color-cyan); }
+
+/* ==========================================================================
+   SECTION 3: PRIORITY THREATS (TRIAGE QUEUE)
+   ========================================================================== */
+.priority-threats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.25rem;
+}
+
+.threat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-left: 5px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    transition: all 0.25s ease;
+}
+.threat-card:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    transform: translateY(-2px);
+}
+.threat-card.level-critical {
+    border-left-color: var(--color-critical);
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.14);
+}
+.threat-card.level-high {
+    border-left-color: var(--color-high);
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.12);
+}
+.threat-card.level-medium {
+    border-left-color: var(--color-medium);
+}
+.threat-card.level-low {
+    border-left-color: var(--color-low);
+}
+
+.threat-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.threat-card-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.threat-card-score {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.score-badge {
+    font-size: 0.85rem;
+    font-weight: 800;
+    font-family: var(--font-mono);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+.score-badge.critical { background: var(--color-critical); color: #fff; }
+.score-badge.high { background: var(--color-high); color: #fff; }
+.score-badge.medium { background: var(--color-medium); color: #000; }
+.score-badge.low { background: var(--color-low); color: #000; }
+
+.threat-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+.threat-meta-row span strong { color: #cbd5e1; }
+.threat-meta-row code {
+    background: #0b111e;
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+    color: var(--color-cyan);
+}
+
+.threat-detail-block {
+    font-size: 0.82rem;
+    color: #cbd5e1;
+    background: #090e18;
+    border-radius: 6px;
+    padding: 0.75rem 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    line-height: 1.45;
+}
+.threat-detail-label {
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.04em;
+}
+
+.threat-remediation-block {
+    border-left: 3px solid var(--color-cyan);
+    background: rgba(6, 182, 212, 0.07);
+    padding: 0.65rem 0.85rem;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.8rem;
+    color: #e0f2fe;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   SECTION 4: LIVE THREAT FEED & ASSET REGISTRY
+   ========================================================================== */
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+}
+
+.soc-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.soc-panel-header {
+    padding: 1rem 1.4rem;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(12, 18, 32, 0.8);
+}
+.soc-panel-header h3 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #f1f5f9;
+}
+.soc-panel-body {
+    padding: 1rem;
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+/* Live Traffic Table */
+.soc-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.8rem;
 }
-table.soc-table th {
+.soc-table th {
     text-align: left;
-    padding: 0.6rem 0.8rem;
-    color: var(--text-muted);
-    font-weight: 600;
-    border-bottom: 1px solid var(--border-color);
-}
-table.soc-table td {
-    padding: 0.65rem 0.8rem;
-    border-bottom: 1px solid #1a2234;
-    color: var(--text-secondary);
-}
-table.soc-table tr:hover { background: var(--bg-card-hover); }
-
-/* Badges */
-.badge-threat {
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.7rem;
+    padding: 0.75rem 0.85rem;
+    color: var(--text-dim);
     font-weight: 700;
+    font-size: 0.72rem;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border-subtle);
+    background: #090e1a;
 }
-.badge-threat.normal { background: #064e3b; color: #6ee7b7; }
-.badge-threat.sqli { background: #7f1d1d; color: #fca5a5; }
-.badge-threat.xss { background: #78350f; color: #fde047; }
-.badge-threat.bruteforce { background: #831843; color: #fbcfe8; }
-.badge-threat.burst { background: #4c1d95; color: #c4b5fd; }
+.soc-table td {
+    padding: 0.7rem 0.85rem;
+    border-bottom: 1px solid #141f33;
+    color: var(--text-muted);
+}
+.soc-table tr:hover td {
+    background: var(--bg-card-hover);
+    color: #fff;
+}
 
-/* Threat Stream Items */
-.threat-list { display: flex; flex-direction: column; gap: 0.75rem; }
-.threat-item {
-    background: #181f30;
-    border-left: 4px solid var(--neon-red);
-    padding: 0.85rem;
-    border-radius: 0 6px 6px 0;
-    font-size: 0.8rem;
-}
-.threat-item.warning { border-left-color: var(--neon-yellow); }
-.threat-top {
+/* Asset List */
+.asset-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.35rem;
-    font-weight: 600;
+    align-items: center;
+    padding: 0.85rem;
+    border-bottom: 1px solid #162238;
+    font-size: 0.82rem;
 }
-.threat-title { color: #fca5a5; }
-.threat-time { font-size: 0.75rem; color: var(--text-muted); }
-.threat-reason { color: #cbd5e1; font-size: 0.78rem; line-height: 1.35; margin-bottom: 0.35rem; }
-.threat-meta { font-size: 0.72rem; color: var(--text-muted); }
-.threat-meta span { margin-right: 0.75rem; }
+.asset-item:last-child { border-bottom: none; }
+.asset-name { font-weight: 700; color: #fff; }
+.asset-sub { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.15rem; }
 
-/* Canvas Chart */
-.chart-container {
-    height: 200px;
-    width: 100%;
-    position: relative;
-}
-
-/* Alert History Section */
-.alerts-grid {
+/* ==========================================================================
+   SECTION 5: RISK ANALYTICS CHARTS
+   ========================================================================== */
+.analytics-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+}
+
+.chart-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.4rem;
+}
+.chart-canvas-wrap {
+    width: 100%;
+    height: 230px;
+    position: relative;
+    margin-top: 0.85rem;
+}
+
+/* ==========================================================================
+   SECTION 6: AI SECURITY ANALYST CONSOLE
+   ========================================================================== */
+.analyst-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.analyst-header {
+    background: linear-gradient(90deg, #10192c 0%, #1a2a4c 100%);
+    padding: 1.1rem 1.75rem;
+    border-bottom: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.analyst-title {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: #fff;
+}
+
+.analyst-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 1rem 1.75rem;
+    background: #090e1a;
+    border-bottom: 1px solid var(--border-subtle);
+}
+.prompt-chip {
+    background: #141f36;
+    border: 1px solid #233454;
+    color: #cbd5e1;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.4rem 0.95rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.prompt-chip:hover {
+    background: rgba(6, 182, 212, 0.22);
+    border-color: var(--color-cyan);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.analyst-output-area {
+    padding: 1.75rem;
+    min-height: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: #e2e8f0;
+}
+.analyst-output-headline {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--color-cyan);
+    margin-bottom: 0.85rem;
+}
+
+.analyst-input-bar {
+    display: flex;
+    padding: 1.1rem 1.75rem;
+    background: #090e1a;
+    border-top: 1px solid var(--border-subtle);
+    gap: 0.85rem;
+}
+.analyst-input {
+    flex: 1;
+    background: #131d33;
+    border: 1px solid #233454;
+    border-radius: 8px;
+    padding: 0.75rem 1.1rem;
+    color: #fff;
+    font-size: 0.88rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.analyst-input:focus {
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+}
+
+.analyst-send-btn {
+    background: var(--color-cyan);
+    color: #042f2e;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 0 1.5rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.analyst-send-btn:hover {
+    background: #22d3ee;
+    box-shadow: 0 0 12px var(--color-cyan-glow);
+}
+
+/* ==========================================================================
+   SECTION 7: RECOMMENDED ACTIONS
+   ========================================================================== */
+.remediation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.1rem;
+}
+
+.action-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1.25rem;
+    display: flex;
+    gap: 1rem;
+    transition: border-color 0.2s;
+}
+.action-card:hover {
+    border-color: rgba(6, 182, 212, 0.4);
+}
+.action-icon {
+    font-size: 1.6rem;
+    color: var(--color-cyan);
+}
+.action-content h4 {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.35rem;
+}
+.action-content p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+
+/* Footer */
+footer.soc-footer {
+    text-align: center;
+    padding: 2.5rem;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 2.5rem;
+}
+
+@media (max-width: 960px) {
+    .soc-navbar { padding: 0.85rem 1.25rem; }
+    .soc-container { padding: 1rem; }
+    .two-column-layout, .analytics-grid { grid-template-columns: 1fr; }
+    .hero-sphere-section { min-height: 440px; padding: 1.5rem 1rem; }
+    .sphere-stage { height: 320px; }
+    .sphere-hud { width: 190px; height: 190px; }
+    .hud-score { font-size: 2.8rem; }
 }

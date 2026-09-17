@@ -10,7 +10,6 @@ Tests:
 """
 
 import time
-import pytest
 from ml.preprocessing.text_cleaner import clean_web_text, extract_threat_tokens
 from backend.detection.behavioral_detector import BehavioralDetector
 from backend.alerts.alert_service import AlertService
@@ -35,12 +34,10 @@ def test_behavioral_brute_force_detection():
     detector = BehavioralDetector()
     test_ip = "192.168.1.105"
 
-    # Simulate 4 failed logins (threshold is 5)
     for _ in range(4):
         res = detector.analyze_behavior(test_ip, "/login", 401)
         assert res["is_threat"] is False
 
-    # 5th failed login triggers brute-force alert
     res_5 = detector.analyze_behavior(test_ip, "/login", 401)
     assert res_5["is_threat"] is True
     assert res_5["threat_type"] == "BRUTE_FORCE"
@@ -49,7 +46,6 @@ def test_behavioral_rate_spike():
     detector = BehavioralDetector()
     test_ip = "10.0.0.99"
 
-    # Send 26 rapid requests (threshold is 25)
     for _ in range(25):
         detector.analyze_behavior(test_ip, "/api/data", 200)
 
@@ -62,10 +58,7 @@ def test_alert_throttling():
     ip = "172.16.0.4"
     threat = "SQL_INJECTION"
 
-    # First occurrence should not be throttled
     assert service.should_throttle(ip, threat) is False
-
-    # Immediate second occurrence must be throttled
     assert service.should_throttle(ip, threat) is True
 
 def test_log_parser_valid_json():
