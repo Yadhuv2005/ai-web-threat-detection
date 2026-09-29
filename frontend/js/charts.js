@@ -57,11 +57,11 @@ class RiskCharts {
 
         ctx.setLineDash([]);
 
-        // Risk line
-        ctx.strokeStyle = '#06b6d4';
-        ctx.lineWidth = 3;
-        ctx.shadowColor = 'rgba(6, 182, 212, 0.5)';
-        ctx.shadowBlur = 10;
+        // Risk line (Gold Theme)
+        ctx.strokeStyle = '#ffd700';
+        ctx.lineWidth = 2.5;
+        ctx.shadowColor = 'rgba(255, 215, 0, 0.45)';
+        ctx.shadowBlur = 12;
 
         ctx.beginPath();
         scoreHistory.forEach((score, i) => {
@@ -80,8 +80,8 @@ class RiskCharts {
         ctx.closePath();
 
         const grad = ctx.createLinearGradient(0, topPadding, 0, topPadding + chartH);
-        grad.addColorStop(0, 'rgba(6, 182, 212, 0.30)');
-        grad.addColorStop(1, 'rgba(6, 182, 212, 0.0)');
+        grad.addColorStop(0, 'rgba(212, 175, 55, 0.25)');
+        grad.addColorStop(1, 'rgba(212, 175, 55, 0.0)');
         ctx.fillStyle = grad;
         ctx.fill();
 
@@ -89,7 +89,7 @@ class RiskCharts {
         scoreHistory.forEach((score, i) => {
             const x = leftPadding + i * stepX;
             const y = topPadding + chartH - (score / maxScore) * chartH;
-            ctx.fillStyle = score >= 80 ? '#ef4444' : (score >= 60 ? '#f97316' : '#06b6d4');
+            ctx.fillStyle = score >= 80 ? '#f43f5e' : (score >= 60 ? '#fb923c' : '#ffd700');
             ctx.beginPath();
             ctx.arc(x, y, 4, 0, Math.PI * 2);
             ctx.fill();

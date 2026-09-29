@@ -51,17 +51,31 @@ class AISecurityAnalyst:
         elif any(term in q for term in ["why", "score", "high risk", "critical risk", "calculation"]):
             return AISecurityAnalyst._answer_risk_reasoning(prioritized)
 
-        # 6. SQL Injection specific queries
-        elif "sql" in q or "sqli" in q:
-            return AISecurityAnalyst._answer_threat_specific(prioritized, "SQL_INJECTION")
+        # 6. SQL Injection specific queries & "How to solve"
+        if "sql" in q or "sqli" in q:
+            return AISecurityAnalyst._explain_and_solve_sqli(prioritized)
 
-        # 7. Brute force specific queries
-        elif "brute" in q or "password" in q or "login" in q:
-            return AISecurityAnalyst._answer_threat_specific(prioritized, "BRUTE_FORCE")
+        # 7. Brute force specific queries & "How to solve"
+        elif "brute" in q or "password" in q or "login" in q or "credential" in q:
+            return AISecurityAnalyst._explain_and_solve_bruteforce(prioritized)
 
-        # 8. XSS specific queries
-        elif "xss" in q or "script" in q:
-            return AISecurityAnalyst._answer_threat_specific(prioritized, "XSS")
+        # 8. XSS specific queries & "How to solve"
+        elif "xss" in q or "cross site" in q or "cross-site" in q or "script" in q:
+            return AISecurityAnalyst._explain_and_solve_xss(prioritized)
+
+        # 9. General "How to solve" / "Remediation"
+        elif any(term in q for term in ["how to solve", "how to fix", "remediation", "mitigate", "protect", "defense"]):
+            return AISecurityAnalyst._answer_how_to_solve_all(prioritized)
+
+        # 10. "What is this attack" / "explain"
+        elif any(term in q for term in ["what is this", "explain attack", "what happened", "what attack"]):
+            if prioritized:
+                top = prioritized[0]
+                t_type = top.get("threat_type", "")
+                if t_type == "SQL_INJECTION": return AISecurityAnalyst._explain_and_solve_sqli(prioritized)
+                elif t_type == "XSS": return AISecurityAnalyst._explain_and_solve_xss(prioritized)
+                elif t_type in ["BRUTE_FORCE", "HIGH_RATE_BURST"]: return AISecurityAnalyst._explain_and_solve_bruteforce(prioritized)
+            return AISecurityAnalyst._answer_investigation_priority(prioritized)
 
         # Default intelligent synthesis
         return AISecurityAnalyst._answer_general(user_query, stats, prioritized, assets)
@@ -244,6 +258,124 @@ class AISecurityAnalyst:
             "answer": answer_text,
             "action_items": [sample["remediation_action"]],
             "relevant_events": matching[:3]
+        }
+
+    @staticmethod
+    def _explain_and_solve_sqli(prioritized: List[Dict[str, Any]]) -> Dict[str, Any]:
+        matching = [t for t in prioritized if t.get("threat_type") == "SQL_INJECTION"]
+        sample_info = ""
+        if matching:
+            top = matching[0]
+            sample_info = f"\n\n**Live Database Incident**: #{top['id']} detected on `{top['endpoint']}` from IP `{top['client_ip']}` with Risk Score **{top['risk_score']}/100**."
+
+        answer_text = (
+            "### What is SQL Injection (SQLi)?\n"
+            "SQL Injection occurs when malicious SQL code is injected into input fields (such as search boxes or login forms) and executed directly by backend database engines. "
+            "Attackers use SQL syntax tricks like `' OR 1=1 --` or `UNION SELECT` to bypass authentication, steal confidential database records, modify records, or execute admin commands.\n\n"
+            "### How to Solve & Prevent SQL Injection:\n"
+            "1. **Use Parameterized Queries / Prepared Statements**: Never concatenate raw user input into SQL strings (e.g. `cursor.execute('SELECT * FROM users WHERE id = ?', (uid,))`).\n"
+            "2. **Use Object Relational Mappers (ORMs)**: Modern frameworks like SQLAlchemy or Django ORM automatically parameterize queries.\n"
+            "3. **Input Validation & Sanitization**: Enforce strict whitelists on accepted character sets and data types.\n"
+            "4. **Principle of Least Privilege**: Ensure your database connection user only has permissions required for read/write on specific tables."
+            f"{sample_info}"
+        )
+
+        return {
+            "headline": "SQL Injection: Threat Explanation & Remediation Guide",
+            "answer": answer_text,
+            "action_items": [
+                "Refactor raw database queries to parameterized statements.",
+                "Deploy WAF rules to drop SQL keywords in GET query parameters."
+            ],
+            "relevant_events": matching[:3]
+        }
+
+    @staticmethod
+    def _explain_and_solve_xss(prioritized: List[Dict[str, Any]]) -> Dict[str, Any]:
+        matching = [t for t in prioritized if t.get("threat_type") == "XSS"]
+        sample_info = ""
+        if matching:
+            top = matching[0]
+            sample_info = f"\n\n**Live Database Incident**: #{top['id']} detected on `{top['endpoint']}` from IP `{top['client_ip']}` with Risk Score **{top['risk_score']}/100**."
+
+        answer_text = (
+            "### What is Cross-Site Scripting (XSS)?\n"
+            "XSS occurs when an application includes untrusted data in a web page without proper validation or escaping. "
+            "Attackers inject JavaScript (like `<script>alert('XSS')</script>` or `<img src=x onerror=...>`), which executes inside the victims' browsers to hijack session cookies, deface websites, or redirect users to phishing portals.\n\n"
+            "### How to Solve & Prevent XSS:\n"
+            "1. **Context-Aware Output Encoding**: HTML-encode all user-generated content before rendering (`&lt;` for `<`, `&gt;` for `>`).\n"
+            "2. **Implement Content Security Policy (CSP)**: Configure HTTP response header `Content-Security-Policy: default-src 'self'` to block inline scripts.\n"
+            "3. **Enable HttpOnly on Cookies**: Mark session cookies as `HttpOnly` so client-side JavaScript cannot access them even if XSS occurs.\n"
+            "4. **Use Modern Template Engines**: Jinja2, React, or Vue automatically escape HTML characters by default."
+            f"{sample_info}"
+        )
+
+        return {
+            "headline": "Cross-Site Scripting (XSS): Threat Explanation & Remediation Guide",
+            "answer": answer_text,
+            "action_items": [
+                "Configure Content-Security-Policy (CSP) headers.",
+                "Enforce HTML output escaping across all dynamic template variables."
+            ],
+            "relevant_events": matching[:3]
+        }
+
+    @staticmethod
+    def _explain_and_solve_bruteforce(prioritized: List[Dict[str, Any]]) -> Dict[str, Any]:
+        matching = [t for t in prioritized if t.get("threat_type") in ["BRUTE_FORCE", "HIGH_RATE_BURST"]]
+        sample_info = ""
+        if matching:
+            top = matching[0]
+            sample_info = f"\n\n**Live Database Incident**: #{top['id']} detected on `{top['endpoint']}` from IP `{top['client_ip']}` with Risk Score **{top['risk_score']}/100**."
+
+        answer_text = (
+            "### What is a Brute Force Attack?\n"
+            "A Brute Force attack involves automated scripts or botnets systematically submitting hundreds of username and password combinations against authentication endpoints (`/login`) until finding a valid match. "
+            "It leads to account takeovers, unauthorized database access, and server CPU exhaustion.\n\n"
+            "### How to Solve & Prevent Brute Force:\n"
+            "1. **Account Lockout & Progressive Delays**: Temporarily lock accounts or add exponential backoff delays after 5 failed login attempts.\n"
+            "2. **Rate Limiting by IP & Subnet**: Restrict login submissions to a maximum of 5 attempts per minute per IP address.\n"
+            "3. **Multi-Factor Authentication (MFA)**: Require TOTP authenticator or hardware keys so password discovery alone is insufficient.\n"
+            "4. **CAPTCHA Verification**: Trigger Cloudflare Turnstile or reCAPTCHA challenges upon repeated failed login attempts."
+            f"{sample_info}"
+        )
+
+        return {
+            "headline": "Brute Force Attack: Threat Explanation & Remediation Guide",
+            "answer": answer_text,
+            "action_items": [
+                "Deploy IP rate-limiting rules on `/login` via reverse proxy or middleware.",
+                "Mandate Multi-Factor Authentication (MFA) across privileged accounts."
+            ],
+            "relevant_events": matching[:3]
+        }
+
+    @staticmethod
+    def _answer_how_to_solve_all(prioritized: List[Dict[str, Any]]) -> Dict[str, Any]:
+        if prioritized:
+            top = prioritized[0]
+            t_type = top.get("threat_type", "")
+            if t_type == "SQL_INJECTION": return AISecurityAnalyst._explain_and_solve_sqli(prioritized)
+            elif t_type == "XSS": return AISecurityAnalyst._explain_and_solve_xss(prioritized)
+            elif t_type in ["BRUTE_FORCE", "HIGH_RATE_BURST"]: return AISecurityAnalyst._explain_and_solve_bruteforce(prioritized)
+
+        answer_text = (
+            "### Defense-in-Depth Security Remediation Strategy:\n\n"
+            "1. **For SQL Injection**: Refactor code to use parameterized statements (`?` placeholders) and enforce strict input schemas.\n"
+            "2. **For XSS**: Apply HTML output escaping and configure strict Content Security Policy (`CSP`) headers.\n"
+            "3. **For Brute Force**: Enforce account lockout thresholds after 5 attempts and rate-limit authentication endpoints.\n"
+            "4. **Network Perimeter**: Deploy a Web Application Firewall (WAF) to drop known malicious request patterns."
+        )
+
+        return {
+            "headline": "Enterprise Defense & Remediation Playbook",
+            "answer": answer_text,
+            "action_items": [
+                "Implement Parameterized SQL statements.",
+                "Enforce Content Security Policy headers.",
+                "Apply rate limiting to authentication endpoints."
+            ],
+            "relevant_events": prioritized[:3]
         }
 
     @staticmethod

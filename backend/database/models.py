@@ -216,19 +216,57 @@ def get_stats():
     xss_count = cursor.execute("SELECT COUNT(*) FROM threat_events WHERE threat_type = 'XSS'").fetchone()[0]
     brute_force_count = cursor.execute("SELECT COUNT(*) FROM threat_events WHERE threat_type = 'BRUTE_FORCE'").fetchone()[0]
     rate_limit_count = cursor.execute("SELECT COUNT(*) FROM threat_events WHERE threat_type = 'HIGH_RATE_BURST'").fetchone()[0]
-
     # Risk level counts
     critical_risks = cursor.execute("SELECT COUNT(*) FROM threat_events WHERE risk_level = 'CRITICAL'").fetchone()[0]
     high_risks = cursor.execute("SELECT COUNT(*) FROM threat_events WHERE risk_level = 'HIGH'").fetchone()[0]
     medium_risks = cursor.execute("SELECT COUNT(*) FROM threat_events WHERE risk_level = 'MEDIUM'").fetchone()[0]
     low_risks = cursor.execute("SELECT COUNT(*) FROM threat_events WHERE risk_level = 'LOW'").fetchone()[0]
 
-    # Overall Risk Score calculation (weighted average or max recent impact)
-    avg_score_row = cursor.execute("SELECT AVG(risk_score) FROM (SELECT risk_score FROM threat_events ORDER BY id DESC LIMIT 20)").fetchone()
-    if total_threats > 0 and avg_score_row and avg_score_row[0] is not None:
-        # Scale based on critical risks
-        base_avg = float(avg_score_row[0])
-        overall_risk_score = min(100, int(round(base_avg + (critical_risks * 3))))
+    # Overall Risk Score calculation:
+    # Uses a recent traffic window with time-decay. If no attacks occurred within the last 90 seconds,
+    # or as normal requests are received, the risk score decays back to baseline (12 / Green).
+    import datetime
+    now_utc = datetime.datetime.utcnow()
+
+    recent_logs = cursor.execute("""
+        SELECT prediction, risk_score, timestamp FROM (
+            SELECT t.prediction, COALESCE(e.risk_score, 10) as risk_score, t.timestamp
+            FROM traffic_logs t
+            LEFT JOIN threat_events e ON t.timestamp = e.timestamp
+            ORDER BY t.id DESC LIMIT 15
+        )
+    """).fetchall()
+
+    if recent_logs:
+        # Filter active threats within the last 90 seconds
+        active_threat_scores = []
+        for row in recent_logs:
+            pred, score, ts_str = row[0], row[1], row[2]
+            if pred != 'NORMAL':
+                try:
+                    ts_clean = ts_str.rstrip('Z')
+                    log_time = datetime.datetime.fromisoformat(ts_clean)
+                    age_seconds = (now_utc - log_time).total_seconds()
+                except Exception:
+                    age_seconds = 0
+                
+                # Threat is actively factored in for 90 seconds with time-decay
+                if age_seconds < 90:
+                    decay_factor = max(0.2, 1.0 - (age_seconds / 90.0))
+                    active_threat_scores.append(score * decay_factor)
+
+        recent_threats_count = len(active_threat_scores)
+        recent_normal_count = len(recent_logs) - len([r for r in recent_logs if r[0] != 'NORMAL'])
+
+        if recent_threats_count > 0:
+            avg_threat_impact = sum(active_threat_scores) / recent_threats_count
+            threat_ratio = recent_threats_count / len(recent_logs)
+            calculated_score = (avg_threat_impact * 0.7) + (threat_ratio * 35)
+            # Dampened by clean normal browsing traffic
+            dampened_score = calculated_score - (recent_normal_count * 4.0)
+            overall_risk_score = min(98, max(12, int(round(dampened_score))))
+        else:
+            overall_risk_score = 12  # Healthy baseline when attacks have cleared or aged out
     else:
         overall_risk_score = 12  # baseline healthy low risk
 

@@ -3,242 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Cyber Risk Manager — Real-Time Detection, Risk Scoring & Threat Response</title>
+    <title>AEGIS CYBER DEFENSE — AI Risk Operations & Threat Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-    <!-- Top Cyber SOC Navigation Bar -->
-    <header class="soc-navbar">
-        <div class="brand">
-            <span class="brand-icon">🛡️</span>
-            <div>
-                <h1>AEGIS CYBER RISK MANAGER <span class="badge">AI HYBRID SOC</span></h1>
+<body class="gold-black-theme">
+
+    <!-- ====================================================================
+         1. CINEMATIC iOS-STYLE WELCOME INTRO OVERLAY
+         Deep black screen, luxury metallic gold typography, smooth exit
+         ==================================================================== -->
+    <div id="intro-overlay" class="intro-screen">
+        <div class="intro-bg-glow"></div>
+        <div class="intro-content">
+            <div class="intro-crest">🛡️</div>
+            <div class="intro-eyebrow">ENTERPRISE AUTONOMOUS DEFENSE</div>
+            <h1 class="intro-title"><span id="typewriter-title"></span><span class="typewriter-cursor">|</span></h1>
+            <p class="intro-subtitle"><span id="typewriter-sub"></span></p>
+            <div class="intro-action-wrap">
+                <button id="btn-enter-soc" class="btn-gold-enter">
+                    <span>INITIALIZE SECURITY PROTOCOL</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+            <div class="intro-audio-note">🔊 Spatial Audio Guidance Enabled</div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         2. CONTINUOUS LUXURY STOCK TICKER (Real-time moving threat updates)
+         ==================================================================== -->
+    <div class="stock-ticker-wrap">
+        <div class="ticker-badge">LIVE CYBER FEED</div>
+        <div class="ticker-track">
+            <div id="ticker-content" class="ticker-content">
+                <!-- Dynamically populated & looped smoothly -->
+                <span class="ticker-item"><span class="ticker-pill safe">SYSTEM OK</span> Defense Matrix Nominal • 0 Active Zero-Days</span>
+                <span class="ticker-item"><span class="ticker-pill crit">SQLi EXPOSURE</span> /search Endpoint Vector Risk 85/100 • Critical</span>
+                <span class="ticker-item"><span class="ticker-pill high">XSS ANOMALY</span> Polyglot script detected • Likelihood High</span>
+                <span class="ticker-item"><span class="ticker-pill med">BRUTE FORCE</span> Auth Gateway 401 surge throttled • Medium</span>
+                <span class="ticker-item"><span class="ticker-pill gold">ML CONFIDENCE</span> TF-IDF Sub-word Model Accuracy 97.4%</span>
+                <span class="ticker-item"><span class="ticker-pill safe">TARGET ACTIVE</span> CyberShop Node 127.0.0.1:8001 Operational</span>
+            </div>
+            <!-- Duplicated for seamless continuous ticker motion -->
+            <div id="ticker-content-clone" class="ticker-content" aria-hidden="true"></div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         3. TOP EXECUTIVE GOLD & BLACK NAVIGATION WITH HOVER POP-DOWNS
+         ==================================================================== -->
+    <header class="gold-navbar">
+        <div class="nav-left">
+            <div class="brand-crest">
+                <span class="crest-icon">🛡️</span>
+                <div class="brand-headings">
+                    <span class="brand-sup">AI CYBER RISK OPERATIONS</span>
+                    <h1 class="brand-name">AEGIS <span class="gold-tag">ENTERPRISE</span></h1>
+                </div>
             </div>
         </div>
-        <div class="nav-actions">
-            <div class="nav-node-info">
-                Monitored Node: <strong>http://127.0.0.1:8001</strong>
+
+        <!-- Hover Navigation Menu Dropdowns -->
+        <nav class="nav-menu">
+            <!-- 1. Risk Overview Popdown -->
+            <div class="nav-item has-dropdown">
+                <button class="nav-link">
+                    <span>📊 Risk Telemetry</span>
+                    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div class="popdown-menu popdown-wide">
+                    <div class="popdown-header">
+                        <h4>Real-Time Enterprise Exposure KPI Metrics</h4>
+                        <span class="popdown-sub">Live synchronized database counters</span>
+                    </div>
+                    <div class="popdown-kpi-grid">
+                        <div class="kpi-card gold-border">
+                            <span class="kpi-label">OVERALL RISK</span>
+                            <div id="card-overall-score" class="kpi-num gold-text">12</div>
+                            <span class="kpi-sub">Composite index 0-100</span>
+                        </div>
+                        <div class="kpi-card crit-border">
+                            <span class="kpi-label">CRITICAL RISKS</span>
+                            <div id="card-critical-risks" class="kpi-num crit-text">0</div>
+                            <span class="kpi-sub">Immediate triage</span>
+                        </div>
+                        <div class="kpi-card high-border">
+                            <span class="kpi-label">HIGH RISKS</span>
+                            <div id="card-high-risks" class="kpi-num high-text">0</div>
+                            <span class="kpi-sub">Exploitable vectors</span>
+                        </div>
+                        <div class="kpi-card med-border">
+                            <span class="kpi-label">MEDIUM RISKS</span>
+                            <div id="card-medium-risks" class="kpi-num med-text">0</div>
+                            <span class="kpi-sub">Behavioral surges</span>
+                        </div>
+                        <div class="kpi-card low-border">
+                            <span class="kpi-label">LOW RISKS</span>
+                            <div id="card-low-risks" class="kpi-num low-text">0</div>
+                            <span class="kpi-sub">Informational</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-label">ACTIVE THREATS</span>
+                            <div id="card-active-threats" class="kpi-num">0</div>
+                            <span class="kpi-sub">ML flagged instances</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <span id="status-pill" class="status-pill online">
-                <span class="dot"></span> CONNECTING...
+
+            <!-- 2. Priority Threats Popdown -->
+            <div class="nav-item has-dropdown">
+                <button class="nav-link">
+                    <span>🚨 Priority Threats</span>
+                    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div class="popdown-menu popdown-large">
+                    <div class="popdown-header">
+                        <h4>Assessed Priority Threat Triage Queue</h4>
+                        <span class="popdown-sub">Ranked by Likelihood × Severity × Asset Criticality</span>
+                    </div>
+                    <div id="priority-threats-container" class="popdown-threats-scroll">
+                        <div class="empty-state">🛡️ Zero active high-priority risks detected. All monitored endpoints operating safely within baseline.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Live Feed & Assets Popdown -->
+            <div class="nav-item has-dropdown">
+                <button class="nav-link">
+                    <span>📡 Live Feed & Assets</span>
+                    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div class="popdown-menu popdown-extra-wide">
+                    <div class="popdown-columns">
+                        <!-- Live Ingestion Feed -->
+                        <div class="popdown-col">
+                            <div class="col-title">
+                                <span>📡 Live Event Ingestion Stream</span>
+                                <span class="badge-mini">WEBSOCKET</span>
+                            </div>
+                            <div class="table-scroll-wrap">
+                                <table class="gold-table">
+                                    <thead>
+                                        <tr>
+                                            <th>TIME</th>
+                                            <th>THREAT</th>
+                                            <th>ASSET</th>
+                                            <th>RISK</th>
+                                            <th>STATUS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="traffic-tbody">
+                                        <!-- Realtime rows -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- Registered Assets -->
+                        <div class="popdown-col">
+                            <div class="col-title">
+                                <span>🏢 Monitored Enterprise Assets</span>
+                                <span class="badge-mini">REGISTRY</span>
+                            </div>
+                            <div id="asset-list" class="asset-list-wrap">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Threat Analytics Charts Popdown -->
+            <div class="nav-item has-dropdown">
+                <button class="nav-link">
+                    <span>📈 Analytics</span>
+                    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div class="popdown-menu popdown-charts">
+                    <div class="popdown-header">
+                        <h4>Cyber Threat Analytics & Temporal Drift</h4>
+                        <span class="popdown-sub">Real-time severity distribution and incident progression</span>
+                    </div>
+                    <div class="charts-wrap-grid">
+                        <div class="chart-box">
+                            <h5>Risk Score Trend Timeline</h5>
+                            <div class="chart-canvas-container">
+                                <canvas id="chart-risk-trend"></canvas>
+                            </div>
+                        </div>
+                        <div class="chart-box">
+                            <h5>Risk Tier Distribution</h5>
+                            <div class="chart-canvas-container">
+                                <canvas id="chart-risk-dist"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. AI Analyst Console Popdown -->
+            <div class="nav-item has-dropdown">
+                <button class="nav-link gold-glow-btn">
+                    <span>🤖 AI Analyst</span>
+                    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div class="popdown-menu popdown-analyst">
+                    <div class="popdown-header">
+                        <h4>Aegis Autonomous Cyber Intelligence Assistant</h4>
+                        <span class="popdown-sub">Natural language analysis grounded in live database telemetry</span>
+                    </div>
+                    <div class="analyst-chips">
+                        <button class="prompt-chip" data-query="What is this attack and how to solve this?">What is this attack and how to solve it?</button>
+                        <button class="prompt-chip" data-query="What is SQL Injection and how to prevent it?">What is SQL Injection?</button>
+                        <button class="prompt-chip" data-query="What is XSS and how to solve it?">What is XSS?</button>
+                        <button class="prompt-chip" data-query="How to stop Brute Force attacks?">Stop Brute Force?</button>
+                        <button class="prompt-chip" data-query="What should I investigate first?">Investigate first?</button>
+                    </div>
+                    <div id="analyst-output" class="analyst-output-box">
+                        <div class="analyst-output-headline">Welcome to AI Security Analyst Console</div>
+                        <div>Ask questions about real-time threat telemetry, asset exposures, or remediation steps. Select a query chip above or type an investigation prompt below.</div>
+                    </div>
+                    <div class="analyst-input-row">
+                        <input type="text" id="analyst-input" class="gold-input" placeholder="Ask AI Analyst (e.g. 'What are our highest priority threats right now?')...">
+                        <button id="analyst-send-btn" class="btn-gold-send">Analyze</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Remediation Actions Popdown -->
+            <div class="nav-item has-dropdown">
+                <button class="nav-link">
+                    <span>🛠️ Remediation</span>
+                    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                </button>
+                <div class="popdown-menu popdown-remediation">
+                    <div class="popdown-header">
+                        <h4>Synthesized Defensive Directives</h4>
+                        <span class="popdown-sub">Autonomous actionable playbooks generated from active threats</span>
+                    </div>
+                    <div id="remediation-cards-container" class="remediation-scroll-list">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Right Quick Controls -->
+        <div class="nav-right-actions">
+            <span id="status-pill" class="status-pill-gold online">
+                <span class="dot-gold"></span> ACTIVE
             </span>
-            <button id="btn-start" class="btn btn-primary">▶ Resume Monitor</button>
-            <button id="btn-stop" class="btn btn-secondary">⏹ Pause</button>
+            <button id="btn-start" class="btn-ctrl-gold" title="Resume monitoring">▶</button>
+            <button id="btn-stop" class="btn-ctrl-dark" title="Pause monitoring">⏸</button>
+            <button id="btn-reset" class="btn-ctrl-reset" title="Reset all telemetry back to clean baseline">🔄 Reset</button>
         </div>
     </header>
 
-    <main class="soc-container">
+    <!-- ====================================================================
+         4. HERO CENTERPIECE: PURE FULLSCREEN-STYLE GOLD 3D RISK SPHERE
+         Nothing else cluttering the dashboard — 100% focused, immersive SOC
+         ==================================================================== -->
+    <main class="sphere-hero-stage">
+        <!-- Background Radial Luxury Glow -->
+        <div class="hero-halo"></div>
 
-        <!-- ====================================================================
-             SECTION 1: HERO 3D PARTICLE "SECURITY RISK SPHERE"
-             ==================================================================== -->
-        <section class="hero-sphere-section">
-            <div class="sphere-stage">
-                <canvas id="risk-sphere-canvas"></canvas>
-                <!-- Central HUD Overlay inside rotating sphere -->
-                <div id="sphere-hud" class="sphere-hud state-low">
-                    <div class="hud-label">ORGANIZATIONAL RISK</div>
-                    <div id="hud-risk-score" class="hud-score">12<span>/100</span></div>
-                    <div id="hud-system-status" class="hud-status">SYSTEM SECURE</div>
-                </div>
-            </div>
+        <div class="sphere-centerpiece">
+            <canvas id="risk-sphere-canvas"></canvas>
 
-            <!-- Concise Live Status Meta Banner -->
-            <div class="sphere-meta-banner">
-                <div class="sphere-meta-item">
-                    <span>SECURITY POSTURE:</span> <strong>MONITORING ACTIVE</strong>
-                </div>
-                <div class="sphere-meta-item">
-                    <span>CRITICAL:</span> <strong id="hud-crit-count" class="tag-pill critical">0</strong>
-                </div>
-                <div class="sphere-meta-item">
-                    <span>HIGH:</span> <strong id="hud-high-count" class="tag-pill high">0</strong>
-                </div>
-                <div class="sphere-meta-item">
-                    <span>MEDIUM:</span> <strong id="hud-med-count" class="tag-pill medium">0</strong>
-                </div>
-                <div class="sphere-meta-item">
-                    <span>LOW:</span> <strong id="hud-low-count" class="tag-pill low">0</strong>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====================================================================
-             SECTION 2: RISK OVERVIEW KPI CARDS
-             ==================================================================== -->
-        <section>
-            <div class="section-title-wrap">
-                <h2 class="section-title"><span>📊</span> Risk Overview</h2>
-                <span class="section-subtitle">Real-time enterprise exposure metrics</span>
-            </div>
-            <div class="overview-grid">
-                <div class="overview-card cyan">
-                    <div class="overview-card-header">Overall Risk Index <span>⚡</span></div>
-                    <div id="card-overall-score" class="overview-card-value">12</div>
-                    <div class="overview-card-desc">Composite 0–100 scale</div>
-                </div>
-                <div class="overview-card crit">
-                    <div class="overview-card-header">Critical Risks <span>🚨</span></div>
-                    <div id="card-critical-risks" class="overview-card-value">0</div>
-                    <div class="overview-card-desc">Requires immediate triage</div>
-                </div>
-                <div class="overview-card high">
-                    <div class="overview-card-header">High Risks <span>🔥</span></div>
-                    <div id="card-high-risks" class="overview-card-value">0</div>
-                    <div class="overview-card-desc">Elevated threat exposure</div>
-                </div>
-                <div class="overview-card med">
-                    <div class="overview-card-header">Medium Risks <span>⚠️</span></div>
-                    <div id="card-medium-risks" class="overview-card-value">0</div>
-                    <div class="overview-card-desc">Moderate anomaly impact</div>
-                </div>
-                <div class="overview-card low">
-                    <div class="overview-card-header">Low Risks <span>🛡️</span></div>
-                    <div id="card-low-risks" class="overview-card-value">0</div>
-                    <div class="overview-card-desc">Minor informational events</div>
-                </div>
-                <div class="overview-card">
-                    <div class="overview-card-header">Monitored Assets <span>🏢</span></div>
-                    <div id="card-monitored-assets" class="overview-card-value">6</div>
-                    <div class="overview-card-desc">Endpoints & microservices</div>
-                </div>
-                <div class="overview-card crit">
-                    <div class="overview-card-header">Active Threats <span>🎯</span></div>
-                    <div id="card-active-threats" class="overview-card-value">0</div>
-                    <div class="overview-card-desc">Caught by ML / Behavior</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====================================================================
-             SECTION 3: PRIORITY THREATS (TRIAGE QUEUE)
-             ==================================================================== -->
-        <section>
-            <div class="section-title-wrap">
-                <h2 class="section-title"><span>🎯</span> Priority Threats (Triage Queue)</h2>
-                <span class="section-subtitle">Ranked strictly by assessed risk score (Likelihood × Severity × Asset Criticality)</span>
-            </div>
-            <div id="priority-threats-container" class="priority-threats-grid">
-                <!-- Dynamically populated via app.js -->
-            </div>
-        </section>
-
-        <!-- ====================================================================
-             SECTION 4: LIVE THREAT FEED & ASSET REGISTRY
-             ==================================================================== -->
-        <section class="two-column-layout">
-            <!-- Live Ingested Feed -->
-            <div class="soc-panel">
-                <div class="soc-panel-header">
-                    <h3><span>📡</span> Live Security Event Feed</h3>
-                    <span style="font-size: 0.72rem; color: #06b6d4; font-family: monospace;">REAL-TIME WEBSOCKET STREAM</span>
-                </div>
-                <div class="soc-panel-body">
-                    <table class="soc-table">
-                        <thead>
-                            <tr>
-                                <th>TIME</th>
-                                <th>THREAT</th>
-                                <th>ASSET</th>
-                                <th>RISK</th>
-                                <th>SOURCE IP</th>
-                                <th>STATUS</th>
-                            </tr>
-                        </thead>
-                        <tbody id="traffic-tbody">
-                            <!-- Injected dynamically via WebSocket / polling -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Monitored Asset Registry -->
-            <div class="soc-panel">
-                <div class="soc-panel-header">
-                    <h3><span>🏢</span> Enterprise Asset Registry</h3>
-                    <span style="font-size: 0.72rem; color: #94a3b8;">CRITICALITY BINDINGS</span>
-                </div>
-                <div id="asset-list" class="soc-panel-body">
-                    <!-- Populated dynamically via app.js -->
-                </div>
-            </div>
-        </section>
-
-        <!-- ====================================================================
-             SECTION 5: RISK ANALYTICS CHARTS
-             ==================================================================== -->
-        <section>
-            <div class="section-title-wrap">
-                <h2 class="section-title"><span>📈</span> Cyber Risk Analytics</h2>
-                <span class="section-subtitle">Telemetry trends and severity distributions</span>
-            </div>
-            <div class="analytics-grid">
-                <div class="chart-card">
-                    <h3 style="font-size: 0.9rem; color: #cbd5e1;">Risk Score Trend Over Time</h3>
-                    <div class="chart-canvas-wrap">
-                        <canvas id="chart-risk-trend"></canvas>
+            <!-- Holographic Central HUD inside Rotating Particle Sphere -->
+            <div id="sphere-hud" class="sphere-gold-hud state-low">
+                <div class="hud-top-label">ORGANIZATIONAL RISK INDEX</div>
+                <div id="hud-risk-score" class="hud-big-score">12<span>/100</span></div>
+                <div id="hud-system-status" class="hud-status-badge">SYSTEM SECURE</div>
+                
+                <!-- Quick Sub-Telemetry Pointers -->
+                <div class="hud-mini-stats">
+                    <div class="mini-stat">
+                        <span class="ms-lbl">CRITICAL</span>
+                        <strong id="hud-crit-count" class="ms-val crit">0</strong>
                     </div>
-                </div>
-                <div class="chart-card">
-                    <h3 style="font-size: 0.9rem; color: #cbd5e1;">Risk Level Distribution</h3>
-                    <div class="chart-canvas-wrap">
-                        <canvas id="chart-risk-dist"></canvas>
+                    <div class="mini-divider"></div>
+                    <div class="mini-stat">
+                        <span class="ms-lbl">HIGH</span>
+                        <strong id="hud-high-count" class="ms-val high">0</strong>
+                    </div>
+                    <div class="mini-divider"></div>
+                    <div class="mini-stat">
+                        <span class="ms-lbl">MEDIUM</span>
+                        <strong id="hud-med-count" class="ms-val med">0</strong>
+                    </div>
+                    <div class="mini-divider"></div>
+                    <div class="mini-stat">
+                        <span class="ms-lbl">LOW</span>
+                        <strong id="hud-low-count" class="ms-val low">0</strong>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- ====================================================================
-             SECTION 6: AI SECURITY ANALYST CONSOLE
-             ==================================================================== -->
-        <section>
-            <div class="section-title-wrap">
-                <h2 class="section-title"><span>🤖</span> AI Security Analyst</h2>
-                <span class="section-subtitle">Natural language SOC advisory grounded in live database telemetry</span>
-            </div>
-            <div class="analyst-card">
-                <div class="analyst-header">
-                    <div class="analyst-title">
-                        <span>🛡️</span> Aegis Cyber Intelligence Assistant
-                    </div>
-                    <span style="font-size: 0.75rem; color: #38bdf8; font-family: monospace;">REAL-TIME RAG ENGINE</span>
-                </div>
-                <div class="analyst-chips">
-                    <button class="prompt-chip" data-query="What are today's biggest security risks?">What are today's biggest security risks?</button>
-                    <button class="prompt-chip" data-query="What should I investigate first?">What should I investigate first?</button>
-                    <button class="prompt-chip" data-query="Which assets are most at risk?">Which assets are most at risk?</button>
-                    <button class="prompt-chip" data-query="Why is this threat high risk?">Why is this threat high risk?</button>
-                    <button class="prompt-chip" data-query="What happened in the last 24 hours?">What happened in the last 24 hours?</button>
-                </div>
-                <div id="analyst-output" class="analyst-output-area">
-                    <div class="analyst-output-headline">Welcome to AI Security Analyst Console</div>
-                    <div>Ask questions about real-time threat telemetry, asset vulnerabilities, or remediation steps. Select a pre-configured query chip above or type an investigation prompt below.</div>
-                </div>
-                <div class="analyst-input-bar">
-                    <input type="text" id="analyst-input" class="analyst-input" placeholder="Ask AI Analyst (e.g. 'What are our highest priority threats right now?')...">
-                    <button id="analyst-send-btn" class="analyst-send-btn">Consult Analyst</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====================================================================
-             SECTION 7: RECOMMENDED ACTIONS
-             ==================================================================== -->
-        <section>
-            <div class="section-title-wrap">
-                <h2 class="section-title"><span>🛠️</span> Prioritized Remediation Recommendations</h2>
-                <span class="section-subtitle">Synthesized defensive directives generated from actual detected threats</span>
-            </div>
-            <div id="remediation-cards-container" class="remediation-grid">
-                <!-- Dynamically populated via app.js -->
-            </div>
-        </section>
-
+        <!-- Target Web Link Indicator (At Bottom Corner) -->
+        <div class="target-node-pill">
+            <span class="target-node-dot"></span>
+            Monitored Target: <a href="http://127.0.0.1:8001" target="_blank" rel="noreferrer">http://127.0.0.1:8001 (CyberShop)</a>
+        </div>
     </main>
-
-    <footer class="soc-footer">
-        <p>Aegis Cyber Risk Manager • Enterprise Defense Operations & AI Intelligence Platform</p>
-    </footer>
 
     <!-- Scripts -->
     <script src="/js/charts.js"></script>

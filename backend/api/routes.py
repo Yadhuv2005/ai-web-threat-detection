@@ -139,6 +139,85 @@ async def get_alert_history(limit: int = 50):
     conn.close()
     return [dict(row) for row in rows]
 
+@router.post("/reset")
+async def reset_telemetry():
+    """Clear past logs and threat events to reset demo back to clean baseline."""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM traffic_logs")
+    cursor.execute("DELETE FROM threat_events")
+    cursor.execute("DELETE FROM alert_history")
+    conn.commit()
+    conn.close()
+    
+    # Broadcast fresh baseline stats across WebSocket
+    fresh_stats = get_stats()
+    await ws_manager.broadcast({
+        "event_type": "RESET_STATS",
+        "stats": fresh_stats,
+        "threats": [],
+        "prioritized": []
+    })
+    return {"status": "success", "message": "Telemetry and threat history reset successfully", "stats": fresh_stats}
+
+@router.post("/simulate-attack")
+async def simulate_attack(payload: dict):
+    """Fires real HTTP requests against CyberShop Target Node (127.0.0.1:8001)."""
+    import urllib.request
+    import urllib.parse
+    
+    attack_type = payload.get("type", "sqli")
+    base_url = "http://127.0.0.1:8001"
+
+    try:
+        if attack_type == "sqli":
+            query = urllib.parse.quote("' OR 1=1 --")
+            url = f"{base_url}/search?q={query}"
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (SQLi-Exploit-Tester)"})
+            with urllib.request.urlopen(req, timeout=3) as resp:
+                resp.read()
+            return {"status": "success", "message": "SQL Injection payload dispatched against /search endpoint"}
+
+        elif attack_type == "xss":
+            query = urllib.parse.quote("<script>alert('XSS_BREACH')</script>")
+            url = f"{base_url}/search?q={query}"
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (XSS-Probe-Tool)"})
+            with urllib.request.urlopen(req, timeout=3) as resp:
+                resp.read()
+            return {"status": "success", "message": "XSS script payload dispatched against /search endpoint"}
+
+        elif attack_type == "bruteforce":
+            # Fire 6 rapid failed logins to exceed behavioral threshold
+            for i in range(6):
+                post_data = urllib.parse.urlencode({
+                    "username": "admin",
+                    "password": f"wrongPass_{i}"
+                }).encode('utf-8')
+                req = urllib.request.Request(f"{base_url}/login", data=post_data, headers={"User-Agent": "Hydra/9.2-BruteSurge"})
+                try:
+                    with urllib.request.urlopen(req, timeout=2) as resp:
+                        resp.read()
+                except Exception:
+                    pass
+            return {"status": "success", "message": "6 rapid brute-force authentication bursts dispatched against /login"}
+
+        elif attack_type == "clean":
+            for path in ["/", "/search?q=laptop", "/search?q=wireless+headphones", "/api/products"]:
+                try:
+                    req = urllib.request.Request(f"{base_url}{path}", headers={"User-Agent": "Mozilla/5.0 (CleanUser)"})
+                    with urllib.request.urlopen(req, timeout=2) as resp:
+                        resp.read()
+                except Exception:
+                    pass
+            return {"status": "success", "message": "Clean legitimate browsing traffic dispatched"}
+
+        else:
+            return {"status": "error", "message": f"Unknown attack type: {attack_type}"}
+
+    except Exception as e:
+        return {"status": "error", "message": f"Failed to reach target server at {base_url}: {e}"}
+
+
 @router.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await ws_manager.connect(websocket)

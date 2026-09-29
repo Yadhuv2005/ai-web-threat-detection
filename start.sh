@@ -54,6 +54,9 @@ echo ""
 echo "  👉 Cyber Dashboard:  http://127.0.0.1:8000"
 echo "  👉 Target Website:    http://127.0.0.1:8001"
 echo "=========================================================="
+
+# Automatically open default browser directly
+open "http://127.0.0.1:8000"
 echo "Keep this Terminal window open!"
 echo "Press Ctrl + C when you want to stop the servers."
 echo "=========================================================="

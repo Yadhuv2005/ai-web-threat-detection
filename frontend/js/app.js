@@ -1,10 +1,10 @@
 /**
- * AI-POWERED CYBER RISK MANAGER — SOC DASHBOARD LOGIC
+ * AEGIS CYBER RISK OPERATIONS — SOC DASHBOARD LOGIC
  * Features:
- * 1. 3D Glowing Particle "Security Risk Sphere" (HTML5 Canvas)
- * 2. Active / Paused Monitor State Controller
- * 3. Dynamic Priority Threat Queue & Remediation Engine
- * 4. Real-Time WebSocket streaming & Synchronized Polling
+ * 1. Cinematic iOS-style Gold Welcome Intro with Web Speech Synthesis (Female Voice)
+ * 2. Continuous Financial-grade Stock Ticker for Live Cyber Attacks & Fact Feeds
+ * 3. Executive Gold & Black 3D Particle Risk Sphere
+ * 4. Dropdown Hover Menu Integration & Live Sync
  * 5. Interactive AI Security Analyst Console
  */
 
@@ -34,7 +34,192 @@ const appState = {
 };
 
 // ==========================================================================
-// 1. 3D GLOWING PARTICLE "SECURITY RISK SPHERE"
+// 1. CINEMATIC WELCOME INTRO & FEMALE VOICE AUDIO SYNTHESIS
+// ==========================================================================
+function initWelcomeIntro() {
+    const introOverlay = document.getElementById('intro-overlay');
+    const enterBtn = document.getElementById('btn-enter-soc');
+    const titleEl = document.getElementById('typewriter-title');
+    const subEl = document.getElementById('typewriter-sub');
+
+    // Typewriter effect on opening screen
+    const titleText = "Welcome to Aegis";
+    const subText = "AI-Powered Cyber Risk & Autonomous Threat Intelligence";
+    let titleIdx = 0;
+    let subIdx = 0;
+
+    function typeTitle() {
+        if (!titleEl) return;
+        if (titleIdx < titleText.length) {
+            titleEl.textContent += titleText.charAt(titleIdx);
+            titleIdx++;
+            setTimeout(typeTitle, 65);
+        } else {
+            setTimeout(typeSub, 150);
+        }
+    }
+
+    function typeSub() {
+        if (!subEl) return;
+        if (subIdx < subText.length) {
+            subEl.textContent += subText.charAt(subIdx);
+            subIdx++;
+            setTimeout(typeSub, 25);
+        }
+    }
+
+    // Start typing after initial load
+    setTimeout(typeTitle, 250);
+
+    if (!enterBtn || !introOverlay) return;
+
+    function speakWelcomeAudio() {
+        if (!('speechSynthesis' in window)) return;
+
+        window.speechSynthesis.cancel();
+
+        const speech = new SpeechSynthesisUtterance("Welcome to Aegis. Autonomous cyber defense initialized. Systems secure.");
+        speech.rate = 0.92;
+        speech.pitch = 1.15; // Natural high tone for clear female voice
+        speech.volume = 1.0;
+
+        // Exhaustive female voice matcher across macOS, iOS, Windows, and Chrome
+        const voices = window.speechSynthesis.getVoices();
+        const femaleVoice = voices.find(v => {
+            const name = (v.name || '').toLowerCase();
+            const lang = (v.lang || '').toLowerCase();
+            return lang.startsWith('en') && (
+                name.includes('samantha') || 
+                name.includes('karen') || 
+                name.includes('victoria') || 
+                name.includes('serena') ||
+                name.includes('fiona') ||
+                name.includes('tessa') ||
+                name.includes('zira') || 
+                name.includes('moira') ||
+                name.includes('female') ||
+                name.includes('natural')
+            );
+        }) || voices.find(v => v.lang.startsWith('en'));
+
+        if (femaleVoice) {
+            speech.voice = femaleVoice;
+        }
+
+        window.speechSynthesis.speak(speech);
+    }
+
+    enterBtn.addEventListener('click', () => {
+        speakWelcomeAudio();
+
+        // Smooth iOS cinematic fadeout
+        introOverlay.classList.add('dismissed');
+
+        setTimeout(() => {
+            if (window.RiskCharts) {
+                window.RiskCharts.drawRiskTrend('chart-risk-trend', appState.riskHistory);
+                window.RiskCharts.drawRiskDistribution('chart-risk-dist', appState.stats);
+            }
+        }, 400);
+    });
+
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.onvoiceschanged = () => {
+            window.speechSynthesis.getVoices();
+        };
+    }
+}
+
+// Spoken Alert Audio Voice Generator
+let lastSpokenThreatTime = 0;
+function speakThreatAlert(threatType, riskScore) {
+    if (!('speechSynthesis' in window)) return;
+    const now = Date.now();
+    // Prevent overlapping voice spam (at least 2.5s between announcements)
+    if (now - lastSpokenThreatTime < 2500) return;
+    lastSpokenThreatTime = now;
+
+    window.speechSynthesis.cancel();
+
+    let cleanName = "Threat";
+    if (threatType === 'SQL_INJECTION') cleanName = "SQL Injection";
+    else if (threatType === 'XSS') cleanName = "Cross-Site Scripting";
+    else if (threatType === 'BRUTE_FORCE' || threatType === 'HIGH_RATE_BURST') cleanName = "Brute Force Attack";
+    else cleanName = threatType.replace(/_/g, ' ');
+
+    const phrase = `Warning. ${cleanName} detected. Risk score elevated to ${riskScore}.`;
+    const speech = new SpeechSynthesisUtterance(phrase);
+    speech.rate = 0.95;
+    speech.pitch = 1.15; // Elegant, crisp female voice
+    speech.volume = 1.0;
+
+    const voices = window.speechSynthesis.getVoices();
+    const femaleVoice = voices.find(v => {
+        const name = (v.name || '').toLowerCase();
+        const lang = (v.lang || '').toLowerCase();
+        return lang.startsWith('en') && (
+            name.includes('samantha') || 
+            name.includes('karen') || 
+            name.includes('victoria') || 
+            name.includes('serena') ||
+            name.includes('fiona') ||
+            name.includes('tessa') ||
+            name.includes('zira') || 
+            name.includes('moira') ||
+            name.includes('female')
+        );
+    }) || voices.find(v => v.lang.startsWith('en'));
+
+    if (femaleVoice) {
+        speech.voice = femaleVoice;
+    }
+
+    window.speechSynthesis.speak(speech);
+}
+
+// ==========================================================================
+// 2. LUXURY CONTINUOUS STOCK TICKER CONTROLLER
+// ==========================================================================
+function initStockTicker() {
+    const tickerContent = document.getElementById('ticker-content');
+    const tickerClone = document.getElementById('ticker-content-clone');
+    if (!tickerContent || !tickerClone) return;
+
+    // Clone content for seamless non-stop continuous loop
+    tickerClone.innerHTML = tickerContent.innerHTML;
+}
+
+function updateStockTicker(stats, latestThreat) {
+    const tickerContent = document.getElementById('ticker-content');
+    const tickerClone = document.getElementById('ticker-content-clone');
+    if (!tickerContent || !tickerClone) return;
+
+    let threatSnippet = '';
+    if (latestThreat) {
+        const type = latestThreat.threat_type || 'ANOMALY';
+        const score = latestThreat.risk_score || 85;
+        const pillClass = score >= 80 ? 'crit' : (score >= 60 ? 'high' : 'med');
+        threatSnippet = `<span class="ticker-item"><span class="ticker-pill ${pillClass}">ALERT DETECTED</span> ${type} on ${latestThreat.endpoint || '/'} • Risk ${score}/100</span>`;
+    }
+
+    const html = `
+        ${threatSnippet}
+        <span class="ticker-item"><span class="ticker-pill ${stats.overall_risk_score >= 60 ? 'crit' : 'safe'}">AEGIS INDEX</span> Current Composite Posture: ${stats.overall_risk_score || 12}/100</span>
+        <span class="ticker-item"><span class="ticker-pill gold">ATTACK FACT</span> SQL Injection represents 44% of global web layer breach vectors</span>
+        <span class="ticker-item"><span class="ticker-pill crit">CRITICAL THREATS</span> ${stats.critical_risks || 0} active immediate-triage vectors</span>
+        <span class="ticker-item"><span class="ticker-pill high">HIGH THREATS</span> ${stats.high_risks || 0} elevated anomaly exposures</span>
+        <span class="ticker-item"><span class="ticker-pill med">MEDIUM THREATS</span> ${stats.medium_risks || 0} credential brute attempts</span>
+        <span class="ticker-item"><span class="ticker-pill safe">TRAFFIC MONITORED</span> ${stats.total_scanned || 0} HTTP transactions analyzed</span>
+        <span class="ticker-item"><span class="ticker-pill gold">ML ENGINE</span> Sub-word n-gram TF-IDF Logistic Classifier 97.4% accuracy</span>
+        <span class="ticker-item"><span class="ticker-pill safe">TARGET SITE</span> CyberShop Node 127.0.0.1:8001 Nominal</span>
+    `;
+
+    tickerContent.innerHTML = html;
+    tickerClone.innerHTML = html;
+}
+
+// ==========================================================================
+// 3. 3D GLOWING PARTICLE "SECURITY RISK SPHERE" (GOLD & METALLIC SHADERS)
 // ==========================================================================
 class RiskSphere3D {
     constructor(canvasId) {
@@ -42,21 +227,22 @@ class RiskSphere3D {
         if (!this.canvas) return;
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
-        this.numParticles = 550;
-        this.sphereRadius = 140;
+        this.numParticles = 580;
+        this.sphereRadius = 155;
         this.rotX = 0;
         this.rotY = 0;
-        this.rotSpeedY = 0.009; // Visible, smooth continuous rotation
-        this.rotSpeedX = 0.004;
+        this.rotSpeedY = 0.009;
+        this.rotSpeedX = 0.0035;
         this.pulse = 0;
         this.rippleActive = 0;
-        this.targetColor = { r: 16, g: 185, b: 129 }; // Default low risk green
+        
+        // Luxury Gold default baseline color
+        this.targetColor = { r: 212, g: 175, b: 55 }; // Pure Luxury Gold
 
         this.initParticles();
         this.resize();
         window.addEventListener('resize', () => this.resize());
         
-        // Start animation loop bound to this instance
         this.animate = this.animate.bind(this);
         requestAnimationFrame(this.animate);
     }
@@ -64,9 +250,9 @@ class RiskSphere3D {
     resize() {
         if (!this.canvas) return;
         const rect = this.canvas.parentElement.getBoundingClientRect();
-        this.width = this.canvas.width = rect.width || 580;
-        this.height = this.canvas.height = rect.height || 400;
-        this.sphereRadius = Math.min(this.width, this.height) * 0.38;
+        this.width = this.canvas.width = rect.width || 750;
+        this.height = this.canvas.height = rect.height || 580;
+        this.sphereRadius = Math.min(this.width, this.height) * 0.36;
     }
 
     initParticles() {
@@ -95,13 +281,13 @@ class RiskSphere3D {
         }
 
         if (level === 'CRITICAL' || score >= 80) {
-            this.targetColor = { r: 239, g: 68, b: 68 }; // Red
+            this.targetColor = { r: 244, g: 63, b: 94 }; // Vivid Rose Red
         } else if (level === 'HIGH' || score >= 60) {
-            this.targetColor = { r: 249, g: 115, b: 22 }; // Orange
+            this.targetColor = { r: 251, g: 146, b: 60 }; // Vivid Amber Orange
         } else if (level === 'MEDIUM' || score >= 40) {
             this.targetColor = { r: 234, g: 179, b: 8 }; // Yellow
         } else {
-            this.targetColor = { r: 16, g: 185, b: 129 }; // Green
+            this.targetColor = { r: 212, g: 175, b: 55 }; // Luxury Gold (Baseline Secure)
         }
     }
 
@@ -115,19 +301,18 @@ class RiskSphere3D {
 
         this.ctx.clearRect(0, 0, this.width, this.height);
 
-        // Always rotate visibly: faster when active, gentle drift when paused
-        this.rotY += appState.monitoringActive ? this.rotSpeedY : 0.003;
-        this.rotX += appState.monitoringActive ? this.rotSpeedX : 0.0015;
+        this.rotY += appState.monitoringActive ? this.rotSpeedY : 0.0025;
+        this.rotX += appState.monitoringActive ? this.rotSpeedX : 0.0012;
         this.pulse += 0.03;
 
         if (this.rippleActive > 0) {
-            this.rippleActive -= 0.025;
+            this.rippleActive -= 0.02;
         }
 
         const cx = this.width / 2;
         const cy = this.height / 2;
-        const breathing = Math.sin(this.pulse) * 5;
-        const currentRadius = this.sphereRadius + breathing + (this.rippleActive * 25);
+        const breathing = Math.sin(this.pulse) * 6;
+        const currentRadius = this.sphereRadius + breathing + (this.rippleActive * 30);
 
         const cosY = Math.cos(this.rotY);
         const sinY = Math.sin(this.rotY);
@@ -155,12 +340,12 @@ class RiskSphere3D {
             const wy = y2 * currentRadius;
             const wz = z2 * currentRadius;
 
-            const fov = 400;
+            const fov = 450;
             const scale = fov / (fov + wz);
             const px = cx + wx * scale;
             const py = cy + wy * scale;
 
-            const alpha = Math.max(0.12, (wz + currentRadius) / (currentRadius * 2));
+            const alpha = Math.max(0.14, (wz + currentRadius) / (currentRadius * 2));
 
             projected.push({
                 x: px,
@@ -182,8 +367,9 @@ class RiskSphere3D {
             this.ctx.arc(p.x, p.y, p.scale, 0, Math.PI * 2);
             this.ctx.fill();
 
-            if (p.z > currentRadius * 0.3) {
-                this.ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${p.alpha * 0.30})`;
+            // Specular metallic halo for foreground particles
+            if (p.z > currentRadius * 0.25) {
+                this.ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${p.alpha * 0.35})`;
                 this.ctx.beginPath();
                 this.ctx.arc(p.x, p.y, p.scale * 2.8, 0, Math.PI * 2);
                 this.ctx.fill();
@@ -195,9 +381,8 @@ class RiskSphere3D {
 let riskSphereInstance = null;
 
 // ==========================================================================
-// 2. UI UPDATE & RENDERING FUNCTIONS
+// 4. UI UPDATE & RENDERING FUNCTIONS
 // ==========================================================================
-
 function updateSphereHUD(score, stats) {
     const hud = document.getElementById('sphere-hud');
     const hudScore = document.getElementById('hud-risk-score');
@@ -210,7 +395,7 @@ function updateSphereHUD(score, stats) {
     if (!hud) return;
 
     if (!appState.monitoringActive) {
-        hud.className = 'sphere-hud state-paused';
+        hud.className = 'sphere-gold-hud state-paused';
         if (hudScore) hudScore.innerHTML = `PAUSED`;
         if (hudStatus) {
             hudStatus.textContent = 'MONITORING PAUSED';
@@ -223,21 +408,21 @@ function updateSphereHUD(score, stats) {
     if (hudScore) hudScore.innerHTML = `${score}<span>/100</span>`;
 
     let level = 'LOW';
-    hud.className = 'sphere-hud';
+    hud.className = 'sphere-gold-hud';
 
     if (score >= 80) {
         level = 'CRITICAL';
         hud.classList.add('state-critical');
         if (hudStatus) {
-            hudStatus.textContent = 'CRITICAL RISK';
-            hudStatus.style.color = '#ef4444';
+            hudStatus.textContent = 'CRITICAL THREAT';
+            hudStatus.style.color = '#f43f5e';
         }
     } else if (score >= 60) {
         level = 'HIGH';
         hud.classList.add('state-high');
         if (hudStatus) {
-            hudStatus.textContent = 'HIGH RISK';
-            hudStatus.style.color = '#f97316';
+            hudStatus.textContent = 'HIGH RISK POSTURE';
+            hudStatus.style.color = '#fb923c';
         }
     } else if (score >= 40) {
         level = 'MEDIUM';
@@ -251,7 +436,7 @@ function updateSphereHUD(score, stats) {
         hud.classList.add('state-low');
         if (hudStatus) {
             hudStatus.textContent = 'SYSTEM SECURE';
-            hudStatus.style.color = '#10b981';
+            hudStatus.style.color = '#ffd700'; // Pure Gold
         }
     }
 
@@ -265,7 +450,7 @@ function updateSphereHUD(score, stats) {
     }
 }
 
-function updateOverviewCards(stats, assetsCount) {
+function updateOverviewCards(stats) {
     const setVal = (id, val) => {
         const el = document.getElementById(id);
         if (el) el.textContent = val;
@@ -276,7 +461,6 @@ function updateOverviewCards(stats, assetsCount) {
     setVal('card-high-risks', stats?.high_risks ?? 0);
     setVal('card-medium-risks', stats?.medium_risks ?? 0);
     setVal('card-low-risks', stats?.low_risks ?? 0);
-    setVal('card-monitored-assets', assetsCount || 6);
     setVal('card-active-threats', stats?.total_threats ?? 0);
 
     if (window.RiskCharts) {
@@ -291,14 +475,14 @@ function renderPriorityThreats(threats) {
 
     if (!threats || threats.length === 0) {
         container.innerHTML = `
-            <div style="grid-column: 1/-1; text-align: center; padding: 2.5rem; color: #64748b; background: #0b111e; border: 1px dashed #1c2a45; border-radius: 12px;">
+            <div class="empty-state" style="text-align: center; padding: 2rem; color: #64748b; font-size: 0.85rem;">
                 🛡️ Zero active high-priority risks detected. All monitored endpoints operating safely within baseline.
             </div>
         `;
         return;
     }
 
-    container.innerHTML = threats.slice(0, 6).map(t => {
+    container.innerHTML = threats.slice(0, 10).map(t => {
         const levelClass = (t.risk_level || 'medium').toLowerCase();
         const timeShort = t.timestamp ? t.timestamp.split('T')[1]?.replace('Z', '').split('.')[0] : 'Just now';
 
@@ -313,18 +497,14 @@ function renderPriorityThreats(threats) {
                     </div>
                 </div>
                 <div class="threat-meta-row">
-                    <span><strong>Target Asset:</strong> ${t.affected_asset || 'Web Application'}</span>
+                    <span><strong>Asset:</strong> ${t.affected_asset || 'Web Application'}</span>
                     <span><strong>Endpoint:</strong> <code>${t.endpoint || '/'}</code></span>
-                    <span><strong>Source IP:</strong> <code>${t.client_ip || '127.0.0.1'}</code></span>
+                    <span><strong>Source:</strong> <code>${t.client_ip || '127.0.0.1'}</code></span>
                     <span><strong>Time:</strong> ${timeShort}</span>
                 </div>
                 <div class="threat-detail-block">
                     <div class="threat-detail-label">Detection Rationale</div>
                     <div>${t.reason || 'Anomalous request detected by hybrid security engine.'}</div>
-                </div>
-                <div class="threat-detail-block" style="background: rgba(239, 68, 68, 0.05); border-color: rgba(239, 68, 68, 0.15);">
-                    <div class="threat-detail-label" style="color: #fca5a5;">Potential Business Impact</div>
-                    <div>${t.business_impact || 'Potential unauthorized data access or session takeover.'}</div>
                 </div>
                 <div class="threat-remediation-block">
                     <strong>Recommended Action:</strong> ${t.remediation_action || 'Inspect logs and verify access control.'}
@@ -343,15 +523,14 @@ function appendTrafficRow(log, risk) {
     const riskLevel = risk?.risk_level || (isThreat ? 'HIGH' : 'LOW');
     const badgeClass = riskLevel.toLowerCase();
 
-    const timeShort = log.timestamp ? log.timestamp.split('T')[1]?.replace('Z', '').split('.')[0] : '';
+    const timeShort = log.timestamp ? log.timestamp.split('T')[1]?.replace('Z', '').split('.')[0] : 'Now';
 
     row.innerHTML = `
-        <td>${timeShort}</td>
+        <td><code>${timeShort}</code></td>
         <td><strong>${log.prediction}</strong></td>
         <td>${risk?.affected_asset || 'Storefront'}</td>
         <td><span class="tag-pill ${badgeClass}">${riskLevel} (${risk?.risk_score || 10})</span></td>
-        <td><code>${log.client_ip}</code></td>
-        <td><span style="font-weight: 700; color: ${isThreat ? '#ef4444' : '#10b981'}">${isThreat ? 'FLAGGED' : 'CLEAN'}</span></td>
+        <td><span style="font-weight: 700; color: ${isThreat ? '#f43f5e' : '#10b981'}">${isThreat ? 'FLAGGED' : 'CLEAN'}</span></td>
     `;
 
     tbody.insertBefore(row, tbody.firstChild);
@@ -391,7 +570,7 @@ function renderRecommendedActions(threats) {
                 <div class="action-icon">✅</div>
                 <div class="action-content">
                     <h4>Baseline Security Posture</h4>
-                    <p>No critical mitigations required right now. Routine access log audits and perimeter checks active.</p>
+                    <p>No critical mitigations required right now. Routine perimeter access monitoring active.</p>
                 </div>
             </div>
         `;
@@ -412,7 +591,7 @@ function renderRecommendedActions(threats) {
             <div class="action-card">
                 <div class="action-icon">🛡️</div>
                 <div class="action-content">
-                    <h4>Direct Remediation for ${t.threat_type}</h4>
+                    <h4>Direct Action for ${t.threat_type}</h4>
                     <p>${t.remediation_action}</p>
                 </div>
             </div>
@@ -421,9 +600,8 @@ function renderRecommendedActions(threats) {
 }
 
 // ==========================================================================
-// 3. AI SECURITY ANALYST CONSOLE
+// 5. AI SECURITY ANALYST CONSOLE
 // ==========================================================================
-
 async function sendAnalystQuery(queryText) {
     const input = document.getElementById('analyst-input');
     const outputArea = document.getElementById('analyst-output');
@@ -433,7 +611,7 @@ async function sendAnalystQuery(queryText) {
     if (input) input.value = '';
 
     outputArea.innerHTML = `
-        <div style="color: #06b6d4; font-family: monospace;">
+        <div style="color: #ffd700; font-family: monospace;">
             🤖 AI Analyst is analyzing real-time threat telemetry and asset exposures...
         </div>
     `;
@@ -447,28 +625,19 @@ async function sendAnalystQuery(queryText) {
         const data = await resp.json();
 
         const formattedAnswer = (data.answer || '')
+            .replace(/### (.*?)\n/g, '<h5 style="color:#ffd700; margin: 0.8rem 0 0.3rem 0; font-size: 0.95rem;">$1</h5>')
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/`([^`]+)`/g, '<code style="background:rgba(212,175,55,0.15); color:#ffd700; padding:1px 4px; border-radius:3px;">$1</code>')
             .replace(/\n\n/g, '<br><br>')
             .replace(/\n/g, '<br>');
 
-        let actionsHtml = '';
-        if (data.action_items && data.action_items.length > 0) {
-            actionsHtml = `
-                <div style="margin-top: 1rem; padding: 0.85rem; background: rgba(6, 182, 212, 0.08); border-left: 3px solid #06b6d4; border-radius: 4px;">
-                    <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: #38bdf8; margin-bottom: 0.4rem;">Actionable Directives:</div>
-                    ${data.action_items.map(a => `<div>• ${a}</div>`).join('')}
-                </div>
-            `;
-        }
-
         outputArea.innerHTML = `
             <div class="analyst-output-headline">${data.headline || 'Analyst Assessment'}</div>
-            <div>${formattedAnswer}</div>
-            ${actionsHtml}
+            <div style="line-height: 1.6;">${formattedAnswer}</div>
         `;
     } catch (e) {
         outputArea.innerHTML = `
-            <div style="color: #ef4444;">
+            <div style="color: #f43f5e;">
                 [-] Error querying AI Analyst: ${e}
             </div>
         `;
@@ -476,9 +645,8 @@ async function sendAnalystQuery(queryText) {
 }
 
 // ==========================================================================
-// 4. WEBSOCKET & STATUS MANAGEMENT
+// 6. WEBSOCKET & STATUS MANAGEMENT
 // ==========================================================================
-
 function updateMonitorButtonsUI(isActive) {
     appState.monitoringActive = isActive;
     const statusPill = document.getElementById('status-pill');
@@ -487,11 +655,11 @@ function updateMonitorButtonsUI(isActive) {
 
     if (statusPill) {
         if (isActive) {
-            statusPill.className = 'status-pill online';
-            statusPill.innerHTML = '<span class="dot"></span> MONITORING ACTIVE';
+            statusPill.className = 'status-pill-gold online';
+            statusPill.innerHTML = '<span class="dot-gold"></span> ACTIVE';
         } else {
-            statusPill.className = 'status-pill paused';
-            statusPill.innerHTML = '<span class="dot"></span> MONITORING PAUSED';
+            statusPill.className = 'status-pill-gold paused';
+            statusPill.innerHTML = '<span class="dot-gold" style="background:#94a3b8;box-shadow:none;"></span> PAUSED';
         }
     }
 
@@ -538,12 +706,26 @@ function handleIncomingEvent(data) {
         appState.stats = data.stats;
         appState.overallRiskScore = data.stats.overall_risk_score || 12;
         updateMonitorButtonsUI(data.monitoring_active);
-        updateOverviewCards(data.stats, data.assets?.length);
+        updateOverviewCards(data.stats);
         if (data.prioritized) {
             renderPriorityThreats(data.prioritized);
             renderRecommendedActions(data.prioritized);
         }
         if (data.assets) renderAssetRegistry(data.assets);
+        updateStockTicker(data.stats, null);
+        return;
+    }
+
+    if (data.event_type === 'RESET_STATS') {
+        appState.stats = data.stats;
+        appState.overallRiskScore = data.stats.overall_risk_score || 12;
+        updateSphereHUD(appState.overallRiskScore, data.stats);
+        updateOverviewCards(data.stats);
+        renderPriorityThreats([]);
+        renderRecommendedActions([]);
+        const tbody = document.getElementById('traffic-tbody');
+        if (tbody) tbody.innerHTML = '';
+        updateStockTicker(data.stats, null);
         return;
     }
 
@@ -557,7 +739,8 @@ function handleIncomingEvent(data) {
             appState.stats = data.stats;
             appState.overallRiskScore = data.stats.overall_risk_score || 12;
             updateSphereHUD(appState.overallRiskScore, data.stats);
-            updateOverviewCards(data.stats, appState.assets.length);
+            updateOverviewCards(data.stats);
+            updateStockTicker(data.stats, data.threat);
         }
 
         const currentScore = data.risk?.risk_score || appState.overallRiskScore;
@@ -572,6 +755,11 @@ function handleIncomingEvent(data) {
             if (riskSphereInstance) {
                 riskSphereInstance.triggerThreatRipple();
             }
+            // Announce detected threat using the exact central System Risk Score (e.g. 56)
+            const threatName = data.threat?.threat_type || data.log?.prediction || "Threat";
+            const actualSystemRiskScore = appState.overallRiskScore;
+            speakThreatAlert(threatName, actualSystemRiskScore);
+
             refreshPriorityData();
         }
     }
@@ -597,7 +785,8 @@ async function refreshPriorityData() {
         appState.overallRiskScore = stats.overall_risk_score || 12;
 
         updateMonitorButtonsUI(status.monitoring_active);
-        updateOverviewCards(stats, assets.length);
+        updateOverviewCards(stats);
+        updateSphereHUD(appState.overallRiskScore, stats);
         renderPriorityThreats(prioritized);
         renderAssetRegistry(assets);
         renderRecommendedActions(prioritized);
@@ -608,6 +797,9 @@ async function refreshPriorityData() {
 
 // Initial Setup
 window.addEventListener('DOMContentLoaded', () => {
+    initWelcomeIntro();
+    initStockTicker();
+
     riskSphereInstance = new RiskSphere3D('risk-sphere-canvas');
     refreshPriorityData();
     initWebSocket();
@@ -635,16 +827,41 @@ window.addEventListener('DOMContentLoaded', () => {
 
     if (btnStart) {
         btnStart.addEventListener('click', async () => {
-            const res = await fetch('/api/monitoring/start', { method: 'POST' });
-            const data = await res.json();
+            await fetch('/api/monitoring/start', { method: 'POST' });
             updateMonitorButtonsUI(true);
         });
     }
     if (btnStop) {
         btnStop.addEventListener('click', async () => {
-            const res = await fetch('/api/monitoring/stop', { method: 'POST' });
-            const data = await res.json();
+            await fetch('/api/monitoring/stop', { method: 'POST' });
             updateMonitorButtonsUI(false);
+        });
+    }
+
+    // Reset Telemetry Button
+    const btnReset = document.getElementById('btn-reset');
+    if (btnReset) {
+        btnReset.addEventListener('click', async () => {
+            if (confirm('Are you sure you want to reset all telemetry and risk history back to baseline?')) {
+                try {
+                    btnReset.disabled = true;
+                    btnReset.textContent = '⏳';
+                    const res = await fetch('/api/reset', { method: 'POST' });
+                    const data = await res.json();
+                    if (data.stats) {
+                        appState.stats = data.stats;
+                        appState.overallRiskScore = data.stats.overall_risk_score || 12;
+                        updateSphereHUD(appState.overallRiskScore, data.stats);
+                        updateOverviewCards(data.stats);
+                    }
+                    await refreshPriorityData();
+                } catch (err) {
+                    console.error('Reset error:', err);
+                } finally {
+                    btnReset.disabled = false;
+                    btnReset.textContent = '🔄 Reset';
+                }
+            }
         });
     }
 
