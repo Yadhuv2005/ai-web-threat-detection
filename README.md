@@ -1,6 +1,6 @@
-# AI-Powered Cyber Risk Manager — Real-Time Threat Detection, Risk Assessment & Intelligent Response Platform
+# AEGIS — Autonomous Cyber Risk Operations & AI Threat Intelligence Platform
 
-An enterprise-grade, hybrid AI cybersecurity operations platform that combines **NLP payload classification** (character n-gram TF-IDF with Logistic Regression) and **behavioral sliding-window anomaly detection** with an **intelligent multi-factor Cyber Risk Engine**, **Asset Registry**, and an interactive **3D Particle Security Risk Sphere SOC Dashboard**.
+An executive-grade, hybrid AI cybersecurity platform featuring **NLP sub-word threat classification**, **behavioral sliding-window anomaly heuristics**, a **multi-factor Cyber Risk Engine**, and a **Luxury Gold 3D Particle Risk Sphere** SOC Dashboard.
 
 ---
 
@@ -22,116 +22,114 @@ An enterprise-grade, hybrid AI cybersecurity operations platform that combines *
                                │
                                ▼
 ┌─────────────────────────────────────────────────────────────┐
-│             NEW: AI Cyber Risk Engine                       │
+│             AI Cyber Risk Engine (Dynamic Decay)            │
 │  ├─ Asset Registry Mapping (Endpoint -> Enterprise Asset)   │
 │  ├─ Multi-Factor Risk Scoring (0–100)                       │
 │  │   Score = Likelihood(35%) + Severity(35%) + Asset(30%)   │
+│  ├─ 90-Second Time Decay & Clean Traffic Dampening          │
 │  ├─ Dynamic Triage (Critical, High, Medium, Low)            │
-│  ├─ Business Impact & Actionable Remediation Synthesis      │
 │  └─ Overall Organizational Risk Index Aggregator            │
 └──────────────┬──────────────────────────────┬───────────────┘
                │                              │
                ▼                              ▼
 ┌──────────────────────────────┐ ┌────────────────────────────┐
-│      Smart Alert Engine      │ │   SQLite Extended Schema   │
-│  Low: Dashboard only         │ │  - assets (Criticality)    │
-│  Medium: Dashboard Notif     │ │  - threat_events (risk_*)  │
-│  High: Dashboard + Email     │ │  - alert_history           │
-│  Critical: Dash + Email + SMS│ │  - traffic_logs            │
+               │                              │
+┌──────────────┴───────────────┐ ┌────────────┴───────────────┐
+│     Multi-Channel Alerts     │ │    SQLite Telemetry DB     │
+│  - Real-time Spoken Voice    │ │  - assets (Criticality)    │
+│  - Dashboard WebSockets      │ │  - threat_events           │
+│  - Automated Cooldown Rules  │ │  - traffic_logs            │
 └──────────────┬───────────────┘ └────────────┬───────────────┘
                │                              │
                └──────────────┬───────────────┘
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
 │          FastAPI Monitoring Backend (Port 8000)             │
-│  - REST APIs: /api/risk/overview, /api/risk/prioritized     │
-│  - Asset Endpoints: /api/assets                             │
-│  - AI Security Analyst: /api/analyst/query                  │
-│  - WebSocket Broadcaster: /api/ws                           │
+│  - REST APIs: /api/stats, /api/risk/prioritized, /api/assets│
+│  - AI Security Analyst Q&A Engine: /api/analyst/query       │
+│  - Telemetry Reset Pipeline: /api/reset                     │
+│  - WebSocket Real-Time Streamer: /api/ws                    │
 └─────────────────────────────┬───────────────────────────────┘
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│        Cyber SOC Dashboard (Risk-Centered Redesign)         │
-│  1. Hero 3D Particle "Security Risk Sphere" (Rotating dots) │
-│  2. Risk Overview KPI Cards (Org Score, Severity counts)    │
-│  3. Priority Threats (Critical & High triage queue)         │
-│  4. Live Threat Feed (Real-time WebSocket event stream)     │
-│  5. Risk Analytics (Risk Trend & Level Distribution Charts) │
-│  6. AI Security Analyst Interactive Console                 │
-│  7. Prioritized Remediation Recommendations                 │
+│         Executive Gold & Noir Cyber SOC Interface           │
+│  1. iOS-Style Welcome Intro with Typewriter & Female Audio  │
+│  2. Live Moving Stock Ticker with Real-Time Attack Intel    │
+│  3. Centered 3D Particle Risk Sphere (Gold Baseline)        │
+│  4. Hover Popdown Navigation (Zero-Scroll HUD)              │
+│  5. Real-Time Spoken Audio Warning on Detected Attacks      │
+│  6. AI Security Analyst with Remediation Playbooks          │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## ⚡ Core Capabilities
+## ⚡ Key Highlights & Features
 
-### 1. AI Cyber Risk Engine
-Moves beyond binary "threat/no threat" detection to assess **business-contextual risk**:
-$$\text{Risk Score} = \min(100, \text{Round}((\text{Likelihood} \times 0.35 + \text{Technical Severity} \times 0.35 + \text{Asset Criticality} \times 0.30) \times 100))$$
-- **Likelihood**: Derived from ML model probability and exploit complexity.
-- **Technical Severity**: Categorized by potential system compromise (SQLi = 0.95, Brute-Force = 0.90, High-Rate = 0.75, XSS = 0.70).
-- **Asset Criticality**: Weighted by enterprise asset value (Payment = 1.0, Auth = 1.0, Admin = 0.95, Catalog API = 0.8, Search = 0.6, Web = 0.4).
+### 1. iOS-Style Cinematic Welcome Intro
+- Pure deep black opening canvas with glowing gold typography (*Cinzel* serif).
+- Live typewriter "writing" animation for the title and subtitle.
+- **Female Voice Audio Synthesis**: Automatically welcomes the operator upon initializing the security protocol:
+  > *"Welcome to Aegis. Autonomous cyber defense initialized. Systems secure."*
 
-### 2. Enterprise Asset Registry
-Defines and tracks business systems:
-- **Identity & Access Gateway** (`/login`) — *CRITICAL*
-- **Payment & Checkout API** (`/cart/checkout`) — *CRITICAL*
-- **Administrative Management Console** (`/admin`) — *CRITICAL*
-- **Product Catalog API** (`/api`) — *HIGH*
-- **Customer Search Engine** (`/search`) — *MEDIUM*
-- **Public Storefront** (`/`) — *LOW*
+### 2. Luxury Continuous Stock Ticker
+- High-frequency marquee bar constantly streaming real-time security intelligence, machine learning model accuracy ratings (97.4%), and threat statistics across the top of the screen.
 
-### 3. Risk Prioritization (Triage Queue)
-Threats are automatically sorted by risk score so security operations teams know exactly which incidents require immediate containment.
+### 3. Pure Focused Zero-Scroll 3D Risk Sphere Centerpiece
+- The dashboard is completely uncluttered with zero vertical scrolling required.
+- The central 3D particle sphere rotates gracefully with metallic gold shaders under baseline conditions, dynamically reacting with red shockwaves when threats occur.
 
-### 4. AI Security Analyst
-An intelligent Q&A engine grounded in real database telemetry. Supports questions such as:
-- *"What are today's biggest security risks?"*
-- *"What should I investigate first?"*
-- *"Which assets are most at risk?"*
-- *"Why is this threat high risk?"*
-- *"What happened in the last 24 hours?"*
+### 4. Real-Time Spoken Threat Warnings (Audio Alerts)
+- Whenever a live attack hits the system, the platform speaks the detected attack type and exact elevated risk score in a natural female voice:
+  - 🔊 *"Warning. SQL Injection detected. Risk score elevated to 85."*
+  - 🔊 *"Warning. Cross-Site Scripting detected. Risk score elevated to 77."*
+  - 🔊 *"Warning. Brute Force Attack detected. Risk score elevated to 96."*
 
-### 5. Smart Risk-Based Alerting
-- **LOW Risk**: Logged to dashboard only.
-- **MEDIUM Risk**: Dashboard notification and audit logging.
-- **HIGH Risk**: Dashboard + Email alert (SMTP).
-- **CRITICAL Risk**: Dashboard + Email alert + SMS alert (Twilio).
-- Features **cooldown deduplication** to eliminate alert flooding.
+### 5. Centered Executive Hover Popdowns
+Access every subsystem instantly from the top navigation bar without leaving the center view:
+- **📊 Risk Telemetry**: Real-time KPI cards (Overall Risk, Critical, High, Medium, Low).
+- **🚨 Priority Threats**: Triage queue ranked by business impact.
+- **📡 Live Feed & Assets**: Live WebSocket log stream and registered assets.
+- **📈 Analytics**: Temporal risk trend chart and severity distributions.
+- **🤖 AI Analyst**: Interactive SOC Q&A assistant explaining attacks and code solutions.
+- **🛠️ Remediation**: Direct mitigation directives.
 
-### 6. Interactive 3D Particle "Security Risk Sphere"
-A pure mathematical 3D perspective particle sphere rendered with 550 glowing dots on HTML5 Canvas:
-- **Green State**: Score < 40 (System Secure / Normal).
-- **Yellow/Amber State**: Score 40–79 (Elevated / High Risk).
-- **Red State**: Score 80–100 (Critical Threat Active).
-- Reacts with a 3D ripple wave whenever a new attack hits the server.
+### 6. Dynamic Risk Scoring with 90-Second Time-Decay
+- Threat density and attack severity dynamically spike the score.
+- As legitimate traffic flows or after 90 seconds of inactivity, the score automatically decays back to a green baseline (**12 / 100 — SYSTEM SECURE**).
 
 ---
 
 ## 🚀 Quick Start Guide
 
-### Step 1: Set Up Virtual Environment & Dependencies
-```bash
-cd ~/Desktop/"WEB THREAT"
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
+### One-Click Launch (macOS)
+Simply double-click:
+👉 **`Aegis Cyber Defense.app`** or run `./launch_aegis.command`
 
-### Step 2: Launch Both Servers (One-Command Launch)
+### Terminal Launch
 ```bash
+# 1. Clone repository
+git clone https://github.com/Yadhuv2005/ai-web-threat-detection.git
+cd ai-web-threat-detection
+
+# 2. Run automated start script (auto-spawns target website & SOC backend)
 ./start.sh
 ```
-This launches:
-- **Cyber Risk SOC Dashboard**: `http://127.0.0.1:8000`
-- **Target Test Website**: `http://127.0.0.1:8001`
 
-### Step 3: Simulate Traffic & Verify
-In a second terminal window:
-```bash
-cd ~/Desktop/"WEB THREAT"
-./venv/bin/python3 tests/generate_traffic.py 1
-```
+- **Aegis SOC Dashboard**: `http://127.0.0.1:8000`
+- **Monitored CyberShop Target**: `http://127.0.0.1:8001`
 
-Watch the **Security Risk Sphere** rotate and shift, observe the **Priority Threats triage queue**, and query the **AI Security Analyst console** in real time!
+---
+
+## 🧪 Testing Live Attacks Against the Target
+
+Open **`http://127.0.0.1:8001`** in your browser and test these vectors:
+
+1. **SQL Injection (SQLi)**:
+   Search for: `' OR 1=1 --`
+2. **Cross-Site Scripting (XSS)**:
+   Search for: `<script>alert('XSS')</script>`
+3. **Brute Force**:
+   Go to `/login` and submit invalid credentials 5+ times in a row.
+
+Watch the central 3D sphere glow red, hear the audio alert, and ask the **AI Analyst** how to fix it!
